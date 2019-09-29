@@ -1,0 +1,91 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.carousel-indicators li {
+  width: 1.1vw !important;
+  height: 1.1vw !important;
+  border-radius: 100% !important;
+  margin-right: 1.5vw !important;
+}
+
+.navbar-nav {
+  margin-left: 30px;
+}
+
+.nav-item {
+  margin-right: 30px;
+  color: #9d9d9d;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14.5px;
+  letter-spacing: 1.2px;
+}
+
+.logotipo {
+  margin-left: 30px;
+}
+
+.item:nth-child(1) {
+  background: url('https://snap-photos.s3.amazonaws.com/img-thumbs/960w/HZZKGVVJ6I.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.nav-texto {
+  margin-top: 4px;
+}
+
+
+.fa-facebook {
+  font-size: 27px;
+  color: #05afea;
+}
+
+.fa-facebook:hover {
+  color: red;
+}
+
+.navbar-nav {
+    margin-left: 20%;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.c-icon {
+  color: #05afea;
+}
+
+.list-group-item {
+  font-weight: 400;
+}
+
+.card-title {
+  color: #3d3d3d;
+}
+
+.card-text {
+  font-size: 17px;
+}
+
+.bale {
+  font-family: 'Open Sans', sans-serif;
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    align-content: center;
+    text-align: center;
+    margin-left: -15%;
+  }
+
+  .logotipo {
+    position: relative;
+    left: 45%;
+    margin-left: -50px !important;  /* 50% of your logo width */
+    display: block;
+  }
+}

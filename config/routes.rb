@@ -10,7 +10,4 @@ Rails.application.routes.draw do
   # Admin routes
   get 'admin/teste'
 
-  namespace :admin do
-    resources :eventos [:create, :edit, :destroy, :show]
-  end
 end

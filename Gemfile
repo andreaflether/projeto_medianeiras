@@ -7,6 +7,7 @@ gem 'cdn_assets', '~> 1.0'
 gem 'jquery-cdn', '~> 3.3', '>= 3.3.1'
 gem 'sprockets', '~> 3.7', '>= 3.7.2'
 gem 'devise', '~> 4.7', '>= 4.7.1'
+gem 'simple_form', '~> 5.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'

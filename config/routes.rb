@@ -10,4 +10,9 @@ Rails.application.routes.draw do
   # Admin routes
   get 'admin/teste'
 
+  #Admin Eventos
+  get 'admin/eventos/criar'
+  get 'admin/eventos/editar'
+  get 'admin/eventos/excluir'
+  get 'admin/eventos/exibir'
 end

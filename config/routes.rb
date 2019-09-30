@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   get 'pages/cursos'
   get 'pages/eventos'
 
-  # Admin routes 
+  # Admin routes
   get 'admin/teste'
+
+  namespace :admin do
+    resources :eventos [:create, :edit, :destroy, :show]
+  end
 end

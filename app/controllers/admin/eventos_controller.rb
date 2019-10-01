@@ -1,6 +1,6 @@
 class Admin::EventosController < ApplicationController
 
-  def novo
+  def new
     @evento = Evento.new
   end
 
@@ -17,7 +17,7 @@ class Admin::EventosController < ApplicationController
   private
 
   def evento_params
-    params.permit(:evento).permit(:nome, :data, :hora, :local, :descricao)
+    params.require(:evento).permit(:nome, :data, :hora, :local, :descricao)
   end
 
 end

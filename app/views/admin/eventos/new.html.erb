@@ -1,0 +1,12 @@
+<h1>Criar Evento</h1>
+
+<div class="section">
+  <%= simple_form_for @evento do |f| %>
+    <%= f.input :nome, input_html: { class: 'input'} %>
+    <%= f.input :data, input_html: { class: 'input'} %>
+    <%= f.input :hora, input_html: { class: 'input'} %>
+    <%= f.input :local, input_html: { class: 'input'} %>
+    <%= f.input :descricao, input_html: { class: 'input'} %>
+    <%= f.button :submit, 'Criar novo evento', class: "btn btn-primary"%>
+  <% end %>
+</div>

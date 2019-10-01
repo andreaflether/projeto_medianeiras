@@ -11,8 +11,13 @@ Rails.application.routes.draw do
   get 'admin/teste'
 
   #Admin Eventos
-  get 'admin/eventos/criar'
-  get 'admin/eventos/editar'
-  get 'admin/eventos/excluir'
-  get 'admin/eventos/exibir'
+  # get 'admin/eventos/criar'
+  # get 'admin/eventos/editar'
+  # get 'admin/eventos/excluir'
+  # get 'admin/eventos/exibir'
+  # get 'admin/eventos/novo'
+
+  scope(path_names: {new: 'novo', edit: 'editar'}) do
+    resources :eventos, path: 'admin/eventos', module: :admin
+  end
 end

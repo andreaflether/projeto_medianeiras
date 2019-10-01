@@ -9,6 +9,13 @@ gem 'sprockets', '~> 3.7', '>= 3.7.2'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'simple_form', '~> 5.0'
 
+#Bootstrap, JS
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap', '4.3.1'
+  gem 'rails-assets-jquery'
+  gem 'rails-assets-tether'
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record

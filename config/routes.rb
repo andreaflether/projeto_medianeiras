@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   # get 'admin/eventos/exibir'
   # get 'admin/eventos/novo'
 
-  scope(path_names: {new: 'novo', edit: 'editar'}) do
+  scope(path_names: {new: 'novo', edit: 'editar', create: 'criar', delete: 'excluir'}) do
     resources :eventos, path: 'admin/eventos', module: :admin
   end
 end

@@ -8,7 +8,7 @@ class Admin::EventosController < ApplicationController
     @evento = Evento.new(evento_params)
 
     if @evento.save
-      #redirect_to @evento
+      redirect_to @evento
     else
       render 'criar'
     end

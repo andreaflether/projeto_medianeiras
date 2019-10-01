@@ -2,11 +2,11 @@
 
 <div class="section">
   <%= simple_form_for @evento do |f| %>
-    <%= f.input :nome, input_html: { class: 'form-control'} %>
-    <%= f.input :data, input_html: { class: 'form-control'} %>
-    <%= f.input :hora, input_html: { class: 'form-control'} %>
-    <%= f.input :local, input_html: { class: 'form-control'} %>
-    <%= f.input :descricao, input_html: { class: 'form-control'} %>
+    <%= f.input :nome, input_html: { class: 'form-control'}, label_html: { class: 'label'}  %>
+    <%= f.input :data, input_html: { class: 'form-control'}, label_html: { class: 'label'}%>
+    <%= f.input :hora, input_html: { class: 'form-control'}, label_html: { class: 'label'} %>
+    <%= f.input :local, input_html: { class: 'form-control'}, label_html: { class: 'label'} %>
+    <%= f.input :descricao, input_html: { class: 'form-control'}, label_html: { class: 'label'} %>
     <%= f.button :submit, 'Criar novo evento', class: "btn btn-primary"%>
   <% end %>
 </div>

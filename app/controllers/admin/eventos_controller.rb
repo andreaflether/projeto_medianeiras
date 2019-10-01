@@ -1,17 +1,25 @@
 class Admin::EventosController < ApplicationController
 
+  def index
+    @eventos = Evento.all.order("created_at DESC")
+  end
+
   def new
     @evento = Evento.new
   end
 
-  def criar
+  def create
     @evento = Evento.new(evento_params)
 
     if @evento.save
       redirect_to @evento
     else
-      render 'criar'
+      render 'new'
     end
+  end
+
+  def show
+    @evento = Evento.find(params[:id])
   end
 
   private

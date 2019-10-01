@@ -1,0 +1,15 @@
+<h1>Página inicial - Eventos</h1>
+
+<% @eventos.each do |evento| %>
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title"><%= @evento.nome %></h4>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= @evento.data %>, às <%= @evento.hora %></h5>
+    <p class="card-text"><%= @evento.local %></p>
+    <p class="card-text"><%= @evento.descricao %></p>
+    <a href="#" class="btn btn-primary">Teste</a>
+  </div>
+</div>
+<% end %>

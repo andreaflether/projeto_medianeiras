@@ -21,4 +21,6 @@ Rails.application.routes.draw do
     resources :eventos, path: 'admin/eventos', module: :admin
   end
 
+  get 'admin/eventos/listagem'
+
 end

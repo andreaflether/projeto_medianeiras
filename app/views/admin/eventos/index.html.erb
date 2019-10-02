@@ -1,32 +1,70 @@
-<h1>Página inicial - Eventos</h1>
-
 <!-- Menu -->
-<ul class="nav justify-content-center">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Criar novo evento</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Página de formulários</a>
-  </li>
-</ul>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0984e3;">
+  <a class="navbar-brand" href="#">ADMIN</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Criar novo evento</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Próximos eventos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Ver todos</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Procurar..." aria-label="Search">
+      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Pesquisar</button>
+    </form>
+  </div>
+</nav>
 <!-- Fim do menu -->
 
+<h1>Página inicial - Eventos</h1>
+
 <div class="card-deck">
-
-<% @eventos.each do |evento| %>
-
-    <div class="card mb-2">
-      <div class="card-header">
-        <h4 class="card-title"><%= evento.nome %></h4>
+  <% @eventos.each do |evento| %>
+      <div class="card mb-2">
+        <div class="card-header">
+          <h4 class="card-title"><%= evento.nome %></h4>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%= evento.data %>, às <%= evento.hora %></h5>
+          <p class="card-text"><%= evento.local %></p>
+          <p class="card-text"><%= evento.descricao %></p>
+          <a href="#" class="btn btn-primary">Editar</a>
+          <a href="#" class="btn btn-danger">Apagar</a>
+        </div>
       </div>
-      <div class="card-body">
-        <h5 class="card-title"><%= evento.data %>, às <%= evento.hora %></h5>
-        <p class="card-text"><%= evento.local %></p>
-        <p class="card-text"><%= evento.descricao %></p>
-        <a href="#" class="btn btn-primary">Teste</a>
-      </div>
-    </div>
-
-<% end %>
-
+  <% end %>
 </div>
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th>Nome</th>
+      <th>Data</th>
+      <th>Hora</th>
+      <th>Local<th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @eventos.each do |evento| %>
+      <tr>
+        <td><%= evento.nome %></td>
+        <td><%= evento.data%></td>
+        <td><%= evento.hora %></td>
+        <td><%= evento.local %></td>
+        <td><%= link_to 'Editar', edit_evento_path(evento) %></td>
+        <td><%= link_to 'Apagar', evento, method: :delete, data: { confirm: 'Tem certeza que deseja apagar o evento selecionado?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

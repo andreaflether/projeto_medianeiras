@@ -22,6 +22,11 @@ class Admin::EventosController < ApplicationController
     @evento = Evento.find(params[:id])
   end
 
+  def listagem
+    @eventos = Evento.all.order("created_at ASC")
+  end
+
+
   private
 
   def evento_params

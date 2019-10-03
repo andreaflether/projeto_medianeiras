@@ -23,6 +23,7 @@ class Admin::EventosController < ApplicationController
   end
 
   def listagem
+    #@eventos = Evento.all.order("created_at ASC")
     @proximos_eventos = Evento.proximos_eventos
   end
 

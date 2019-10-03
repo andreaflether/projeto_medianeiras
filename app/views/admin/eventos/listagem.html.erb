@@ -1,29 +1,7 @@
-<h1>Listagem de Eventos</h1>
-
-<!-- Tabela de eventos -->
-<table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th>Nome</th>
-      <th>Data</th>
-      <th>Hora</th>
-      <th>Local<th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @eventos.each do |evento| %>
-      <tr>
-        <td><%= evento.nome %></td>
-        <td><%= evento.data%></td>
-        <td><%= evento.hora %></td>
-        <td><%= evento.local %></td>
-        <td><%= link_to 'Ver', evento %></td>
-        <td><%= link_to 'Editar', edit_evento_path(evento) %></td>
-        <td><%= link_to 'Apagar', evento, method: :delete, data: { confirm: 'Tem certeza que deseja apagar o evento selecionado?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<!-- Tabela de eventos -->
+<h3>Teste: próximos eventos</h3>
+<% @proximos_eventos.order(data: :asc, hora: :asc).each do |evento| %>
+<b><%= evento.nome %></b><br>
+<b>Local: </b><%= evento.local %><br>
+<b>Dia: </b><%= evento.data %>, às <%= evento.hora %><br>
+<%= evento.descricao %><br>
+<% end %>

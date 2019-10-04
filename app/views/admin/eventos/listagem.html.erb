@@ -1,7 +1,48 @@
-<h3>Teste: próximos eventos</h3>
-<% @proximos_eventos.order(data: :asc, hora: :asc).each do |evento| %>
-<b><%= evento.nome %></b><br>
-<b>Local: </b><%= evento.local %><br>
-<b>Dia: </b><%= evento.data %>, às <%= evento.hora %><br>
-<%= evento.descricao %><br>
-<% end %>
+<!-- Menu -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0984e3;">
+  <a class="navbar-brand" href="#">ADMIN</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to 'Criar novo evento', new_evento_path, class: "nav-link" %>
+      </li>
+      <li class="nav-itMês: em">
+        <%= link_to 'Listagem de eventos', eventos_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Ver todos', admin_eventos_listagem_path, class: "nav-link" %>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Procurar..." aria-label="Search">
+      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Pesquisar</button>
+    </form>
+  </div>
+</nav>
+<!-- Fim do menu -->
+
+<h2>Próximos Eventos</h2>
+<br>
+<h3><%= Date.today.strftime("%B") %></h3>
+<div class="card-deck">
+    <% @proximos_eventos.order(data: :asc, hora: :asc).each do |evento| %>
+    <div class="card">
+      <div class="card-body">
+        <h5><b><%= evento.nome %></b><br></h5>
+        <b>Local: </b><%= evento.local %><br>
+        <b>Dia: </b><%= evento.data %>, às <%= evento.hora %><br>
+        <%= evento.descricao %><br>
+      </div>
+    </div>
+    <% end %>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    31 - Teste
+  </div>
+</div>

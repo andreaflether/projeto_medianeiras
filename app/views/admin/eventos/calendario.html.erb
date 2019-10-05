@@ -1,0 +1,11 @@
+<%= render 'menu' %>
+
+<%= month_calendar eventos: @eventos do |date, eventos| %>
+  <%= date.day %>
+
+  <% eventos.each do |evento| %>
+    <div>
+      <%= evento.nome %>
+    </div>
+  <% end %>
+<% end %>

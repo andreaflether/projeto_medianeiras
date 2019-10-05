@@ -19,15 +19,39 @@ class Admin::EventosController < ApplicationController
     end
   end
 
-  def show
-    @evento = Evento.find(params[:id])
-  end
-
   def listagem
     #@eventos = Evento.all.order("created_at ASC")
     @proximos_eventos = Evento.proximos_eventos
   end
 
+  def calendario
+    @eventos = Evento.all
+  end
+
+  def show
+    @evento = Evento.find(params[:id])
+  end
+
+  def update
+    @evento = Evento.find(params[:id])
+
+    if @evento.update(evento_params)
+      redirect_to @evento
+    else
+      render 'edit'
+    end
+  end
+
+  def edit
+    @evento = Evento.find(params[:id])
+  end
+
+  def destroy
+    @evento = Evento.find(params[:id])
+    @evento.destroy
+
+    redirect_to eventos_path
+  end
 
   private
 

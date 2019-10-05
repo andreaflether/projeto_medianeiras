@@ -1,12 +1,1 @@
 <p>só vê essa página quem é "admin"?</p>
-
-<%= month_calendar eventos: @eventos do |date, eventos| %>
-  <%= date.day %>
-
-  <% eventos.each do |evento| %>
-    <div>
-      <%= evento.data %>
-    </div>
-  <% end %>
-
-<% end %>

@@ -1,43 +1,6 @@
-<!-- Menu -->
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0984e3;">
-  <a class="navbar-brand" href="#">ADMIN</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <%= link_to 'Criar novo evento', new_evento_path, class: "nav-link" %>
-      </li>
-      <li class="nav-itMês: em">
-        <%= link_to 'Listagem de eventos', eventos_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'Ver todos', admin_eventos_listagem_path, class: "nav-link" %>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Procurar..." aria-label="Search">
-      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Pesquisar</button>
-    </form>
-  </div>
-</nav>
-<!-- Fim do menu -->
-
-<%= month_calendar eventos: @eventos do |date, eventos| %>
-  <%= date.day %>
-
-  <% eventos.each do |evento| %>
-    <div>
-      <%= evento.nome %>
-    </div>
-  <% end %>
-
-<% end %>
+<%= render 'menu' %>
 
 <h1>Página inicial - Eventos</h1>
-<h1>Listagem de Eventos</h1>
 
 <!-- Tabela de eventos -->
 <table class="table">
@@ -60,7 +23,7 @@
         <td><%= evento.local %></td>
         <td><%= link_to 'Ver', evento %></td>
         <td><%= link_to 'Editar', edit_evento_path(evento) %></td>
-        <td><%= link_to 'Apagar', evento, method: :delete, data: { confirm: 'Tem certeza que deseja apagar o evento selecionado?' } %></td>
+        <td><%= link_to 'Apagar', evento_path(evento), method: :delete, data: { confirm: 'Tem certeza que deseja apagar o evento selecionado?' } %></td>
       </tr>
     <% end %>
   </tbody>

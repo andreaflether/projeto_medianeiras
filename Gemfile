@@ -9,6 +9,9 @@ gem 'sprockets', '~> 3.7', '>= 3.7.2'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'simple_form', '~> 5.0'
 gem 'jquery-rails'
+gem 'i18n'
+gem 'rails-i18n'
+gem 'inline_svg'
 
 #Bootstrap, JS
 source 'https://rails-assets.org' do

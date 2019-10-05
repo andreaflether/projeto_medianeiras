@@ -1,0 +1,10 @@
+<div class="section evt-form">
+  <%= simple_form_for @evento do |f| %>
+    <%= f.input :nome, input_html: { class: 'form-control'}, label_html: { class: 'label'}  %>
+    <%= f.input :data, input_html: { class: 'form-control'}, label_html: { class: 'label'}%>
+    <%= f.input :hora, input_html: { class: 'form-control'}, label_html: { class: 'label'}  %>
+    <%= f.input :local, input_html: { class: 'form-control'}, label_html: { class: 'label'} %>
+    <%= f.input :descricao, input_html: { class: 'form-control'}, label_html: { class: 'label'} %>
+    <%= f.button :submit, class: "btn btn-primary"%>
+  <% end %>
+</div>

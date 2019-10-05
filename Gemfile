@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'i18n'
 gem 'rails-i18n'
 gem 'inline_svg'
+gem 'font-awesome-rails'
 
 #Bootstrap, JS
 source 'https://rails-assets.org' do

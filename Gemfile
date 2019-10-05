@@ -1,13 +1,14 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.4.2'
+ruby '2.5.5'
 
 gem 'cdn_assets', '~> 1.0'
 gem 'jquery-cdn', '~> 3.3', '>= 3.3.1'
 gem 'sprockets', '~> 3.7', '>= 3.7.2'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'simple_form', '~> 5.0'
+gem 'jquery-rails'
 
 #Bootstrap, JS
 source 'https://rails-assets.org' do
@@ -16,6 +17,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether'
 end
 
+gem "simple_calendar", "~> 2.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record

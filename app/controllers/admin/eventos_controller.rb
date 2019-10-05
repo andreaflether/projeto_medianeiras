@@ -1,7 +1,8 @@
 class Admin::EventosController < ApplicationController
 
   def index
-    @eventos = Evento.all.order("created_at DESC")
+    @eventos = Evento.all
+    #@eventos = Evento.all.order("created_at DESC")
   end
 
   def new

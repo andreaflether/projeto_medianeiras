@@ -25,6 +25,17 @@
 </nav>
 <!-- Fim do menu -->
 
+<%= month_calendar eventos: @eventos do |date, eventos| %>
+  <%= date.day %>
+
+  <% eventos.each do |evento| %>
+    <div>
+      <%= evento.nome %>
+    </div>
+  <% end %>
+
+<% end %>
+
 <h1>Página inicial - Eventos</h1>
 <h1>Listagem de Eventos</h1>
 

@@ -49,11 +49,31 @@
   border: none !important;
 }
 
+.iframe-container{
+  position: relative;
+  width: 100%;
+  // padding-top: 56.25%;
+  // height: 0;
+}
+
+.iframe-container iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-main {
+  width: 200px;
+  font-weight: 700 !important;
+}
+
 @media (max-width: 991px) {
+
   .navbar-collapse {
     align-content: center;
     text-align: center;
-
   }
 
   .logotipo {
@@ -61,5 +81,31 @@
     left: 45%;
     margin-left: -50px !important;  /* 50% of your logo width */
     display: block;
+  }
+
+  .iframe-container{
+    position: absolute;
+    width: 100%;
+    // padding-top: 56.25%;
+    // height: 0;
+  }
+
+  .iframe-container iframe{
+    position: relative;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .btn-main {
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 767px) {
+  .iframe-container iframe {
+    height: 180%;
+    margin-top: 30px;
   }
 }

@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get 'pages/sobre'
-  get 'pages/cursos'
+  get 'pages/atividades'
+  get 'pages/aulas'
   get 'pages/eventos'
+  get 'pages/promulher'
 
   # Admin routes
   get 'admin/teste'

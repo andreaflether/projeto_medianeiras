@@ -1,22 +1,28 @@
 <!-- Menu -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <img class="navbar-brand logotipo" src="/assets/ui.png" />
+  <a href="/.."><img class="navbar-brand logotipo" src="/assets/ui.png" /></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active nav-texto">
-        <a class="nav-link" href="#">Início <span class="sr-only">(current)</span></a>
+        <%= link_to "Início", root_path, class: "nav-link" %>
       </li>
       <li class="nav-item nav-texto">
-        <a class="nav-link" href="#">Sobre nós</a>
+        <%= link_to "Sobre Nós", pages_sobre_path, class: "nav-link" %>
       </li>
       <li class="nav-item nav-texto">
-        <a class="nav-link" href="#">Cursos</a>
+        <%= link_to "Atividades", pages_atividades_path, class: "nav-link" %>
       </li>
       <li class="nav-item nav-texto">
-        <a class="nav-link" href="#">Eventos</a>
+        <%= link_to "Aulas", pages_aulas_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item nav-texto">
+        <%= link_to "Promulher", pages_promulher_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item nav-texto">
+        <%= link_to "Eventos", pages_eventos_path, class: "nav-link" %>
       </li>
 
       <li class="nav-item">

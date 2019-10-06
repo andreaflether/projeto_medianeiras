@@ -42,7 +42,7 @@
 }
 
 .navbar-nav {
-  margin-left: 10%;
+  margin-left: 14%;
 }
 
 .navbar-toggler {
@@ -71,16 +71,16 @@
 
 @media (max-width: 991px) {
 
-  .navbar-collapse {
-    align-content: center;
-    text-align: center;
-  }
-
   .logotipo {
     position: relative;
     left: 45%;
     margin-left: -50px !important;  /* 50% of your logo width */
     display: block;
+  }
+
+  .navbar-collapse {
+    align-content: center;
+    text-align: center;
   }
 
   .iframe-container{

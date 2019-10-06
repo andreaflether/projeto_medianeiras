@@ -11,7 +11,7 @@ gem 'simple_form', '~> 5.0'
 gem 'jquery-rails'
 gem 'i18n'
 gem 'rails-i18n'
-gem 'inline_svg'
+gem 'font-awesome-sass'
 gem 'font-awesome-rails'
 
 #Bootstrap, JS

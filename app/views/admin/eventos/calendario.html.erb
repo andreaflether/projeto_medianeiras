@@ -2,7 +2,6 @@
 
 <%= month_calendar events: @eventos do |date, eventos| %>
   <%= date.day %>
-  <%= eventos.count %>
 
   <% eventos.each do |evento| %>
     <div>

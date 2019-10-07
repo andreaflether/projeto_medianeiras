@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_05_142328) do
+ActiveRecord::Schema.define(version: 2019_10_07_172310) do
 
   create_table "eventos", force: :cascade do |t|
     t.string "nome"
-    t.datetime "data"
+    t.date "data"
     t.string "hora"
     t.string "local"
     t.text "descricao"
@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 2019_10_05_142328) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.boolean "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "role", default: 0, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

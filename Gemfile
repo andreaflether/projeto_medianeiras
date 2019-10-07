@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.5'
+ruby '2.4.2'
+# ruby '2.5.5'
 
 gem 'cdn_assets', '~> 1.0'
 gem 'jquery-cdn', '~> 3.3', '>= 3.3.1'

@@ -6,6 +6,7 @@ class Admin::EventosController < AdminController
   end
 
   def new
+    @title = 'Admin - Criar Evento'
     @evento = Evento.new
   end
 
@@ -20,15 +21,18 @@ class Admin::EventosController < AdminController
   end
 
   def listagem
+    @title = 'Admin - Listagem'
     #@eventos = Evento.all.order("created_at ASC")
     @proximos_eventos = Evento.proximos_eventos
   end
 
   def calendario
+    @title = 'Admin - Calendário'
     @eventos = Evento.all
   end
 
   def show
+    @title = 'Admin - Mostrar Evento'
     @evento = Evento.find(params[:id])
   end
 
@@ -43,6 +47,7 @@ class Admin::EventosController < AdminController
   end
 
   def edit
+    @title = 'Admin - Editar Evento'
     @evento = Evento.find(params[:id])
   end
 

@@ -1,5 +1,7 @@
 class Admin::EventosController < AdminController
 
+  layout 'menu_admin'
+
   def index
     @eventos = Evento.all
     #@eventos = Evento.all.order("created_at DESC")

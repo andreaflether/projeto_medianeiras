@@ -6,6 +6,7 @@ class AdminController < ApplicationController
   def users
     if current_user.superadmin?
       @users = User.all
+      @currentUser = current_user.email
     else
       redirect_to root_path
     end

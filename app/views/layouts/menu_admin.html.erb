@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -20,22 +19,22 @@
 
   <!-- Custom styles for this template -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
-
 </head>
 
 <body>
-
   <div class="d-flex" id="wrapper">
-
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">Medianeiras Admin </div>
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light">Início</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Listagem</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Criar novo evento</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Calendário</a>
+        <a href="/admin/eventos" class="list-group-item list-group-item-action bg-light">Início</a>
+        <span class="list-group-item tsts">Eventos</span>
+        <a href="/admin/eventos/listagem" class="list-group-item list-group-item-action bg-light">Listagem</a>
+        <a href="/admin/eventos/novo" class="list-group-item list-group-item-action bg-light">Criar novo evento</a>
+        <a href="/admin/eventos/calendario" class="list-group-item list-group-item-action bg-light">Calendário</a>
+        <span class="list-group-item tsts">Formulários</span>
         <a href="#" class="list-group-item list-group-item-action bg-light">Formulários</a>
+        <span class="list-group-item tsts">Usuários</span>
         <a href="#" class="list-group-item list-group-item-action bg-light">Usuários</a>
       </div>
     </div>
@@ -60,7 +59,7 @@
               <a class="nav-link" href="#">Link</a>
             </li> -->
             <li class="nav-item">
-              <span class="nav-link" href="#">Logado como <%= current_user.email %></span>
+              <span class="nav-link" href="#">Logado como <b><%= current_user.email %></b></span>
             </li>
 
             <li class="nav-item dropdown">
@@ -71,7 +70,8 @@
                 <a class="dropdown-item" href="#">Preferências</a>
 
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Sair</a>
+                <!-- <a class="dropdown-item" href="#">Sair</a> -->
+                <%= link_to t('devise.logout'), destroy_user_session_path, class: 'dropdown-item', method: :delete %>
               </div>
             </li>
           </ul>

@@ -8,6 +8,10 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.label_b {
+  font-weight: bold;
+}
+
 h1 {
   text-align: center;
   margin-top: 25px;
@@ -29,9 +33,27 @@ h1 {
 }
 
 .form-control {
-  margin: 8px 0;
+  margin: 4px 0 20px 0;
+}
+
+.data-input {
+  margin: 4px 0 4px 0;
 }
 
 .teste {
   width: 100px;
+}
+
+.hora_label {
+  margin-top: 10px;
+}
+
+.tsts {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  color: #2980b9;
+  font-weight: 700 !important;
+  // color: #707070;
+  // font-weight: bold !important;
 }

@@ -29,9 +29,10 @@
       <div class="list-group list-group-flush">
         <a href="/admin/eventos" class="list-group-item list-group-item-action bg-light">Início</a>
         <span class="list-group-item tsts">Eventos</span>
-        <a href="/admin/eventos/listagem" class="list-group-item list-group-item-action bg-light">Listagem</a>
         <a href="/admin/eventos/novo" class="list-group-item list-group-item-action bg-light">Criar novo evento</a>
         <a href="/admin/eventos/calendario" class="list-group-item list-group-item-action bg-light">Calendário</a>
+        <a href="/admin/eventos/listagem" class="list-group-item list-group-item-action bg-light">Próximos eventos</a>
+        <a href="/admin/eventos" class="list-group-item list-group-item-action bg-light">Ver todos os eventos</a>
         <span class="list-group-item tsts">Formulários</span>
         <a href="#" class="list-group-item list-group-item-action bg-light">Formulários</a>
         <span class="list-group-item tsts">Usuários</span>
@@ -70,8 +71,7 @@
                 <a class="dropdown-item" href="#">Preferências</a>
 
                 <div class="dropdown-divider"></div>
-                <!-- <a class="dropdown-item" href="#">Sair</a> -->
-                <%= link_to t('devise.logout'), destroy_user_session_path, class: 'dropdown-item', method: :delete %>
+                <%= link_to t('Sair'), destroy_user_session_path, class: 'dropdown-item', method: :delete %>
               </div>
             </li>
           </ul>

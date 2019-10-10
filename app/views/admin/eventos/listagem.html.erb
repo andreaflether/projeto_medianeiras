@@ -1,8 +1,11 @@
 <%#= render 'menu' %>
 
-<h2>Próximos Eventos</h2>
+<h1 class="h1-evt">Próximos eventos</h1>
 <br>
 <h3><%= Date.today.strftime("%B") %></h3>
+<!-- l Date.today.strftime("%B") -->
+
+<!--
 <div class="card-deck">
     <% @proximos_eventos.order(data: :asc, hora: :asc).each do |evento| %>
     <div class="card">
@@ -15,9 +18,23 @@
     </div>
     <% end %>
 </div>
+-->
 
-<div class="card">
+<% @proximos_eventos.order(data: :asc, hora: :asc).each do |evento| %>
+<div class="card events-card">
   <div class="card-body">
-    31 - Teste
+    <div class="row align-items-start">
+      <div class="col-md-auto">
+        <p class="txt-large">10</p>
+      </div>
+      <div class="col-md-auto">
+        <%= evento.hora %> - <%= evento.nome %><br>
+        <%= evento.local %>
+      </div>
+    </div>
   </div>
 </div>
+<% end %>
+
+
+<%#= l evento.data, format: :short %>

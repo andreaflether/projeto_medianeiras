@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   # get 'admin/eventos/novo'
   get 'admin/eventos/listagem', to: 'admin/eventos#listagem'
   get 'admin/eventos/calendario', to: 'admin/eventos#calendario'
-  
+
   get 'admin/users'
 
   scope(path_names: {new: 'novo', edit: 'editar', show: 'mostrar', destroy: 'excluir'}) do

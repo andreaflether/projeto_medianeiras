@@ -1,5 +1,5 @@
 class Admin::EventosController < AdminController
-
+  before_action :authorize
   layout 'menu_admin'
 
   def index
@@ -66,4 +66,10 @@ class Admin::EventosController < AdminController
     params.require(:evento).permit(:nome, :data, :hora, :local, :descricao)
   end
 
+  def authorize
+    unless current_user.admin?
+      redirect_to root_path
+      return
+    end
+  end
 end

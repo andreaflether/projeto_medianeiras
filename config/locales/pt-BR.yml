@@ -10,6 +10,7 @@ pt-BR:
         restrict_dependent_destroy:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
+
   datetime:
     distance_in_words:
       about_x_hours:

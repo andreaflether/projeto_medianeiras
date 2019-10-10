@@ -35,8 +35,10 @@
         <a href="/admin/eventos" class="list-group-item list-group-item-action bg-light">Ver todos os eventos</a>
         <span class="list-group-item tsts">Formulários</span>
         <a href="#" class="list-group-item list-group-item-action bg-light">Formulários</a>
+        <% if current_user.superadmin? %>
         <span class="list-group-item tsts">Usuários</span>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Usuários</a>
+        <a href="/admin/users" class="list-group-item list-group-item-action bg-light">Usuários</a>
+        <% end %>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->

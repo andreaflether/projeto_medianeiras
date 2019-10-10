@@ -1,5 +1,25 @@
-<p>em nome do pai</p>
+<h1 class="h1-evt">Usuários</h1>
+<br>
+<container>
+<!-- Tabela de eventos -->
+<table class="table table-bordered">
+  <thead class="thead-light">
+    <tr>
+      <th>Email</th>
+      <th>Privilégio</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
 
-<% @users.each do |usuario| %>
-  <%= usuario.role %>
-<% end %>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.role %></td>
+        <th> <a href="#">Editar</a> </th>
+        <th> <a href="#">Apagar</a> </th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</container>

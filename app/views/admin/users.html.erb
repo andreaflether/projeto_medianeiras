@@ -7,6 +7,8 @@
     <tr>
       <th>Email</th>
       <th>Privilégio</th>
+      <th>Criado em</th>
+      <th>Atualizado em</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -16,6 +18,8 @@
       <tr>
         <td><%= user.email %></td>
         <td><%= user.role %></td>
+        <td><%= l user.created_at, format: :short %></td>
+        <td><%= l user.updated_at, format: :short %></td>
         <th> <a href="#">Editar</a> </th>
         <th> <a href="#">Apagar</a> </th>
       </tr>

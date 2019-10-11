@@ -2,7 +2,7 @@
 
 <h1 class="h1-evt">Próximos eventos</h1>
 <br>
-<h3><%= Date.today.strftime("%B") %></h3>
+<h3><%= l Date.today, format: :month_only %></h3>
 <!-- l Date.today.strftime("%B") -->
 
 <!--
@@ -25,11 +25,15 @@
   <div class="card-body">
     <div class="row align-items-start">
       <div class="col-md-auto">
-        <p class="txt-large">10</p>
+        <p class="txt-large"><%=evento.data.day%></p>
       </div>
       <div class="col-md-auto">
-        <%= evento.hora %> - <%= evento.nome %><br>
-        <%= evento.local %>
+        <%= evento.nome %> - <%= evento.hora %><br>
+        <i class="fas fa-map-marker-alt"></i> <%= evento.local %>
+      </div>
+      <div class="col">
+        <%= link_to 'Editar', edit_evento_path(evento), class: 'btn btn-outline-primary btn-next' %>
+        <%= link_to 'Apagar', evento_path(evento), class: 'btn btn-outline-danger btn-next', method: :delete, data: { confirm: 'Tem certeza que deseja apagar o evento selecionado?' } %>
       </div>
     </div>
   </div>

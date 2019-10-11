@@ -21,12 +21,14 @@ Rails.application.routes.draw do
   get 'admin/eventos/listagem', to: 'admin/eventos#listagem'
   get 'admin/eventos/calendario', to: 'admin/eventos#calendario'
 
+  
+  resources :users
   get 'admin/users'
+
+
 
   scope(path_names: {new: 'novo', edit: 'editar', show: 'mostrar', destroy: 'excluir'}) do
     resources :eventos, path: 'admin/eventos', module: :admin
   end
-
-
 
 end

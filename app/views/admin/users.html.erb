@@ -20,7 +20,8 @@
         <td><%= user.role %></td>
         <td><%= l user.created_at, format: :short %></td>
         <td><%= l user.updated_at, format: :short %></td>
-        <th> <a href="#">Editar</a> </th>
+        <!-- <th> <a href="#">Editar</a> </th> -->
+        <th><%= link_to 'Editar', edit_user_path(user), class: 'btn btn-outline-primary btn-next' %></th>
         <th> <a href="#">Apagar</a> </th>
       </tr>
     <% end %>

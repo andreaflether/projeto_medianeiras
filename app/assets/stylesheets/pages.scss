@@ -68,6 +68,62 @@
   .fa-facebook {
     margin-right: 32px;
   }
+}
 
-  
+// footer
+
+.footer-txt {
+  color: #f7d794;
+  text-transform: uppercase;
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  margin: 28px 0 20px 0;
+  letter-spacing: 1.5px;
+}
+
+.spn-body {
+  color: #bdc3c7;
+  font-size: 14px;
+  line-height: 26px;
+}
+
+.i-footer {
+  color: #fdcb6e;
+}
+
+.footer{
+  background: #2c3e50;
+  color: white;
+
+  .links{
+    ul {list-style-type: none;
+    }
+    li a{
+      color: #bdc3c7;
+      transition: color .2s;
+      &:hover{
+        text-decoration:none;
+        color: #fdcb6e;
+        }
+    }
+  }
+
+  .about-company{
+    a {
+      color: white;
+      transition: color .2s;
+      &:hover
+      {color: #05afea}
+    }
+  }
+
+  .copyright p
+  {border-top: 1px solid rgba(255,255,255,.1);
+  }
+
+  .copyright {
+    margin-top: -20px !important;
+    text-align: center;
+  }
 }

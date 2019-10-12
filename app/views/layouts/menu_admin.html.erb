@@ -64,10 +64,10 @@
                 Usuário
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <%= link_to t('Preferências'), edit_user_registration_path, class: 'dropdown-item'%>
+                <%= link_to ('Preferências'), edit_user_registration_path, class: 'dropdown-item'%>
 
                 <div class="dropdown-divider"></div>
-                <%= link_to t('Sair'), destroy_user_session_path, class: 'dropdown-item', method: :delete %>
+                <%= link_to ('Sair'), destroy_user_session_path, class: 'dropdown-item', method: :delete %>
               </div>
             </li>
           </ul>

@@ -1,3 +1,15 @@
 // Place all the styles related to the Admin controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900&display=swap');
+
+.devise-txt {
+  margin-top: 40px;
+}
+
+.admin-welcome {
+  color: #05afea;
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: 700;
+  margin: 28px 0 20px 0;
+}

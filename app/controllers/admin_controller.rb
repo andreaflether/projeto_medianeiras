@@ -1,4 +1,5 @@
 class AdminController < ApplicationController
+
   before_action :authenticate_user!
   layout 'menu_admin'
 
@@ -10,7 +11,11 @@ class AdminController < ApplicationController
       redirect_to root_path
     end
   end
-  # 
+
+  def show
+
+  end
+  #
   # def update
   #   @user = User.find(params[:id])
   #

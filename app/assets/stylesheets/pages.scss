@@ -47,6 +47,10 @@
   font-weight: 700 !important;
 }
 
+.about-img img:hover {
+  transform: scale(-1.5);
+}
+
 @media (max-width: 991px) {
 
   .logotipo {
@@ -82,14 +86,23 @@
   letter-spacing: 1.5px;
 }
 
-.spn-body {
+.spn-body, .spn-body-end {
   color: #bdc3c7;
   font-size: 14px;
   line-height: 26px;
 }
 
+.spn-body-end {
+  font-size: 13px;
+}
+
 .i-footer {
   color: #fdcb6e;
+}
+
+.i-footer-social {
+  font-size: 20px;
+  color: #f7d794;
 }
 
 .footer{

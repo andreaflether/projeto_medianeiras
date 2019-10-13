@@ -6,15 +6,21 @@ class AdminController < ApplicationController
   def users
     if current_user.superadmin?
       @users = User.all
-      @currentUser = current_user.email
     else
       redirect_to root_path
     end
   end
 
+
   def show
 
   end
+
+  protected
+    def configure_permitted_parameters
+        devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password) }
+        devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :password, :current_password) }
+    end
   #
   # def update
   #   @user = User.find(params[:id])

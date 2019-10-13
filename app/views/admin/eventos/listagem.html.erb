@@ -2,23 +2,7 @@
 
 <h1 class="h1-evt">Próximos eventos</h1>
 <br>
-<h3><%= l Date.today, format: :month_only %></h3>
-<!-- l Date.today.strftime("%B") -->
-
-<!--
-<div class="card-deck">
-    <% @proximos_eventos.order(data: :asc, hora: :asc).each do |evento| %>
-    <div class="card">
-      <div class="card-body">
-        <h5><b><%= evento.nome %></b><br></h5>
-        <b>Local: </b><%= evento.local %><br>
-        <b>Dia: </b><%= evento.data %>, às <%= evento.hora %><br>
-        <%= evento.descricao %><br>
-      </div>
-    </div>
-    <% end %>
-</div>
--->
+<h3 class="admin-title"><%= l Date.today, format: :month_only %></h3>
 
 <% @proximos_eventos.order(data: :asc, hora: :asc).each do |evento| %>
 <div class="card events-card">
@@ -28,10 +12,10 @@
         <p class="txt-large"><%=evento.data.day%></p>
       </div>
       <div class="col-md-auto">
-        <%= evento.nome %> - <%= evento.hora %><br>
-        <i class="fas fa-map-marker-alt"></i> <%= evento.local %>
+        <b><%= evento.nome %></b> - <%= evento.hora %><br>
+        <i class="fas fa-map-marker-alt c-icon"></i> <%= evento.local %>
       </div>
-      <div class="col">
+      <div class="col d-flex justify-content-end">
         <%= link_to 'Editar', edit_evento_path(evento), class: 'btn btn-outline-primary btn-next' %>
         <%= link_to 'Apagar', evento_path(evento), class: 'btn btn-outline-danger btn-next', method: :delete, data: { confirm: 'Tem certeza que deseja apagar o evento selecionado?' } %>
       </div>

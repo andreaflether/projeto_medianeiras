@@ -15,16 +15,16 @@
   </thead>
 
   <tbody>
-    <% @eventos.each do |evento| %>
+    <% @eventos.order(data: :asc, hora: :asc).each do |evento| %>
       <tr>
-        <td><%= evento.nome %></td>
-        <td><%= l evento.data, format: :long %></td>
-        <td><%= evento.hora %></td>
-        <td><%= evento.local %></td>
-        <td><%= evento.descricao %></td>
-        <td><%= link_to 'Ver', evento, class: 'btn btn-info' %></td>
-        <td><%= link_to 'Editar', edit_evento_path(evento), class: 'btn btn-primary' %></td>
-        <td><%= link_to 'Apagar', evento_path(evento), class: 'btn btn-danger', method: :delete, data: { confirm: 'Tem certeza que deseja apagar o evento selecionado?' } %></td>
+        <td class="align-middle align-self-center align-items-center"><%= evento.nome %></td>
+        <td class="align-middle align-self-center align-items-center"><%= l evento.data, format: :complete_numbers %></td>
+        <td class="align-middle align-self-center align-items-center"><%= evento.hora %></td>
+        <td class="align-middle align-self-center align-items-center"><%= evento.local %></td>
+        <td class="align-middle align-self-center align-items-center"><%= evento.descricao %></td>
+        <td class="align-middle align-self-center align-items-center"><%= link_to 'Ver', evento, class: 'btn btn-info' %></td>
+        <td class="align-middle align-self-center align-items-center"><%= link_to 'Editar', edit_evento_path(evento), class: 'btn btn-primary' %></td>
+        <td class="align-middle align-self-center align-items-center"><%= link_to 'Apagar', evento_path(evento), class: 'btn btn-danger', method: :delete, data: { confirm: 'Tem certeza que deseja apagar o evento selecionado?' } %></td>
       </tr>
     <% end %>
   </tbody>

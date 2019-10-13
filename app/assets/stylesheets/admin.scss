@@ -2,11 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap');
 
 .devise-txt {
   margin-top: 40px;
 }
-
 
 .admin-txt-top {
   margin: 28px 0 20px 0;
@@ -14,15 +14,34 @@
 
 .admin-txt {
   color: #696969;
-  font-family: 'Maven Pro', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .admin-welcome {
   color: #05afea;
-  font-family: 'Maven Pro', sans-serif;
-  // font-weight: 700;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
 }
 
 .admin-txt, .admin-welcome {
-  font-size: 30px;
+  font-size: 32px;
+}
+
+.btn-tabela {
+  align-items: center !important;
+  align-content: center !important;
+  text-align: center !important;
+  justify-content: center !important;
+}
+
+.card-text-tit {
+  font-size: 25px;
+}
+
+.admin-title {
+  text-transform: uppercase;
+  color: #05afea;
+  letter-spacing: 0.5px;
+  font-size: 24px;
+  font-weight: 600 !important;
 }

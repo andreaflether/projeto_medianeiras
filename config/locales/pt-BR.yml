@@ -175,6 +175,7 @@ pt-BR:
   date:
     formats:
       month_only: "%B"
+      complete_numbers: "%d/%m/%Y"
   views:
   admin:
     home:

@@ -2,12 +2,12 @@
 <br>
 <container>
 <!-- Tabela de eventos -->
-<table class="table table-bordered">
+<table class="table table-bordered table-hover">
   <thead class="thead-light">
     <tr>
+      <th>Nome</th>
       <th>Email</th>
       <th>Privilégio</th>
-      <th>Criado em</th>
       <th>Atualizado em</th>
       <th colspan="2"></th>
     </tr>
@@ -16,13 +16,14 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.email %></td>
-        <td><%= user.role %></td>
-        <td><%= l user.created_at, format: :short %></td>
-        <td><%= l user.updated_at, format: :short %></td>
+        <td class="align-middle align-self-center align-items-center"><%= user.name %></td>
+        <td class="align-middle align-self-center align-items-center"><%= user.email %></td>
+        <td class="align-middle align-self-center align-items-center"><%= user.role %></td>
+        <td class="align-middle align-self-center align-items-center"><%= l user.updated_at, format: :short %></td>
         <!-- <th> <a href="#">Editar</a> </th> -->
-        <th><%= link_to 'Editar', edit_user_path(user), class: 'btn btn-outline-primary btn-next' %></th>
-        <th> <a href="#">Apagar</a> </th>
+        <td class="btn-tabela class="align-middle align-self-center align-items-center"><%= link_to 'Editar', edit_user_path(user), class: 'btn btn-outline-primary' %></td>
+        <td class="btn-tabela class="align-middle align-self-center align-items-center"><%= link_to 'Apagar', user_registration_path, :confirm => 'Tem certeza que deseja deletar essa conta?', :method => :delete,
+          class: 'btn btn-outline-danger' %></td>
       </tr>
     <% end %>
   </tbody>

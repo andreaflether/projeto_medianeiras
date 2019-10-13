@@ -1,21 +1,19 @@
-<!-- <div class="jumbotron">
-  <h2 class="display-4"><%= @evento.nome %></h2>
-  <p class="lead"><br><%=@evento.descricao%></p>
-  <hr class="my-4">
-  <p><%= @evento.data %>, às <%=@evento.hora%><br><%=@evento.local%></p>
-</div> -->
+<!-- <button class="btn btn-outline-secondary"><i class="fas fa-chevron-left"></i><%= link_to '', eventos_path%> Voltar</button>
+<br><br> -->
 <br>
 <div class="card-deck">
       <div class="card mb-2">
-        <div class="card-header">
-          <h4 class="card-title"><%= @evento.nome %></h4>
+        <div class="card-header card-text-tit">
+          <%= @evento.nome%>
         </div>
         <div class="card-body">
-          <h5 class="card-title"><%= @evento.data %>, às <%= @evento.hora %></h5>
-          <p class="card-text"><%= @evento.local %></p>
+          <h5 class="card-title"><b><%= l @evento.data, format: :long %></b> às <%= @evento.hora %></h5>
           <p class="card-text"><%= @evento.descricao %></p>
-          <a href="#" class="btn btn-primary">Editar</a>
-          <a href="#" class="btn btn-danger">Apagar</a>
+          <p class="card-text"><i class="fas fa-map-marker-alt c-icon"></i><%= @evento.local %></p>
+
+          <%= link_to 'Criar novo evento', new_evento_path, class: 'btn btn-outline-success btn-next' %>
+          <%= link_to 'Editar', edit_evento_path(@evento), class: 'btn btn-outline-primary btn-next' %>
+          <%= link_to 'Apagar', evento_path(@evento), class: 'btn btn-outline-danger btn-next', method: :delete, data: { confirm: 'Tem certeza que deseja apagar o evento selecionado?' } %>
         </div>
       </div>
 </div>

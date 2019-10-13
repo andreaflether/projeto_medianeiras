@@ -1,4 +1,5 @@
 <div class="section evt-form">
+
   <%= simple_form_for @evento do |f| %>
     <%= f.input :nome, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
     <%= f.input :data, input_html: { class: 'form-control data-input'}, label_html: { class: 'label label_b data-label'}%>
@@ -6,5 +7,7 @@
     <%= f.input :local, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'} %>
     <%= f.input :descricao, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'} %>
     <%= f.button :submit, class: "btn btn-primary btn-criar"%>
+    <button class="btn btn-outline-secondary float-right"><%= link_to '', eventos_path %> Voltar</button>
   <% end %>
 </div>
+<br>

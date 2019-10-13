@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
 
@@ -16,7 +17,6 @@ Rails.application.routes.draw do
   #Admin Eventos
   get 'admin/eventos/listagem', to: 'admin/eventos#listagem'
   get 'admin/eventos/calendario', to: 'admin/eventos#calendario'
-
 
   resources :users
   get 'admin/users'

@@ -2,17 +2,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <%= render 'menu_p' %>
 
-<h1 class="h1-txt">Aulas</h1>
+<!-- <h1 class="h1-txt">Aulas</h1> -->
+<h3 class="title-txt text-center">Aulas</h3>
 <div class="container-fluid">
 <div class="card-deck">
 
 <!-- Karatê -->
-  <div class="card">
+  <div class="card card-general">
     <img src="/assets/karate_1.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-      <h4 class="card-title text-center">Karatê</h4>
-      <p class="card-text text-justify">O Karatê proporciona grande condicionamento cardiovascular e muscular, desenvolve a coordenação motora e a
-        mobilidade das articulações. A arte marcial exige exercício mental em que o lutador passa a criar estratégias e aprende a controlar
+      <h5 class="card-title text-center act-title">Karatê</h5>
+      <p class="card-text text-justify">O Karatê proporciona grande condicionamento cardiovascular, muscular e desenvolve a coordenação motora.
+        A arte marcial exige exercício mental em que o lutador passa a criar estratégias e aprende a controlar
         as suas emoções. Faixa etária: de 7 a 14 anos.</p>
       <ul class="list-group list-group-flush">
         <li class="list-group-item"><i class="fas fa-chalkboard-teacher c-icon"></i> Professores Neto e Juscelino </li>
@@ -27,10 +28,10 @@
 <!-- Fim do Karatê -->
 
 <!-- Balé -->
-<div class="card">
+<div class="card card-general">
   <img src="/assets/bale_1.jpg" class="card-img-top" alt="...">
   <div class="card-body">
-    <h4 class="card-title text-center">Balé</h4>
+    <h5 class="card-title text-center act-title">Balé</h5>
     <p class="card-text text-justify">As aulas de Balé proporcionam às crianças e adolescentes o fortalecimento da musculatura das pernas, a postura do
       corpo, a coordenação motora, a disciplina da mente e corpo e sobretudo noções de localização e orientação de espaço.</p>
     <ul class="list-group list-group-flush">
@@ -46,13 +47,13 @@
 <!-- Fim do balé -->
 
 <!-- Muay Thay -->
-  <div class="card">
+  <div class="card card-general">
     <img src="/assets/mthay_1.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-      <h4 class="card-title text-center">Muay Thay</h4>
-      <p class="card-text text-justify">As aulas trazem benefícios para os jovens e adultos, desenvolvimento o físico, psíquico e social de forma integral.
-      Desenvolve habilidades de autodefesa, ensina a conviver com os outros, melhor a coordenação motora, desenvolve o raciocínio, o equilíbrio
-      mental, torna ágil e ensina, sobretudo, a disciplina.</p>
+      <h5 class="card-title text-center act-title">Muay Thay</h5>
+      <p class="card-text text-justify">As aulas trazem benefícios para os jovens e adultos.
+      Desenvolve habilidades de autodefesa, ensina a conviver com os outros, melhora a coordenação motora, o raciocínio,
+      o equilíbrio mental, torna ágil e ensina, sobretudo, a disciplina.</p>
       <ul class="list-group list-group-flush">
         <li class="list-group-item"><i class="fas fa-chalkboard-teacher c-icon"></i> Professor Brayner CB</li>
         <li class="list-group-item"><i class="far fa-calendar-alt c-icon"></i> Quartas, Quintas e Sextas</li>
@@ -90,3 +91,5 @@
   </div>
 </div>
 <!-- Reforço Escolar -->
+
+<%= render 'footer' %>

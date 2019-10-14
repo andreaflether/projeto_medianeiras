@@ -1,19 +1,28 @@
 # 1. Informações acerca do projeto
 
-Rotas disponíveis:
+Rotas disponíveis (todos os usuários:
 - **/sobre** - informações sobre o centro comunotário, história, fotos, equipe...
 - **/eventos** - calendário de eventos*, eventos que virão a acontecer
-- **/cursos** - informações sobre os cursos e a atividades
-- **/admin** (página de login --> formulários/eventos)
+- **/atividades** - informações sobre os projetos e atividades
+- **/aulas** - informações sobre as aulas oferecidas
 
-# 2. To do:
-- [x] Página inicial com menu e slideshow responsivo
-- [ ] Finalizar página inicial
-- [ ] Pegar fotos oficiais
-- [x] Criar página de cursos 
-- [ ] Verificar design da página de cursos 
-- [ ] Considerar mudança de /cursos para /atividaes
 
+# 2. Páginas de Administrador
+- **/admin** - Rota principal
+
+  #2.1. Eventos
+  - **/admin/eventos** - Página principal
+  - **/admin/eventos/novo** - Criar evento
+  - **/admin/eventos/1** - Ver evento pelo ID
+  - **/admin/eventos/1/editar** - Editar evento específico (Todos os campos disponíveis)
+  - **/admin/eventos/listagem** - Lista os próximos eventos no mês atual
+  - **/admin/eventos/calendario** - Mostra um calendário com todos os eventos marcados, com os mesmos para exibição e clique em cada dia.
+  
+  #2.2. Users
+  - **/admin/users** - Página inicial
+  - **/admin/users/1** - Ver user pelo ID
+  - **/admin/users/1/editar** - Editar user específico (Campos Nome, E-mail, Role)
+  
 
 
 

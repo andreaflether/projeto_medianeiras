@@ -1,6 +1,7 @@
 <h1 class="h1-evt">Editar Usuário</h1>
 <div class="section evt-form mt-3">
   <%= simple_form_for @user do |f| %>
+    <%= f.input :name, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'} %>
     <%= f.input :email, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
     <%= f.input :role, collection: [['usuario', 'Usuário normal'], ['admin', 'Administrador'], ['superadmin', 'Superadministrador']], prompt: "Selecionar privilégio",
     label_method: :second, value_method: :first, label: "Privilégio", input_html: { class: 'form-control'},

@@ -29,6 +29,6 @@ class UsersController < AdminController
 
    private
    def user_params
-     params.require(:user).permit(:id, :role, :email, :update_at, :created_at)
+     params.require(:user).permit(:id, :name, :role, :email, :update_at, :created_at)
    end
 end

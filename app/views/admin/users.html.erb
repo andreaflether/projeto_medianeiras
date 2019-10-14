@@ -19,10 +19,10 @@
         <td class="align-middle align-self-center align-items-center"><%= user.name %></td>
         <td class="align-middle align-self-center align-items-center"><%= user.email %></td>
         <td class="align-middle align-self-center align-items-center"><%= user.role.capitalize %></td>
-        <td class="align-middle align-self-center align-items-center"><%= l user.updated_at, format: :short %></td>
-        <!-- <th> <a href="#">Editar</a> </th> -->
+        <td class="align-middle align-self-center align-items-center"><%= l user.updated_at.advance(hours: -3), format: :short %></td>
+        <!-- <th> <a href="#">Editar</a> </th> at.in_time_zone(-3) -->
         <td class="btn-tabela class="align-middle align-self-center align-items-center"><%= link_to 'Editar', edit_user_path(user), class: 'btn btn-outline-primary' %></td>
-        <td class="btn-tabela class="align-middle align-self-center align-items-center"><%= link_to 'Apagar', user_registration_path, :confirm => 'Tem certeza que deseja deletar essa conta?', :method => :delete,
+        <td class="btn-tabela class="align-middle align-self-center align-items-center"><%= link_to 'Apagar', user_path(user), :confirm => 'Tem certeza que deseja deletar essa conta?', :method => :delete,
           class: 'btn btn-outline-danger' %></td>
       </tr>
     <% end %>

@@ -18,7 +18,7 @@
       <tr>
         <td class="align-middle align-self-center align-items-center"><%= user.name %></td>
         <td class="align-middle align-self-center align-items-center"><%= user.email %></td>
-        <td class="align-middle align-self-center align-items-center"><%= user.role %></td>
+        <td class="align-middle align-self-center align-items-center"><%= user.role.capitalize %></td>
         <td class="align-middle align-self-center align-items-center"><%= l user.updated_at, format: :short %></td>
         <!-- <th> <a href="#">Editar</a> </th> -->
         <td class="btn-tabela class="align-middle align-self-center align-items-center"><%= link_to 'Editar', edit_user_path(user), class: 'btn btn-outline-primary' %></td>

@@ -1,3 +1,8 @@
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+
 .c-icon {
   color: #05afea;
   margin-right: 5px;
@@ -29,4 +34,28 @@
   margin-top: 25px;
   margin-bottom: 25px;
   color: #3d3d3d;
+}
+
+.promulher-txt {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  color: #DF5286;
+}
+
+.promulher-txt-about {
+  font-size: 0.7rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.promulher-card {
+  border: none !important;
+}
+
+.edna, .angela {
+  justify-content: center !important;
+  align-items: center !important;
+  align-content: center !important;
+  // text-align: center !important;
 }

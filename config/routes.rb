@@ -14,8 +14,6 @@ Rails.application.routes.draw do
   get 'admin/teste'
   get 'admin/', to: 'admin#index'
 
-
-
   #Admin Eventos
   get 'admin/eventos/listagem', to: 'admin/eventos#listagem'
   get 'admin/eventos/calendario', to: 'admin/eventos#calendario'

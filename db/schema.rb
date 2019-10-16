@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_12_235003) do
+ActiveRecord::Schema.define(version: 2019_10_16_205045) do
+
+  create_table "atividades", force: :cascade do |t|
+    t.string "nome"
+    t.string "professor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "atividades_pessoas", id: false, force: :cascade do |t|
+    t.integer "atividade_id", null: false
+    t.integer "pessoa_id", null: false
+  end
 
   create_table "eventos", force: :cascade do |t|
     t.string "nome"
@@ -18,6 +30,24 @@ ActiveRecord::Schema.define(version: 2019_10_12_235003) do
     t.string "hora"
     t.string "local"
     t.text "descricao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pessoas", force: :cascade do |t|
+    t.string "nome"
+    t.integer "idade"
+    t.date "dt_nascimento"
+    t.string "endereco"
+    t.string "bairro"
+    t.string "telefone"
+    t.string "religiao"
+    t.string "responsavel"
+    t.date "dt_entrada"
+    t.boolean "estuda"
+    t.string "escola"
+    t.string "serie"
+    t.string "string"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

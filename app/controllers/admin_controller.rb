@@ -11,9 +11,6 @@ class AdminController < ApplicationController
     end
   end
 
-
-
-
   def show
 
   end

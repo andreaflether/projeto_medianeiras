@@ -1,4 +1,4 @@
-class AtividadesController < AdminController
+class Admin::PessoasController < AdminController
   def new
   end
 

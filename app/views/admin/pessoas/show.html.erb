@@ -14,7 +14,7 @@
     <p class="mb-2"><b>Telefone: </b><%= @pessoa.telefone %></p>
     <p class="mb-2"><b>Religião: </b><%= @pessoa.religiao %></p>
     <p class="mb-2"><b>Responsável: </b><%= @pessoa.responsavel %></p>
-    <p class="mb-2"><b>Data de entrada: </b><%= @pessoa.dt_entrada %></p>
+    <p class="mb-2"><b>Data de entrada: </b><%= l @pessoa.dt_entrada, format: :long %></p>
     <p class="mb-2"><b>Estuda? </b><%= @pessoa.estuda %></p>
     <p class="mb-2"><b>Escola: </b><%= @pessoa.escola %></p>
     <p class="mb-2"><b>Série: </b><%= @pessoa.serie %></p>

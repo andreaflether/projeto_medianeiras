@@ -1,27 +1,4 @@
 Rails.application.routes.draw do
-  # get 'atividades/new'
-  # get 'atividades/create'
-  # get 'atividades/update'
-  # get 'atividades/edit'
-  # get 'atividades/destroy'
-  # get 'atividades/index'
-  # get 'atividades/show'
-  #
-  # get 'pessoas/new'
-  # get 'pessoas/create'
-  # get 'pessoas/update'
-  # get 'pessoas/edit'
-  # get 'pessoas/destroy'
-  # get 'pessoas/index'
-  # get 'pessoas/show'
-
-  # scope(path_names: {new: 'novo', show: 'mostrar', destroy: 'excluir', edit: 'editar'}) do
-  #   resources :pessoas, path: 'admin/pessoas', module: :admin
-  # end
-  #
-  # scope(path_names: {new: 'novo', show: 'mostrar', destroy: 'excluir', edit: 'editar'}) do
-  #   resources :atividades, path: 'admin/atividades', module: :admin
-  # end
 
   devise_for :users
 
@@ -38,20 +15,27 @@ Rails.application.routes.draw do
   get 'admin/', to: 'admin#index'
 
   #Admin Eventos
-  get 'admin/eventos/listagem', to: 'admin/eventos#listagem'
+  get 'admin/eventos/proximos_eventos', to: 'admin/eventos#proximos_eventos'
   get 'admin/eventos/calendario', to: 'admin/eventos#calendario'
 
-
+  # namespace /admin em português --> eventos
   scope(path_names: {new: 'novo', edit: 'editar', show: 'mostrar', destroy: 'excluir'}) do
     resources :eventos, path: 'admin/eventos', module: :admin
   end
 
+  # namespace /admin em português --> pessoas
   scope(path_names: {new: 'novo', edit: 'editar', show: 'mostrar', destroy: 'excluir'}) do
     resources :pessoas, path: 'admin/pessoas', module: :admin
   end
 
+  # namespace /admin em português --> atividades
   scope(path_names: {new: 'novo', edit: 'editar', show: 'mostrar', destroy: 'excluir'}) do
     resources :atividades, path: 'admin/atividades', module: :admin
+  end
+
+  # namespace /admin em português --> users
+  scope(path_names: {new: 'novo', edit: 'editar', show: 'mostrar', destroy: 'excluir'}) do
+    resources :users, path: 'admin/users', module: :admin
   end
 
 end

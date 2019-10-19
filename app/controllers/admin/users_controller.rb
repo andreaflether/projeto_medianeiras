@@ -1,4 +1,4 @@
-class UsersController < AdminController
+class Admin::UsersController < AdminController
 
   layout 'menu_admin'
 
@@ -6,6 +6,9 @@ class UsersController < AdminController
     @user = User.find(params[:id])
   end
 
+  def index
+    @users = User.all
+  end
 
   def edit
      @user = User.find(params[:id])
@@ -14,7 +17,7 @@ class UsersController < AdminController
    def update
      @user = User.find(params[:id])
      if @user.update(user_params)
-       redirect_to admin_path
+       redirect_to users_path, notice: 'Usuário atualizado com sucesso.'
      else
        render 'edit'
      end
@@ -24,7 +27,7 @@ class UsersController < AdminController
      @user = User.find(params[:id])
      @user.destroy
 
-     redirect_to admin_users_path
+     redirect_to admin_users_path, notice: 'Usuário apagado com sucesso.'
    end
 
    private

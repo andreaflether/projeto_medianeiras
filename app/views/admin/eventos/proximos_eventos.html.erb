@@ -1,5 +1,3 @@
-<%#= render 'menu' %>
-
 <h1 class="h1-evt">Próximos eventos</h1>
 <br>
 <h3 class="admin-title"><%= l Date.today, format: :month_only %></h3>
@@ -8,14 +6,14 @@
 <div class="card events-card">
   <div class="card-body">
     <div class="row align-items-start">
-      <div class="col-md-auto">
+      <div class="col-md-auto mb-1 mt-1">
         <p class="txt-large"><%=evento.data.day%></p>
       </div>
-      <div class="col-md-auto">
+      <div class="col-md-8 mb-2 mt-2">
         <b><%= evento.nome %></b> - <%= evento.hora %><br>
         <i class="fas fa-map-marker-alt c-icon"></i> <%= evento.local %>
       </div>
-      <div class="col d-flex justify-content-end">
+      <div class="col d-flex offset-md-1 mr-0 pr-0 mb-2 mt-2">
         <%= link_to 'Editar', edit_evento_path(evento), class: 'btn btn-outline-primary btn-next' %>
         <%= link_to 'Apagar', evento_path(evento), class: 'btn btn-outline-danger btn-next', method: :delete, data: { confirm: 'Tem certeza que deseja apagar o evento selecionado?' } %>
       </div>

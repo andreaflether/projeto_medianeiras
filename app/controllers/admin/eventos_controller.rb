@@ -16,14 +16,14 @@ class Admin::EventosController < AdminController
     @evento = Evento.new(evento_params)
 
     if @evento.save
-      redirect_to @evento
+      redirect_to @evento, notice: 'Evento criado com sucesso!'
     else
-      render 'new'
+      render 'new', alert: 'Erro ao criar evento. Tente novamente.'
     end
   end
 
-  def listagem
-    @title = 'Admin - Listagem'
+  def proximos_eventos
+    @title = 'Admin - Próximos Eventos'
     #@eventos = Evento.all.order("created_at ASC")
     @proximos_eventos = Evento.proximos_eventos
   end
@@ -42,7 +42,8 @@ class Admin::EventosController < AdminController
     @evento = Evento.find(params[:id])
 
     if @evento.update(evento_params)
-      redirect_to @evento
+      # redirect_to @evento
+      redirect_to @evento, notice: 'Evento atualizado com sucesso.'
     else
       render 'edit'
     end
@@ -57,7 +58,7 @@ class Admin::EventosController < AdminController
     @evento = Evento.find(params[:id])
     @evento.destroy
 
-    redirect_to eventos_path
+    redirect_to eventos_path, notice: 'Evento apagado com sucesso.'
   end
 
   private

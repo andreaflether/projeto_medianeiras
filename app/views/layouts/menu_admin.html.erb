@@ -31,7 +31,7 @@
         <span class="list-group-item tsts">Eventos</span>
         <a href="/admin/eventos/novo" class="list-group-item list-group-item-action bg-light">Criar novo evento</a>
         <a href="/admin/eventos/calendario" class="list-group-item list-group-item-action bg-light">Calendário</a>
-        <a href="/admin/eventos/listagem" class="list-group-item list-group-item-action bg-light">Próximos eventos</a>
+        <a href="/admin/eventos/proximos_eventos" class="list-group-item list-group-item-action bg-light">Próximos eventos</a>
         <a href="/admin/eventos" class="list-group-item list-group-item-action bg-light">Ver todos os eventos</a>
         <span class="list-group-item tsts">Formulários</span>
         <a href="#" class="list-group-item list-group-item-action bg-light">Formulários</a>
@@ -75,7 +75,25 @@
       </nav>
 
       <div class="container-fluid">
+        <% if alert %>
+        <div class="alert alert-danger alert-dismissible fade show mt-3 mb-3" role="alert">
+          <%= alert %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <% end %>
+
+        <% if notice %>
+        <div class="alert alert-success alert-dismissible fade show mt-3 mb-3" role="alert">
+          <%= notice %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <% end %>
         <%= yield %>
+
       </div>
     </div>
     <!-- /#page-content-wrapper -->
@@ -94,6 +112,14 @@
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
+  </script>
+
+  <!-- Alerts -->
+  <script>
+  $(".alert").fadeTo(4000, 500).slideUp(500, function(){
+      $(".alert").alert('close');
+      $(this).remove();
+  });
   </script>
 
 </body>

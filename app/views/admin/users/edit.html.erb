@@ -6,7 +6,7 @@
     <%= f.input :role, collection: [['usuario', 'Usuário normal'], ['admin', 'Administrador'], ['superadmin', 'Superadministrador']], prompt: "Selecionar privilégio",
     label_method: :second, value_method: :first, label: "Privilégio", input_html: { class: 'form-control'},
     label_html: { class: 'select label_b'}%>
-    <button class="btn btn-outline-secondary"><%= link_to '', user_path %> Voltar</button>
+    <%= link_to 'Voltar', :back, class: "btn btn-outline-secondary" %>
     <%= f.button :submit, class: "btn btn-primary btn-criar float-right"%>
   <% end %>
 </div>

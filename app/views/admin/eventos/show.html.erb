@@ -1,15 +1,13 @@
-<!-- <button class="btn btn-outline-secondary"><i class="fas fa-chevron-left"></i><%= link_to '', eventos_path%> Voltar</button>
-<br><br> -->
 <br>
 <div class="card-deck">
       <div class="card mb-2">
         <div class="card-header card-text-tit">
-          <%= @evento.nome%>
+          <%= @evento.nome.titleize%>
         </div>
         <div class="card-body">
-          <h5 class="card-title"><b><%= l @evento.data, format: :long %></b> às <%= @evento.hora %></h5>
-          <p class="card-text"><%= @evento.descricao %></p>
-          <p class="card-text"><i class="fas fa-map-marker-alt c-icon"></i><%= @evento.local %></p>
+          <p class="card-text card-bigger"><b><%= l @evento.data, format: :long %></b> às <%= @evento.hora %></p>
+          <p class="card-text"><%= @evento.descricao.capitalize %></p>
+          <p class="card-text"><i class="fas fa-map-marker-alt c-icon"></i><%= @evento.local.titleize %></p>
 
           <%= link_to 'Criar novo evento', new_evento_path, class: 'btn btn-outline-success btn-next' %>
           <%= link_to 'Editar', edit_evento_path(@evento), class: 'btn btn-outline-primary btn-next' %>

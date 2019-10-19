@@ -1,2 +1,19 @@
 <h1>Pessoas#index</h1>
 <p>Find me in app/views/pessoas/index.html.erb</p>
+
+<% @pessoas.each do |pessoa| %>
+  <%= pessoa.nome %>
+  <%= pessoa.idade %>
+  <% pessoa.atividades.each do |atividade| %>
+    <%= atividade.nome %>
+  <% end %>
+<% end %>
+
+<br><br>
+
+<% @atividades.each do |atividade| %>
+  <b><%= atividade.nome %></b><br>
+  <% atividade.pessoas.each do |pessoa| %>
+    <%= pessoa.nome %><br>
+  <% end %>
+<% end %>

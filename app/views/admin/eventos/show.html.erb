@@ -5,7 +5,7 @@
           <%= @evento.nome.titleize%>
         </div>
         <div class="card-body">
-          <p class="card-text card-bigger"><b><%= l @evento.data, format: :long %></b> às <%= @evento.hora %></p>
+          <p class="card-text card-bigger"><i class="far fa-calendar-alt c-icon"></i><b><%= l @evento.data, format: :long %></b> às <%= @evento.hora %></p>
           <p class="card-text"><%= @evento.descricao.capitalize %></p>
           <p class="card-text"><i class="fas fa-map-marker-alt c-icon"></i><%= @evento.local.titleize %></p>
 

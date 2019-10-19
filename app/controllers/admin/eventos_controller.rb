@@ -18,7 +18,7 @@ class Admin::EventosController < AdminController
     if @evento.save
       redirect_to @evento, notice: 'Evento criado com sucesso!'
     else
-      render 'new', alert: 'Erro ao criar evento. Tente novamente.'
+      render 'new'
     end
   end
 

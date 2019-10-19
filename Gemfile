@@ -16,6 +16,7 @@ gem 'font-awesome-sass'
 gem 'font-awesome-rails'
 gem 'devise-i18n'
 gem 'devise-bootstrap-views', '~> 1.0'
+gem 'bootstrap-multiselect-rails'
 
 #Bootstrap, JS
 source 'https://rails-assets.org' do

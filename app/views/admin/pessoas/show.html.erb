@@ -1,2 +1,29 @@
-<h1>Pessoas#show</h1>
-<p>Find me in app/views/pessoas/show.html.erb</p>
+<!-- <h1>Pessoas#show</h1>
+<p>Find me in app/views/pessoas/show.html.erb</p> -->
+
+<h1 class="h1-evt">Formulário de Pessoa</h1>
+
+<div class="container">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><%= @pessoa.nome %></h5>
+    <p class="mb-2"><b>Idade: </b><%= @pessoa.idade %></p>
+    <p class="mb-2"><b>Data de Nascimento: </b><%= @pessoa.dt_nascimento %></p>
+    <p class="mb-2"><b>Endereço: </b><%= @pessoa.endereco %></p>
+    <p class="mb-2"><b>Bairro: </b><%= @pessoa.bairro %></p>
+    <p class="mb-2"><b>Telefone: </b><%= @pessoa.telefone %></p>
+    <p class="mb-2"><b>Religião: </b><%= @pessoa.religiao %></p>
+    <p class="mb-2"><b>Responsável: </b><%= @pessoa.responsavel %></p>
+    <p class="mb-2"><b>Data de entrada: </b><%= @pessoa.dt_entrada %></p>
+    <p class="mb-2"><b>Estuda? </b><%= @pessoa.estuda %></p>
+    <p class="mb-2"><b>Escola: </b><%= @pessoa.escola %></p>
+    <p class="mb-2"><b>Série: </b><%= @pessoa.serie %></p>
+
+    <p><b>Atividades:</b>
+    <% @pessoa.atividades.each do |atividade| %>
+      <span class="badge badge-primary" style="font-size: 16px;"><%= atividade.nome %></span>
+    <% end %></p>
+    <p class="card-text"><small class="text-muted">Cadastrado no projeto há 3 anos</small></p>
+    <%= link_to 'Editar', edit_pessoa_path(@pessoa), class: 'btn btn-outline-primary' %>
+  </div>
+</div>

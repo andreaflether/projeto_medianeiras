@@ -18,3 +18,4 @@
 //= require bootstrap
 //= require jquery
 //= require tether
+//= require bootstrap-multiselect

@@ -1,2 +1,27 @@
-<h1>Pessoas#new</h1>
-<p>Find me in app/views/pessoas/new.html.erb</p>
+<!-- <h1>Pessoas#new</h1>
+<p>Find me in app/views/pessoas/new.html.erb</p> -->
+
+<h1 class="h1-evt">Cadastrar Pessoa</h1>
+
+<div class="section evt-form">
+  <%= simple_form_for @pessoa do |f| %>
+    <%= f.input :nome, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%= f.input :idade, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%= f.input :endereco, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%= f.input :bairro, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%= f.input :telefone, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%= f.input :religiao, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%= f.input :responsavel, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%= f.input :dt_entrada, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%= f.input :estuda, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%= f.input :escola, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%= f.input :serie, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+
+    <%= f.association :atividades, :collection => @atividades, :label_method => :nome,
+    :value_method => :id, input_html: {class: 'form-control'}, label_html: { class: 'label label_b'} %>
+    <%= f.button :submit, "Cadastrar pessoa", class: "btn btn-primary btn-criar"%>
+    <%= link_to 'Voltar', :back, class: "btn btn-outline-secondary" %>
+
+  <% end %>
+</div>
+<br>

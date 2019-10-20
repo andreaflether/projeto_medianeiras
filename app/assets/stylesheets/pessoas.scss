@@ -6,3 +6,15 @@
 // width: 32%;
 // margin-right: 5px;
 // }
+
+div.dataTables_length label select{
+  margin-bottom: 5px;
+}
+
+.sorting_asc, .sorting_dsc {
+  font-weight: bold;
+}
+
+#example_paginate, .dataTables_info {
+  margin-top: 15px;
+}

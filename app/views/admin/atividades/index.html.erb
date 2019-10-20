@@ -1,5 +1,26 @@
-<h1>Atividades#index</h1>
-<p>Find me in app/views/atividades/index.html.erb</p>
+<!-- <h1>Atividades#index</h1>
+<p>Find me in app/views/atividades/index.html.erb</p> -->
 
 <!-- source: http://hellotumo.com/2012/11/how-to-embed-specific-cells-when-embedding-a-google-spreadsheet/ -->
-<iframe src="https://docs.google.com/spreadsheets/d/1j157EqP2-THgWC2Fu1qQ2cSt5_pqQixI_jXS8QLUWhM/pubhtml/sheet?headers=false&amp;gid=1290413671&amp;range=BE1:BK" width="1000" height="120"></iframe>
+<!-- <iframe src="https://docs.google.com/spreadsheets/d/1j157EqP2-THgWC2Fu1qQ2cSt5_pqQixI_jXS8QLUWhM/pubhtml/sheet?headers=false&amp;gid=1290413671&amp;range=BE1:BK" width="1000" height="120"></iframe> -->
+
+<h1 class="h1-evt">Todas as atividades</h1>
+<br>
+
+  <% @atividades.order(nome: :asc).each_with_index do |atividade, index| %>
+    <div class="card">
+    	<header class="card-header">
+    		<a href="#" data-toggle="collapse" data-target="#collapse<%= index+1 %>" aria-expanded="true" class="text-primary alert-link">
+    			<span class="title"><%= atividade.nome %></span><i class="icon-action fa fa-chevron-down float-right mt-1"></i>
+    		</a> - Professor(a)/Responsável: Teste
+    	</header>
+    	<div class="collapse" id="collapse<%= index+1 %>" style="">
+    		<article class="card-body">
+          <h5>Alunos inscritos: <%= atividade.pessoas.count %></h5>
+          <% atividade.pessoas.each do |pessoa| %>
+    			<p class="mb-0 mt-0"><%= link_to pessoa.nome, pessoa, class: 'text-dark', title: "Ver ficha de #{pessoa.nome}" %></p><hr>
+          <% end %>
+    		</article> <!-- card-body.// -->
+    	</div> <!-- collapse .// -->
+    </div> <!-- card.// --> <br>
+  <% end %>

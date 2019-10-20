@@ -1,3 +1,26 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/af-2.3.4/b-1.6.1/b-colvis-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/cr-1.5.2/fc-3.3.0/fh-3.1.6/kt-2.5.1/r-2.2.3/rg-1.1.1/rr-1.2.6/sc-2.0.1/sl-1.3.1/datatables.min.css"/>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/af-2.3.4/b-1.6.1/b-colvis-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/cr-1.5.2/fc-3.3.0/fh-3.1.6/kt-2.5.1/r-2.2.3/rg-1.1.1/rr-1.2.6/sc-2.0.1/sl-1.3.1/datatables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json"></script>
+<script>
+  $(document).ready(function() {
+    $('#example').dataTable(
+    {
+      // dom: 'Bfrtip',
+      // buttons: [
+      //     'copy', 'excel', 'pdf'
+      // ],
+      language: {
+          "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json"
+      }
+    }
+    );
+});
+</script>
+
+
 <h1>Pessoas#index</h1>
 <p>Find me in app/views/pessoas/index.html.erb</p>
 
@@ -23,3 +46,26 @@ https://getbootstrap.com/docs/4.3/components/navs/
     <%= pessoa.nome %><br>
   <% end %><br>
 <% end %>
+
+<table id="example" class="table display" style="width:100%">
+        <thead class="thead-light">
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Atividades</th>
+                <th>Data de entrada</th>
+            </tr>
+        </thead>
+        <tbody>
+          <% @pessoas.each do |pessoa| %>
+            <tr>
+                <td><%= pessoa.nome %></td>
+                <td><%= pessoa.idade %></td>
+                <td><% pessoa.atividades.each do |atividade| %>
+                  <%= atividade.nome %>
+                <% end %></td>
+                <td><%= l pessoa.dt_entrada, format: :complete_numbers %></td>
+            </tr>
+          <% end %>
+        </tbody>
+    </table>

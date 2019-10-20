@@ -7,20 +7,18 @@
   <%= simple_form_for @pessoa do |f| %>
     <%= f.input :nome, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
     <%= f.input :idade, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
-    <%= f.input :endereco, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%= f.input :endereco, label: "Endereço", input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
     <%= f.input :bairro, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
     <%= f.input :telefone, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
-    <%= f.input :religiao, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
-    <%= f.input :responsavel, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
-    <%= f.input :dt_entrada, input_html: { class: 'form-control ml-1 d-flex col-md-3'}, label_html: { class: 'label label_b col-md-12'},
-    wrapper_html: {class: 'form-row'}  %>
-
+    <%= f.input :religiao, label: "Religião", input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%= f.input :responsavel, label: "Responsável", input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%= f.input :dt_entrada, label: "Data de entrada no projeto", input_html: { class: 'form-control ml-1 d-flex col-md-3'},
+    label_html: { class: 'label label_b col-md-12'}, wrapper_html: {class: 'form-row'}  %>
     <%= f.input :estuda, collection: [['true', 'Sim'], ['false', 'Não']], prompt: "Selecione uma opção", label_method: :second,
-    value_method: :first, label: "Estuda?", input_html: { class: 'form-control'}, label_html: { class: 'select label_b'} %>
-    <%= f.input :escola, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
-    <%= f.input :serie, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
-
-    <%= f.association :atividades, :collection => @atividades, :label_method => :nome,
+    value_method: :first, label: "Estuda?", input_html: { class: 'form-control', id: 'boolean'}, label_html: { class: 'select label_b'} %>
+    <%= f.input :escola, input_html: { class: 'form-control hidden-fields'}, label_html: { class: 'label label_b hidden-fields'}  %>
+    <%= f.input :serie, label: "Série", input_html: { class: 'form-control hidden-fields'}, label_html: { class: 'label label_b hidden-fields'}  %>
+    <%= f.association :atividades, :collection => @atividades.order('nome ASC'), :label_method => :nome,
     :value_method => :id, input_html: {class: 'form-control'}, label_html: { class: 'label label_b'} %>
     <%= f.button :submit, "Cadastrar pessoa", class: "btn btn-primary btn-criar"%>
     <%= link_to 'Voltar', :back, class: "btn btn-outline-secondary" %>
@@ -28,3 +26,15 @@
   <% end %>
 </div>
 <br>
+
+<script>
+  $(function() {
+    $('#boolean').change(function(){
+        if ($(this).val () == 'true') {
+            $('.hidden-fields').show();
+        } else {
+            $('.hidden-fields').hide();
+        }
+    });
+})
+</script>

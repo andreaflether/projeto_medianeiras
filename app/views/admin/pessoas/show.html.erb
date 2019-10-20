@@ -7,17 +7,17 @@
 <div class="card">
   <div class="card-body">
     <h5 class="card-title"><%= @pessoa.nome %></h5>
-    <p class="mb-2"><b>Idade: </b><%= @pessoa.idade %></p>
-    <p class="mb-2"><b>Data de Nascimento: </b><%= @pessoa.dt_nascimento %></p>
-    <p class="mb-2"><b>Endereço: </b><%= @pessoa.endereco %></p>
-    <p class="mb-2"><b>Bairro: </b><%= @pessoa.bairro %></p>
-    <p class="mb-2"><b>Telefone: </b><%= @pessoa.telefone %></p>
-    <p class="mb-2"><b>Religião: </b><%= @pessoa.religiao %></p>
-    <p class="mb-2"><b>Responsável: </b><%= @pessoa.responsavel %></p>
-    <p class="mb-2"><b>Data de entrada: </b><%= l @pessoa.dt_entrada, format: :long %></p>
-    <p class="mb-2"><b>Estuda? </b><%= @pessoa.estuda %></p>
-    <p class="mb-2"><b>Escola: </b><%= @pessoa.escola %></p>
-    <p class="mb-2"><b>Série: </b><%= @pessoa.serie %></p>
+    <p class="mb-3"><b>Idade: </b><%= @pessoa.idade %></p>
+    <p class="mb-3"><b>Data de Nascimento: </b><%= @pessoa.dt_nascimento %></p>
+    <p class="mb-3"><b>Endereço: </b><%= @pessoa.endereco %></p>
+    <p class="mb-3"><b>Bairro: </b><%= @pessoa.bairro %></p>
+    <p class="mb-3"><b>Telefone: </b><%= @pessoa.telefone %></p>
+    <p class="mb-3"><b>Religião: </b><%= @pessoa.religiao %></p>
+    <p class="mb-3"><b>Responsável: </b><%= @pessoa.responsavel %></p>
+    <p class="mb-3"><b>Data de entrada: </b><%= l @pessoa.dt_entrada, format: :complete_numbers %></p>
+    <p class="mb-3"><b>Estuda? </b><%= @pessoa.estuda %></p>
+    <p class="mb-3"><b>Escola: </b><%= @pessoa.escola %></p>
+    <p class="mb-3"><b>Série: </b><%= @pessoa.serie %></p>
 
     <p><b>Atividades:</b>
     <% @pessoa.atividades.each do |atividade| %>
@@ -25,5 +25,7 @@
     <% end %></p>
     <p class="card-text"><small class="text-muted">Cadastrado no projeto há 3 anos</small></p>
     <%= link_to 'Editar', edit_pessoa_path(@pessoa), class: 'btn btn-outline-primary' %>
+    <%= link_to 'Apagar', pessoa_path(@pessoa), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza que deseja
+    apagar o formulário selecionado?' } %>
   </div>
 </div>

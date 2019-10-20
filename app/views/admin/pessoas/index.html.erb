@@ -11,9 +11,15 @@
 
 <br><br>
 
+A fazer, cadelinha:
+- Jogar tudo isso em uma tabela;
+- Colocar 2 tabelas em uma mesma linha;
+- Ver algo que seja possível abaixar/subir (bootstrap);
+https://getbootstrap.com/docs/4.3/components/navs/
+<h2>Todas as atividades</h2>
 <% @atividades.each do |atividade| %>
   <b><%= atividade.nome %></b><br>
   <% atividade.pessoas.each do |pessoa| %>
     <%= pessoa.nome %><br>
-  <% end %>
+  <% end %><br>
 <% end %>

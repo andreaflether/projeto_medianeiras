@@ -1,0 +1,10 @@
+<div class="section evt-form">
+  <%= simple_form_for @atividade do |f| %>
+    <%= f.input :nome, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%= f.input :professor, label: "Professor(a)/Responsável", input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%= f.input :horario, label: "Horário", input_html: { class: 'form-control'}, label_html: { class: 'label label_b'} %>
+    <%= f.input :dias_semana, label: "Dias da semana", input_html: { class: 'form-control'}, label_html: { class: 'label label_b'} %>
+    <%= f.button :submit, class: "btn btn-primary btn-criar"%>
+    <%= link_to 'Voltar', :back, class: "btn btn-outline-secondary" %>
+  <% end %>
+<div>

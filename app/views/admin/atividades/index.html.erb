@@ -9,18 +9,32 @@
 
   <% @atividades.order(nome: :asc).each_with_index do |atividade, index| %>
     <div class="card">
-    	<header class="card-header">
-    		<a href="#" data-toggle="collapse" data-target="#collapse<%= index+1 %>" aria-expanded="true" class="text-primary alert-link">
+    	<header class="card-header justify-content-center">
+    		<span class="badge badge-pill badge-primary badge-qtd"><%= atividade.pessoas.count %></span>
+        <a href="#" data-toggle="collapse" data-target="#collapse<%= index+1 %>" aria-expanded="true" class="text-primary alert-link mt-1">
     			<span class="title"><%= atividade.nome %></span><i class="icon-action fa fa-chevron-down float-right mt-1"></i>
-    		</a> - Professor(a)/Responsável: Teste
+    		</a> - Professor(a)/Responsável: <%= atividade.professor %>
     	</header>
     	<div class="collapse" id="collapse<%= index+1 %>" style="">
     		<article class="card-body">
-          <h5>Alunos inscritos: <%= atividade.pessoas.count %></h5>
-          <% atividade.pessoas.each do |pessoa| %>
+          <div class="row no-gutters d-flex align-items-start">
+              <div class="col-md-12 mt-2">
+                <p><b>Horário:</b> <%= atividade.dias_semana %>, de <%= atividade.horario %></p>
+              </div>
+
+              <div class="col d-flex mb-0 mt-0 mr-0 ml-0">
+                <%= link_to 'Cadastrar pessoa', new_pessoa_path, class: 'btn btn-outline-success mr-2' %>
+                <%= link_to 'Editar', edit_atividade_path(atividade),
+                class: 'btn btn-outline-primary mr-2' %>
+                <%= link_to 'Apagar', atividade_path(atividade), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza que deseja apagar a atividade selecionado?' } %>
+              </div>
+          </div>
+          <hr>
+
+          <% atividade.pessoas.order(nome: :asc).each do |pessoa| %>
     			<p class="mb-0 mt-0"><%= link_to pessoa.nome, pessoa, class: 'text-dark', title: "Ver ficha de #{pessoa.nome}" %></p><hr>
           <% end %>
-    		</article> <!-- card-body.// -->
-    	</div> <!-- collapse .// -->
-    </div> <!-- card.// --> <br>
+    		</article> <!-- card-body -->
+    	</div> <!-- collapse -->
+    </div> <!-- card --> <br>
   <% end %>

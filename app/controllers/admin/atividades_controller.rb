@@ -17,7 +17,7 @@ class Admin::AtividadesController < AdminController
 
   def update
     @atividade = Atividade.find(params[:id])
-    if @atividade.update(pessoa_params)
+    if @atividade.update(atividade_params)
       redirect_to @atividade, notice: "Atividade atualizada com sucesso."
     else
       render 'edit'
@@ -47,7 +47,7 @@ class Admin::AtividadesController < AdminController
   private
 
   def atividade_params
-    params.require(:atividade).permit(:nome, pessoa_ids: [])
+    params.require(:atividade).permit(:nome, :professor, :horario, :dias_semana, pessoa_ids: [])
   end
 
   def authorize

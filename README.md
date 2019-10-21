@@ -23,6 +23,15 @@ Rotas disponíveis (todos os usuários:
   - **/admin/users/1** - Ver user pelo ID
   - **/admin/users/1/editar** - Editar user específico (Campos Nome, E-mail, Role)
   
+  ## 2.3. Atividades
+  - **/admin/atividades** - Página inicial
+  - **/admin/atividades/1** - Ver atividade pelo ID
+  - **/admin/atividades/1/editar** - Editar atividade específica (Nome, professor, horário, dias)
+  
+  ## 2.4. Pessoas
+  - **/admin/pessoas** - Página inicial
+  - **/admin/pessoas/1** - Ver pessoa pelo ID
+  - **/admin/pessoas/1/editar** - Editar pessoa específica (Todos os campos)
 
 
 

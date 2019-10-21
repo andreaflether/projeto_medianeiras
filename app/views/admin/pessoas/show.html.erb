@@ -15,10 +15,11 @@
     <p class="mb-3"><b>Religião: </b><%= @pessoa.religiao %></p>
     <p class="mb-3"><b>Responsável: </b><%= @pessoa.responsavel %></p>
     <p class="mb-3"><b>Data de entrada: </b><%= l @pessoa.dt_entrada, format: :complete_numbers %></p>
-    <p class="mb-3"><b>Estuda? </b><%= @pessoa.estuda %></p>
-    <p class="mb-3"><b>Escola: </b><%= @pessoa.escola %></p>
-    <p class="mb-3"><b>Série: </b><%= @pessoa.serie %></p>
-
+    <p class="mb-3"><b>Estuda? </b><%= @pessoa.form_estuda %></p>
+    <% if @pessoa.estuda %>
+      <p class="mb-3"><b>Escola: </b><%= @pessoa.escola %></p>
+      <p class="mb-3"><b>Série: </b><%= @pessoa.serie %></p>
+    <% end %>
     <p><b>Atividades:</b>
     <% @pessoa.atividades.each do |atividade| %>
       <span class="badge badge-primary" style="font-size: 16px;"><%= atividade.nome %></span>

@@ -1,6 +1,6 @@
 class Admin::AtividadesController < AdminController
   def new
-    @atividades = Atividade.all
+    @atividade = Atividade.new
   end
 
   def create

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+
 .card-horizontal {
     display: flex;
     flex: 1 1 auto;
@@ -81,5 +83,19 @@
   text-transform: uppercase;
   // color: #05afea;
   font-family: 'Maven Pro', sans-serif;
+  font-weight: 600;
+}
+
+.sec-esporte {
+  padding-right: 40px !important;
+  padding-left: 40px !important;
+}
+
+.btn-inscricao {
+  padding: 0.375rem 6rem !important;
+}
+
+.tit-esporte, .tit-sec {
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
 }

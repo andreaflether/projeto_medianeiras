@@ -23,7 +23,6 @@ test:
 
 production:
   <<: *default
-  database: medianeiras
   adapter: postgresql
   enconding: unicode
   database: medianeiras

@@ -8,13 +8,13 @@
   no <b>sábado</b> acontecem as vendas. As arrecadações são direcionadas para projetos sociais do Centro Comunitário.</p>
   <div class="row">
     <div class="col-md-4">
-      <img src="/assets/bazar_1.jpg" class="img-fluid" alt="...">
+      <%= image_tag("bazar_1.jpg", :class => "img-fluid", alt:"Bazar")%>
     </div>
     <div class="col-md-4">
-      <img src="/assets/bazar_2.jpg" class="img-fluid" alt="...">
+      <%= image_tag("bazar_2.jpg", :class => "img-fluid", alt:"Bazar")%>
     </div>
     <div class="col-md-4">
-      <img src="/assets/bazar_3.jpg" class="img-fluid" alt="...">
+      <%= image_tag("bazar_3.jpg", :class => "img-fluid", alt:"Bazar")%>
     </div>
   </div>
   <br>
@@ -27,7 +27,7 @@
   <h3 class="card-title text-center ativ-text tit-sec">Laboratório de Práticas Manuais</h3><br>
       <div class="row no-gutters align-items-center">
         <div class="col-md-4">
-          <img src="/assets/fuxico.png" class="card-img pt-2" alt="...">
+          <%= image_tag("fuxico.png", :class => "card-img pt-2", alt:"Fuxico")%>
         </div>
         <div class="col-md-8">
           <div class="card-body">
@@ -43,14 +43,14 @@
       </div>
 </div>
 <!-- Laboratório de Práticas Manuais -->
-<hr class="hr-praticas">
 
 <!-- Reforço Escolar -->
 <div class="container">
+  <hr class="hr-praticas">
   <h3 class="card-title text-center ativ-text tit-sec">Reforço Escolar</h3>
       <div class="row no-gutters align-items-center">
         <div class="col-md-4">
-          <img src="/assets/pastoral-do-menor.png" class="card-img" alt="...">
+          <%= image_tag("pastoral-do-menor.png", :class => "card-img", alt:"Reforço Escolar")%>
         </div>
         <div class="col-md-8">
           <div class="card-body">
@@ -66,8 +66,8 @@
 
 <!-- <i class="fas fa-hand-holding"></i>
 <i class="fas fa-hands-helping"></i><br> -->
-
-<h3 class="title-txt text-center mt-2">Trabalhos Pastorais</h3>
+<br>
+<h3 class="title-txt text-center mt-4">Trabalhos Pastorais</h3>
 <!-- Pastoral do Menor -->
 <div class="container mb-2">
   <div class="row no-gutters">
@@ -139,7 +139,7 @@
 <div class="container">
   <div class="row d-flex">
     <div class="col-md-4 text-center pr-3 pl-3">
-      <img class="img-fluid" src="/assets/promulher_logo.png">
+      <%= image_tag("promulher_logo.png", :class => "img-fluid", alt:"Logo Promulher")%>
     </div>
     <div class="col-md-8">
       <p class="text-justify"> O <b>PROMULHER – Promovendo a Cidadania da Mulher</b> é uma iniciativa da Coordenação do Curso de Graduação em Serviço Social e visa promover o
@@ -151,14 +151,14 @@
       Esse projeto é iniciativa do Núcleo Docente Estruturante (NDE) e da coordenação do curso de Serviço Social da Unifametro e
       visa promover o aprimoramento da formação profissional dos estudantes através de uma experiência de intervenção no âmbito da
       formação política e cidadã junto a grupos de mulheres – adolescentes, jovens e idosas em situação de vulnerabilidade social.</p>
-
       <div class="container-fluid">
         <div class="row no-gutters">
           <div class="col-6 mt-2">
               <div class="card promulher-card angela">
                   <div class="card-horizontal align-items-center justify-content-center">
                       <div class="img-square-wrapper">
-                          <img class="rounded-circle" src="/assets/angela-tavares-100.jpg" alt="Ângela Tavares" style="width: 90px;">
+                          <!-- <img class="rounded-circle" src="/assets/angela-tavares-100.jpg" alt="Ângela Tavares" style="width: 90px;"> -->
+                          <%= image_tag("angela-tavares-100.jpg", :class => "rounded-circle", :alt => "Ângela Tavares", :style => "width: 90px;") %>
                       </div>
                       <div class="card-body">
                           <p class="card-title promulher-txt">Ângela Madeiro</p>
@@ -172,7 +172,7 @@
                 <div class="card promulher-card edna">
                     <div class="card-horizontal align-items-center justify-content-center">
                         <div class="img-square-wrapper">
-                            <img class="rounded-circle" src="/assets/edna-leite.jpg" alt="Edna Leite" style="width: 90px;">
+                            <%= image_tag("edna-leite.jpg", :class => "rounded-circle", :alt => "Edna Leite", :style => "width: 90px;") %>
                         </div>
                         <div class="card-body">
                             <p class="card-title promulher-txt">Edna Leite Dias</p>
@@ -183,13 +183,13 @@
             </div>
         </div>
     </div>
-
+    <br>
+      <%= image_tag("logo_fametro.png", :alt => "Logotipo Unifametro") %>
     </div>
-
-
     </div>
   </div>
 
-<img src="/assets/logo_fametro.png">
+
+
 
 <%= render 'footer' %>

@@ -27,5 +27,5 @@ production:
   enconding: unicode
   database: medianeiras
   username: andreaflether
-  password: adsadmin@123
+  password: <%= ENV['MEDIANEIRAS_DATABASE_PASSWORD'] %>
   timeout: 5000

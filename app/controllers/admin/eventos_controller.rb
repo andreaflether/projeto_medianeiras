@@ -66,11 +66,4 @@ class Admin::EventosController < AdminController
   def evento_params
     params.require(:evento).permit(:nome, :data, :hora, :local, :descricao)
   end
-
-  def authorize
-    unless current_user.admin?
-      redirect_to root_path
-      return
-    end
-  end
 end

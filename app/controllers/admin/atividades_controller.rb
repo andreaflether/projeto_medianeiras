@@ -49,12 +49,4 @@ class Admin::AtividadesController < AdminController
   def atividade_params
     params.require(:atividade).permit(:nome, :professor, :horario, :dias_semana, pessoa_ids: [])
   end
-
-  def authorize
-    unless current_user.admin?
-      redirect_to root_path
-      return
-    end
-  end
-
 end

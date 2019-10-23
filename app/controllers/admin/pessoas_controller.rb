@@ -51,13 +51,4 @@ class Admin::PessoasController < AdminController
     params.require(:pessoa).permit(:nome, :idade, :dt_nascimento, :endereco, :bairro, :telefone, :religiao, :responsavel,
     :dt_entrada, :estuda, :escola, :serie, atividade_ids: [])
   end
-
-
-  def authorize
-    unless current_user.admin?
-      redirect_to root_path
-      return
-    end
-  end
-
 end

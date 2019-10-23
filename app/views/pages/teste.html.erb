@@ -1,0 +1,24 @@
+<%= content_for :page_title, "Página Inicial" %>
+<script src="https://kit.fontawesome.com/8d9d868ad3.js" crossorigin="anonymous"></script>
+
+<div class="section">
+    <div class="container">
+        <% @proximos_eventos.order(data: :asc, hora: :asc).each do |evento| %>
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4"><%= link_to evento.nome, evento  %></p>
+              </div>
+            </div>
+            <div class="content">
+
+            <p>Dia <%= l evento.data, format: :long %> às <%= evento.hora %></p>
+            <span class="icon has-text-info">
+            <i class="fas fa-map-marker-alt"></i></span><%= evento.local %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+    </div>
+</div>

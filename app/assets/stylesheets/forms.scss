@@ -1,8 +1,14 @@
 .form-group {
-  margin: 0 30vw;
+  margin: 0 25vw;
 }
 
 .sml-txt {
    margin: -10px 0 0 0 !important;
    padding-top: 0 !important;
+}
+
+@media (max-width: 991px) {
+  .form-group {
+    margin: 0 20vw;
+  }
 }

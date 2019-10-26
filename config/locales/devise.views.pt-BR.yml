@@ -40,21 +40,21 @@ pt-BR:
     failure:
       already_authenticated: Você já está autenticado.
       inactive: A sua conta ainda não foi ativada.
-      invalid: Inválido %{authentication_keys} ou senha.
+      invalid: Seu %{authentication_keys} ou senha inválidos.
       last_attempt: Você tem mais uma única tentativa antes de sua conta ser bloqueada.
       locked: A sua conta está bloqueada.
-      not_found_in_database: Inválido %{authentication_keys} ou senha.
-      timeout: A sua sessão expirou, por favor, faça login novamente para continuar.
+      not_found_in_database: Seu %{authentication_keys} ou senha inválidos.
+      timeout: A sua sessão expirou. Por favor, faça login novamente para continuar.
       unauthenticated: Para continuar, faça login ou registre-se.
       unconfirmed: Antes de continuar, confirme a sua conta.
     mailer:
       confirmation_instructions:
         action: Confirmar minha conta
-        greeting: Bem-vindo %{recipient}!
+        greeting: Bem-vindo, %{recipient}!
         instruction: 'Você pode confirmar sua conta através do link abaixo:'
         subject: Instruções de confirmação
       email_changed:
-        greeting: Olá %{recipient}!
+        greeting: Olá, %{recipient}!
         message: Estamos entrando em contato para notificá-lo de que seu e-mail está sendo alterado para %{email}.
         subject: E-mail alterado
       password_change:

@@ -50,10 +50,6 @@
   font-weight: 700 !important;
 }
 
-.about-img img:hover {
-  transform: scale(-1.5);
-}
-
 @media (max-width: 991px) {
 
   .navbar-toggler-icon {
@@ -63,7 +59,6 @@
   .logotipo {
     position: absolute;
     left: 45%;
-    // transform: translateX(-50%);
     top: -9px;
     display: block;
     margin-left: -50px !important;

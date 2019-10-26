@@ -23,10 +23,12 @@ class Admin::PessoasController < AdminController
     else
       render 'edit'
     end
+    @atividades = Atividade.all
   end
 
   def edit
     @pessoa = Pessoa.find(params[:id])
+    @atividades = Atividade.all
   end
 
   def destroy

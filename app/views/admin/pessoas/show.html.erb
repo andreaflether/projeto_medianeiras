@@ -6,7 +6,7 @@
 <div class="container">
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title"><%= @pessoa.nome %></h5>
+    <h4 class="card-title text-primary"><b><%= @pessoa.nome %></b></h4>
     <p class="mb-3"><b>Idade: </b><%= @pessoa.idade %></p>
     <p class="mb-3"><b>Data de Nascimento: </b><%= @pessoa.dt_nascimento %></p>
     <p class="mb-3"><b>Endereço: </b><%= @pessoa.endereco %></p>
@@ -24,7 +24,8 @@
     <% @pessoa.atividades.each do |atividade| %>
       <span class="badge badge-primary" style="font-size: 16px;"><%= atividade.nome %></span>
     <% end %></p>
-    <p class="card-text"><small class="text-muted">Cadastrado no projeto há 3 anos</small></p>
+
+    <p class="card-text"><small class="text-muted">Cadastrado(a) no projeto a alguns dias</small></p>
     <%= link_to 'Editar', edit_pessoa_path(@pessoa), class: 'btn btn-outline-primary' %>
     <%= link_to 'Apagar', pessoa_path(@pessoa), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza que deseja
     apagar o formulário selecionado?' } %>

@@ -2,44 +2,34 @@
 <br>
 <container>
 <!-- Tabela de eventos -->
-<table class="table table-bordered">
-  <thead class="thead-light">
-    <tr>
-      <th>Nome</th>
-      <th>Data</th>
-      <th>Hora</th>
-      <th>Local</th>
-      <th>Descrição</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead class="thead-light">
+        <tr>
+          <th>Nome</th>
+          <th>Data</th>
+          <th>Hora</th>
+          <th>Local</th>
+          <th>Descrição</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @eventos.order(data: :asc, hora: :asc).each do |evento| %>
-      <tr>
-        <td class="align-middle align-self-center align-items-center"><%= evento.nome %></td>
-        <td class="align-middle align-self-center align-items-center"><%= l evento.data, format: :complete_numbers %></td>
-        <td class="align-middle align-self-center align-items-center"><%= evento.hora %></td>
-        <td class="align-middle align-self-center align-items-center"><%= evento.local %></td>
-        <td class="align-middle align-self-center align-items-center"><%= evento.descricao %></td>
-        <td class="align-middle align-self-center align-items-center"><%= link_to 'Ver', evento, class: 'btn btn-info' %></td>
-        <td class="align-middle align-self-center align-items-center"><%= link_to 'Editar', edit_evento_path(evento), class: 'btn btn-primary' %></td>
-        <td class="align-middle align-self-center align-items-center"><%= link_to 'Apagar', evento_path(evento), class: 'btn btn-danger', method: :delete, data: { confirm: 'Tem certeza que deseja apagar o evento selecionado?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @eventos.order(data: :asc, hora: :asc).each do |evento| %>
+          <tr>
+            <td class="align-middle align-self-center align-items-center"><%= evento.nome %></td>
+            <td class="align-middle align-self-center align-items-center"><%= l evento.data, format: :complete_numbers %></td>
+            <td class="align-middle align-self-center align-items-center"><%= evento.hora %></td>
+            <td class="align-middle align-self-center align-items-center"><%= evento.local %></td>
+            <td class="align-middle align-self-center align-items-center"><%= evento.descricao %></td>
+            <td class="align-middle align-self-center align-items-center"><%= link_to 'Ver', evento, class: 'btn btn-info' %></td>
+            <td class="align-middle align-self-center align-items-center"><%= link_to 'Editar', edit_evento_path(evento), class: 'btn btn-primary' %></td>
+            <td class="align-middle align-self-center align-items-center"><%= link_to 'Apagar', evento_path(evento), class: 'btn btn-danger', method: :delete, data: { confirm: 'Tem certeza que deseja apagar o evento selecionado?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </container>
 <!-- Tabela de eventos -->
-
-<!--
-<h3>Próximos Eventos</h3>
-
-<% @eventos.each do |evento| %>
-<div class="card">
-  <div class="card-body">
-    <%= evento.nome %>
-  </div>
-</div>
-<% end %>
--->

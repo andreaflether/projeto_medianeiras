@@ -20,38 +20,39 @@
 });
 </script>
 
-
 <h1 class="h1-evt">Formulários - Visão geral</h1>
 <!-- <p>Find me in app/views/pessoas/index.html.erb</p> -->
 
 <br>
-<table id="example" class="table table-hover display" style="width:100%">
-        <thead class="thead-dark">
-            <tr>
-                <th>Nome</th>
-                <th>Idade</th>
-                <th>Atividades</th>
-                <th>Data de entrada</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-          <% @pessoas.each do |pessoa| %>
-            <tr>
-                <td><%= link_to pessoa.nome, pessoa, class: "text-dark", title: "Ver ficha cadastral de #{pessoa.nome}" %></td>
-                <td><%= pessoa.idade %></td>
-                <td><% pessoa.atividades.order(nome: :asc).each do |atividade| %>
-                      <% if pessoa.atividades.length > 1 %>
-                        <%= atividade.nome %><br>
-                      <% else %>
-                        <%= atividade.nome %>
-                      <% end %>
-                <% end %></td>
-                <td><%= l pessoa.dt_entrada, format: :complete_numbers %></td>
-                <td><%= link_to 'Editar', edit_pessoa_path(pessoa), class: 'btn btn-outline-primary btn-next' %>
-                <%= link_to 'Apagar', pessoa_path(pessoa), class: 'btn btn-outline-danger btn-next', method: :delete, data: { confirm: 'Tem certeza que deseja apagar o cadastro selecionado?' } %></td>
+<div class="table-responsive">
+  <table id="example" class="table table-hover display" style="width:100%">
+    <thead class="thead-dark">
+      <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Atividades</th>
+        <th>Data de entrada</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
 
-            </tr>
-          <% end %>
-        </tbody>
-    </table>
+    <tbody>
+      <% @pessoas.each do |pessoa| %>
+        <tr>
+          <td><%= link_to pessoa.nome, pessoa, class: "text-dark", title: "Ver ficha cadastral de #{pessoa.nome}" %></td>
+          <td><%= pessoa.idade %></td>
+          <td><% pessoa.atividades.order(nome: :asc).each do |atividade| %>
+            <% if pessoa.atividades.length > 1 %>
+              <%= atividade.nome %><br>
+            <% else %>
+              <%= atividade.nome %>
+            <% end %>
+          <% end %></td>
+          <td><%= l pessoa.dt_entrada, format: :complete_numbers %></td>
+          <td><%= link_to 'Editar', edit_pessoa_path(pessoa), class: 'btn btn-outline-primary btn-next' %>
+          <%= link_to 'Apagar', pessoa_path(pessoa), class: 'btn btn-outline-danger btn-next', method: :delete, data: { confirm: 'Tem certeza que deseja apagar o cadastro selecionado?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

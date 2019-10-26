@@ -5,7 +5,8 @@
     <%= f.input :data, input_html: { class: 'form-control data-input'}, label_html: { class: 'label label_b data-label'}%>
     <%= f.input :hora, input_html: { class: 'form-control'}, label_html: { class: 'label label_b hora_label'}  %>
     <%= f.input :local, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'} %>
-    <%= f.input :descricao, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'} %>
+    <%= f.input :descricao, placeholder: "Descrição do evento", input_html: { class: 'form-control'}, label_html: { class: 'label label_b'},
+    label: "Descrição" %>
     <%= f.button :submit, class: "btn btn-primary btn-criar"%>
     <%= link_to 'Voltar', :back, class: "btn btn-outline-secondary" %>
   <% end %>

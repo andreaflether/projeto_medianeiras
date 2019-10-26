@@ -45,5 +45,32 @@
 
 <h4 class="title-txt text-center">Vídeo</h4>
 <p class="text-center">Colocar vídeo de 5 anos.</p>
+<div class="container text-center justify-content-center align-items-center">
+  <div class="embed-responsive embed-responsive-16by9 d-flex">
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/XMBO9gtPaZE" frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<br>
+
+<h4 class="title-txt text-center">Próximos eventos - <%= l Date.today, format: :month_only %></h4>
+
+<div class="container mb-3 c-evento">
+  <% @proximos_eventos.order(data: :asc, hora: :asc).each do |evento| %>
+  <div class="card events-card">
+    <div class="card-body">
+      <div class="row align-items-start">
+        <div class="col-md-auto mb-1 mt-1">
+          <p class="txt-large"><%= evento.data.day%></p>
+        </div>
+        <div class="col-md-8 mb-2 mt-2">
+          <b><%= evento.nome %></b> - <%= evento.hora %> | <i class="fas fa-map-marker-alt c-icon"></i> <%= evento.local %><br>
+          <%= evento.descricao %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
 
 <%= render 'footer' %>

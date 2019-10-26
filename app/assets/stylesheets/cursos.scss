@@ -39,7 +39,7 @@
 }
 
 .promulher-txt {
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-transform: uppercase;
   font-weight: bold;
   font-family: 'Open Sans', sans-serif;
@@ -47,7 +47,7 @@
 }
 
 .promulher-txt-about {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -60,6 +60,19 @@
   align-items: center !important;
   align-content: center !important;
   // text-align: center !important;
+}
+
+.logo-unifametro {
+  filter: gray; /* IE5+ */
+  -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+  -webkit-transition: all .3s ease-in-out;
+}
+
+.logo-unifametro:hover {
+  filter: none;
+  -webkit-filter: grayscale(0);
+  -webkit-transform: scale(1.01);
+  cursor: pointer;
 }
 
 .others-icon {
@@ -102,4 +115,18 @@
 
 .ativ-hr {
   margin: 12px 0;
+}
+
+@media (max-width: 767px) {
+  .tit-esporte {
+    text-align: center;
+  }
+
+  .btn-inscricao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+  }
 }

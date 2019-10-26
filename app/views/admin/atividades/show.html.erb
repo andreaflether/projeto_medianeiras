@@ -1,2 +1,16 @@
-<h1 class="h1-evt">Atividades#show</h1>
-<p>Find me in app/views/atividades/show.html.erb</p>
+<!-- <h1 class="h1-evt">Atividades#show</h1>
+<p>Find me in app/views/atividades/show.html.erb</p> -->
+<br>
+<div class="container">
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title text-primary"><b><%= @atividade.nome %></b></h4>
+    <p class="mb-3"><b>Professor(a)/Responsável: </b><%= @atividade.professor %></p>
+    <p class="mb-3"><b>Horário </b><%= @atividade.horario %></p>
+    <p class="mb-3"><b>Dia(s): </b><%= @atividade.dias_semana %></p>
+
+    <%= link_to 'Editar', edit_atividade_path(@atividade), class: 'btn btn-outline-primary' %>
+    <%= link_to 'Apagar', atividade_path(@atividade), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza que deseja
+    apagar a atividade selecionada?' } %>
+  </div>
+</div>

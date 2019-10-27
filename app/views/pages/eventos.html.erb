@@ -1,8 +1,13 @@
 <%= render 'menu_p' %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" integrity="sha256-HAaDW5o2+LelybUhfuk0Zh2Vdk8Y2W2UeKmbaXhalfA=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js" integrity="sha256-jGAkJO3hvqIDc4nIY1sfh/FPbV+UK+1N+xJJg6zzr7A=" crossorigin="anonymous"></script>
 
 <div class="container">
   <h4 class="title-txt text-center text-justify">5 anos da presença das Irmãs do Preciosíssimo Sangue</h4>
   <p class="text-justify text-center"><b>Em agosto de 2019, completamos 5 anos da existência do Centro Comunitário Nossa Senhora Medianeira.</b></p>
+
+  <%= link_to image_tag('ips_2.jpg'), 'https://github.com/andreaflether/projeto_medianeiras/blob/master/app/assets/images/ips_1.jpg?raw=true',
+   data:{ title:'Evento na Comunidade', footer:'Evento na Comunidade', toggle:'lightbox', gallery:'example-gallery'}%>
 
   <p class="text-justify">
   Apesar das dificuldades, temos muitos momentos de alegria, e é a estes momentos que somos gratas. É muito bom saber que podemos
@@ -73,4 +78,10 @@
   <% end %>
 </div>
 
+<script>
+  $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
+</script>
 <%= render 'footer' %>

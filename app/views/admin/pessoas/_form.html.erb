@@ -3,6 +3,7 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://unpkg.com/multiple-select@1.4.3/dist/multiple-select.min.js"></script>
+
 <div class="section evt-form">
   <%= simple_form_for @pessoa do |f| %>
     <%= f.input :nome, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
@@ -25,8 +26,6 @@
   <% end %>
 </div>
 <br>
-
-
 
 <script>
   $(function() {

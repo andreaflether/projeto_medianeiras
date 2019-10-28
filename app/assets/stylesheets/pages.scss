@@ -29,6 +29,12 @@
   transition: 0.5s;
 }
 
+.fa-user-circle {
+  font-size: 27px;
+  transition: 0.5s;
+  color: #B8B8B8;
+}
+
 .fa-facebook:hover {
   color: #2980b9;
 }
@@ -49,6 +55,27 @@
   width: 200px;
   font-weight: 700 !important;
 }
+
+.btn-ajuda {
+  border-radius: 20px;
+  padding: 6px 18px;
+}
+
+.btn-all-events {
+  border-color: #05afea;
+  transition: 0.3s;
+  color: #05afea;
+  border-radius: 20px;
+  padding: 6px 20px;
+  font-weight: bold;
+}
+
+.btn-all-events:hover {
+  background-color: #049ACC;
+  border-color: #049ACC;
+  color: white;
+}
+
 
 @media (max-width: 991px) {
 
@@ -82,6 +109,10 @@
     margin-right: 32px;
   }
 
+  .fa-user-circle {
+    margin-right: 14px;
+  }
+
   .c-evento {
     text-align: center;
   }
@@ -96,7 +127,7 @@
 // footer
 
 .footer-txt {
-  color: #f7d794;
+  color: #05afea;
   text-transform: uppercase;
   font-family: 'Maven Pro', sans-serif;
   font-size: 17px;
@@ -106,7 +137,7 @@
 }
 
 .spn-body, .spn-body-end {
-  color: #bdc3c7;
+  color: #505050;
   font-size: 14px;
   line-height: 26px;
 }
@@ -116,7 +147,7 @@
 }
 
 .i-footer {
-  color: #fdcb6e;
+  color: #05afea;
 }
 
 .ms-choice {
@@ -134,18 +165,18 @@
 // azul mais escuro porém ainda claro 8CC6FF
 
 .footer{
-  background: #2c3e50;
+  background: #F0F0F0;
   color: white;
 
   .links{
     ul {list-style-type: none;
     }
     li a{
-      color: #bdc3c7;
+      color: #505050;
       transition: color .2s;
       &:hover{
         text-decoration:none;
-        color: #fdcb6e;
+        color: #05afea;
         }
     }
   }

@@ -6,9 +6,6 @@
   <h4 class="title-txt text-center text-justify">5 anos da presença das Irmãs do Preciosíssimo Sangue</h4>
   <p class="text-justify text-center"><b>Em agosto de 2019, completamos 5 anos da existência do Centro Comunitário Nossa Senhora Medianeira.</b></p>
 
-  <%= link_to image_tag('ips_2.jpg'), 'https://github.com/andreaflether/projeto_medianeiras/blob/master/app/assets/images/ips_1.jpg?raw=true',
-   data:{ title:'Evento na Comunidade', footer:'Evento na Comunidade', toggle:'lightbox', gallery:'example-gallery'}%>
-
   <p class="text-justify">
   Apesar das dificuldades, temos muitos momentos de alegria, e é a estes momentos que somos gratas. É muito bom saber que podemos
   contar com nossos voluntários e com as pessoas que colaboraram de alguma maneira ao Centro. São pessoas que se doam, e nós,
@@ -31,18 +28,30 @@
   <div class="row no-gutters">
 
     <div class="col-sm-4">
-      <%= image_tag("ips_1.jpg", :class => "img-fluid about-img", alt:"Evento na comunidade")%>
-      <%= image_tag("ips_2.jpg", :class => "img-fluid about-img", alt:"Evento na comunidade")%>
+      <%= link_to image_tag('ips_1.jpg', class: "img-fluid about-img"), 'https://github.com/andreaflether/projeto_medianeiras/blob/master/app/assets/images/ips_1.jpg?raw=true',
+       data:{ title:'Evento na Comunidade', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
+       title: "Ver foto"%>
+      <%= link_to image_tag('ips_2.jpg', class: "img-fluid about-img"), 'https://github.com/andreaflether/projeto_medianeiras/blob/master/app/assets/images/ips_2.jpg?raw=true',
+       data:{ title:'Evento na Comunidade', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
+       title: "Ver foto"%>
     </div>
 
     <div class="col-sm-4">
-      <%= image_tag("ips_6.jpg", :class => "img-fluid about-img", alt:"Evento na comunidade")%>
-      <%= image_tag("ips_7.jpg", :class => "img-fluid about-img", alt:"Evento na comunidade")%>
+      <%= link_to image_tag('ips_6.jpg', class: "img-fluid about-img"), 'https://github.com/andreaflether/projeto_medianeiras/blob/master/app/assets/images/ips_6.jpg?raw=true',
+       data:{ title:'Evento na Comunidade', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
+       title: "Ver foto"%>
+       <%= link_to image_tag('ips_7.jpg', class: "img-fluid about-img"), 'https://github.com/andreaflether/projeto_medianeiras/blob/master/app/assets/images/ips_7.jpg?raw=true',
+        data:{ title:'Evento na Comunidade', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
+        title: "Ver foto"%>
     </div>
 
     <div class="col-sm-4">
-      <%= image_tag("ips_8.jpg", :class => "img-fluid about-img", alt:"Evento na comunidade")%>
-      <%= image_tag("ips_11.jpg", :class => "img-fluid about-img", alt:"Evento na comunidade")%>
+      <%= link_to image_tag('ips_8.jpg', class: "img-fluid about-img"), 'https://github.com/andreaflether/projeto_medianeiras/blob/master/app/assets/images/ips_8.jpg?raw=true',
+       data:{ title:'Evento na Comunidade', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
+       title: "Ver foto"%>
+       <%= link_to image_tag('ips_11.jpg', class: "img-fluid about-img"), 'https://github.com/andreaflether/projeto_medianeiras/blob/master/app/assets/images/ips_11.jpg?raw=true',
+        data:{ title:'Evento na Comunidade', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
+        title: "Ver foto"%>
     </div>
 
   </div>

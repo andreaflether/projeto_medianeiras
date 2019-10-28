@@ -32,6 +32,18 @@
       <li class="nav-item">
         <a class="nav-link" href="#"><i class="fab fa-facebook"></i></a>
       </li>
+      <% if user_signed_in? %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user-circle"></i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to ('Preferências'), edit_user_registration_path, class: 'dropdown-item'%>
+            <%= link_to ('Sair'), destroy_user_session_path, class: 'dropdown-item', method: :delete %>
+          </div>
+        </li>
+      <% end %>
+
     </ul>
   </div>
 </nav>

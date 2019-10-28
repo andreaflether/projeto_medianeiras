@@ -94,6 +94,8 @@
     display: block;
     margin-left: -50px !important;
     padding: 10px 0 !important;
+    width: auto;
+    height: auto;
   }
 
   .navbar-collapse {
@@ -123,6 +125,10 @@
     margin: 0 10px 0 0;
   }
 
+  .btn-row {
+    justify-content: center;
+  }
+
 }
 // footer
 
@@ -137,7 +143,7 @@
 }
 
 .spn-body, .spn-body-end {
-  color: #505050;
+  color: rgba(255, 255, 255, 0.5);
   font-size: 14px;
   line-height: 26px;
 }
@@ -165,14 +171,14 @@
 // azul mais escuro porém ainda claro 8CC6FF
 
 .footer{
-  background: #F0F0F0;
+  background: #2c3e50;
   color: white;
 
   .links{
     ul {list-style-type: none;
     }
     li a{
-      color: #505050;
+      color: rgba(255, 255, 255, 0.5);
       transition: color .2s;
       &:hover{
         text-decoration:none;

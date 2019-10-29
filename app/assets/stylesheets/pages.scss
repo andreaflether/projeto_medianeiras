@@ -57,7 +57,7 @@
 }
 
 .btn-ajuda {
-  border-radius: 20px;
+  border-radius: 40px;
   padding: 6px 18px;
 }
 
@@ -65,7 +65,7 @@
   border-color: #05afea;
   transition: 0.3s;
   color: #05afea;
-  border-radius: 20px;
+  border-radius: 40px;
   padding: 6px 20px;
   font-weight: bold;
 }
@@ -143,7 +143,7 @@
 }
 
 .spn-body, .spn-body-end {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 14px;
   line-height: 26px;
 }
@@ -178,7 +178,7 @@
     ul {list-style-type: none;
     }
     li a{
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.7);
       transition: color .2s;
       &:hover{
         text-decoration:none;

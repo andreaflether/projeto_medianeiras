@@ -41,6 +41,11 @@ class Admin::PessoasController < AdminController
   def index
     @pessoas = Pessoa.all
     @atividades = Atividade.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @pessoas }
+    end
   end
 
   def show

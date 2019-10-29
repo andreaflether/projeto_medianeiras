@@ -1,14 +1,16 @@
 <script src="https://kit.fontawesome.com/8d9d868ad3.js" crossorigin="anonymous"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<body style="background-color: rgba(240, 240, 240, 0.7);">
+
 
 <%= render 'menu_p' %>
 
-<h3 class="title-txt text-center">Esportes</h3>
+<h3 class="title-txt text-center">Atividades</h3>
 <br>
 
 <!-- Balé -->
 <div class="container-fluid sec-esporte pb-4">
-  <div class="row no-gutters align-items-center">
+  <div class="row no-gutters align-items-center" style="background-color: white; padding: 20px 20px; border-left: 5px solid #05afea;">
 
     <div class="col-md-4">
       <%= image_tag("bale_1.jpg", :class => "img-fluid mt-2", alt:"...")%>
@@ -16,8 +18,8 @@
 
     <div class="col-md-8">
       <div class="card-body">
-        <h2 class="card-title tit-esporte">Balé</h2><hr>
-        <p class="card-text text-justify">As aulas de Balé proporcionam às crianças e adolescentes o fortalecimento da musculatura das pernas,
+        <h2 class="card-title tit-esporte">Balé</h2> <hr>
+        <p class="card-text">As aulas de Balé proporcionam às crianças e adolescentes o fortalecimento da musculatura das pernas,
         a postura do corpo, a coordenação motora, a disciplina da mente e corpo e sobretudo noções de localização
         e orientação de espaço.</p>
         <i class="fas fa-chalkboard-teacher c-icon"></i> Professora Patrícia Fernandes |
@@ -26,14 +28,13 @@
         <a href="http://m.me/ccnmedianeira" class="btn btn-primary badge-pill btn-inscricao mt-2" target="_blank">Inscrições</a>
       </div>
     </div>
-
   </div>
 </div>
 <!-- Fim do Balé -->
 
 <!-- Karatê -->
 <div class="container-fluid sec-esporte mt-2 pb-4">
-  <div class="row no-gutters align-items-center">
+  <div class="row no-gutters align-items-center" style="background-color: white; padding: 20px 20px; border-left: 5px solid #05afea;">
 
     <div class="col-md-4">
       <%= image_tag("karate_1.jpg", :class => "img-fluid mt-2", alt:"...")%>
@@ -42,7 +43,7 @@
     <div class="col-md-8">
       <div class="card-body">
         <h2 class="card-title tit-esporte">Karatê</h2><hr>
-        <p class="card-text text-justify">O Karatê proporciona grande condicionamento cardiovascular, muscular e desenvolve a coordenação motora.
+        <p class="card-text">O Karatê proporciona grande condicionamento cardiovascular, muscular e desenvolve a coordenação motora.
           A arte marcial exige exercício mental em que o lutador passa a criar estratégias e aprende a controlar
           as suas emoções. Faixa etária: de 7 a 14 anos.</p>
           <i class="fas fa-chalkboard-teacher c-icon"></i> Professores Neto e Juscelino |
@@ -58,7 +59,7 @@
 
 <!-- Muay Thay -->
 <div class="container-fluid sec-esporte mt-2">
-  <div class="row no-gutters align-items-center">
+  <div class="row no-gutters align-items-center" style="background-color: #f8f8f8; padding: 20px 20px; border-left: 5px solid #05afea;">
 
     <div class="col-md-4">
       <%= image_tag("mthay_1.jpg", :class => "img-fluid mt-2", alt:"...")%>
@@ -67,7 +68,7 @@
     <div class="col-md-8">
       <div class="card-body">
         <h2 class="card-title tit-esporte">Muay Thay</h2><hr>
-        <p class="card-text text-justify">As aulas trazem benefícios para os jovens e adultos.
+        <p class="card-text">As aulas trazem benefícios para os jovens e adultos.
         Desenvolve habilidades de autodefesa, ensina a conviver com os outros, melhora a coordenação motora, o raciocínio,
         o equilíbrio mental, torna ágil e ensina, sobretudo, a disciplina.</p>
           <i class="fas fa-chalkboard-teacher c-icon"></i> Professor Brayner CB |
@@ -80,5 +81,5 @@
   </div>
 </div>
 <!-- Fim do Muay Thay -->
-
+</body>
 <%= render 'footer' %>

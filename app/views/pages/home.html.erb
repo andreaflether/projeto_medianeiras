@@ -86,23 +86,38 @@
      </div>
   </div>
 
-<h4 class="title-txt text-center">Próximos eventos</h4>
+<h4 class="title-txt text-center">Próximos eventos - <%= l Date.today, format: :month_only %></h4>
 
 <div class="container">
   <div class="row justify-content-md-center">
-    <% @proximos_eventos.order(data: :asc, hora: :asc).limit(4).each do |evento| %>
-    <div class="col-md-6 mb-4">
-      <div class="card-event my-auto" style="background-color: #f0f0f0; padding: 20px 20px; border-left: 5px solid #05afea;">
-        <h5 class="align-middle"><b><%= evento.nome %> - <%= l evento.data, format: :complete_numbers %></b></h5>
-        <p class="align-middle"><%= evento.descricao %> <br>
-        <%= evento.local %></p>
-      </div>
-    </div>
+    <% if @proximos_eventos.blank? %>
+      <h4 class="text-center">Não há eventos agendados para este mês.</h4>
     <% end %>
-  </div>
 
-  <div class="row justify-content-md-center justify-content-sm-center btn-row">
-    <%= link_to 'Ver todos os eventos', pages_eventos_path, class: 'btn btn-outline-primary btn-all-events' %>
+    <% @proximos_eventos.order(data: :asc, hora: :asc).limit(4).each do |evento| %>
+      <% if @proximos_eventos.count == 1 %>
+      <div class="col-md-12 mb-4">
+        <div class="card-event my-auto" style="background-color: #f0f0f0; padding: 20px 20px; border-left: 5px solid #05afea;">
+          <h4 class="align-middle"><b><%= evento.data.day %></b> - <%= evento.nome %></h4>
+          <p class="align-middle"><i class="fas fa-map-marker-alt c-icon"></i><%= evento.local %> - <%= evento.descricao %></p>
+        </div>
+      </div>
+      <% else %>
+        <div class="col-md-6 mb-4">
+          <div class="card-event my-auto" style="background-color: #f0f0f0; padding: 20px 20px; border-left: 5px solid #05afea;">
+            <h5 class="align-middle"><b><%= evento.nome %> - <%= l evento.data, format: :complete_numbers %></b></h5>
+            <p class="align-middle"><%= evento.descricao %> <br>
+            <%= evento.local %></p>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="col-lg-12">
+        <div class="row justify-content-md-center justify-content-sm-center btn-row">
+        <%= link_to 'Ver todos os eventos', pages_eventos_path, class: 'btn btn-outline-primary btn-all-events' %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
 
@@ -115,7 +130,7 @@
 
     <div class="col-md-12 col-sm-12 col-lg-8">
       <div class="card-event" style="background-color: #f0f0f0; height: auto; padding: 20px 20px;">
-        <h5 class="text-justify"><b>O Centro Comunitário Nossa Senhora Medianeira recebe qualquer tipo de doações, como:</b></h5>
+        <h5><b>O Centro Comunitário Nossa Senhora Medianeira recebe qualquer tipo de doações, como:</b></h5>
         <p class="align-middle">Alimentos, roupas, material de higiene e limpeza, material escolar, móveis e eletrodomésticos.
           Estamos portas abertas para receber você. <br> </p>
           <div class="mt-3" style="border-left: 3px solid #05afea; font-size: 14px;">
@@ -133,7 +148,7 @@
           <div class="card-event my-auto" style="background-color: #05afea; padding: 20px 20px;">
             <h5><b>Seja um Voluntário</b></h5>
             <p class="text-justify text-center">Precisamos de pessoas para atender a demanda crescente. Conheça todos
-            os nosso projetos clicando <a href="/pages/projetos" class="text-white">aqui.</a></p>
+            os nossos projetos clicando <a href="/pages/projetos" class="text-white">aqui.</a></p>
             <button type="button" class="btn btn-outline-light btn-ajuda">Junte-se a nós</button>
           </div>
         </div>

@@ -29,28 +29,28 @@
 
     <div class="col-sm-4">
       <%= link_to image_tag('ips_1.jpg', class: "img-fluid about-img"), 'https://github.com/andreaflether/projeto_medianeiras/blob/master/app/assets/images/ips_1.jpg?raw=true',
-       data:{ title:'Evento na Comunidade', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
+       data:{ title:'Evento - 5 anos de presença das irmãs do Preciosíssimo Sangue', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
        title: "Ver foto"%>
       <%= link_to image_tag('ips_2.jpg', class: "img-fluid about-img"), 'https://github.com/andreaflether/projeto_medianeiras/blob/master/app/assets/images/ips_2.jpg?raw=true',
-       data:{ title:'Evento na Comunidade', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
+       data:{ title:'Evento - 5 anos de presença das irmãs do Preciosíssimo Sangue', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
        title: "Ver foto"%>
     </div>
 
     <div class="col-sm-4">
       <%= link_to image_tag('ips_6.jpg', class: "img-fluid about-img"), 'https://github.com/andreaflether/projeto_medianeiras/blob/master/app/assets/images/ips_6.jpg?raw=true',
-       data:{ title:'Evento na Comunidade', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
+       data:{ title:'Evento - 5 anos de presença das irmãs do Preciosíssimo Sangue', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
        title: "Ver foto"%>
        <%= link_to image_tag('ips_7.jpg', class: "img-fluid about-img"), 'https://github.com/andreaflether/projeto_medianeiras/blob/master/app/assets/images/ips_7.jpg?raw=true',
-        data:{ title:'Evento na Comunidade', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
+        data:{ title:'Evento - 5 anos de presença das irmãs do Preciosíssimo Sangue', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
         title: "Ver foto"%>
     </div>
 
     <div class="col-sm-4">
       <%= link_to image_tag('ips_8.jpg', class: "img-fluid about-img"), 'https://github.com/andreaflether/projeto_medianeiras/blob/master/app/assets/images/ips_8.jpg?raw=true',
-       data:{ title:'Evento na Comunidade', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
+       data:{ title:'Evento - 5 anos de presença das irmãs do Preciosíssimo Sangue', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
        title: "Ver foto"%>
        <%= link_to image_tag('ips_11.jpg', class: "img-fluid about-img"), 'https://github.com/andreaflether/projeto_medianeiras/blob/master/app/assets/images/ips_11.jpg?raw=true',
-        data:{ title:'Evento na Comunidade', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
+        data:{ title:'Evento - 5 anos de presença das irmãs do Preciosíssimo Sangue', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
         title: "Ver foto"%>
     </div>
 
@@ -59,8 +59,8 @@
 
 <h4 class="title-txt text-center">Vídeo</h4>
 <p class="text-center">Colocar vídeo de 5 anos.</p>
-<div class="container text-center justify-content-center align-items-center">
-  <div class="embed-responsive embed-responsive-16by9 d-flex">
+<div class="row text-center justify-content-center align-items-center">
+  <div class="col-md-8 embed-responsive embed-responsive-16by9 d-flex">
     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/XMBO9gtPaZE" frameborder="0"
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
@@ -69,24 +69,25 @@
 
 <h4 class="title-txt text-center">Próximos eventos - <%= l Date.today, format: :month_only %></h4>
 
-<div class="container mb-3 c-evento">
-  <% @proximos_eventos.order(data: :asc, hora: :asc).each do |evento| %>
-  <div class="card events-card">
-    <div class="card-body">
-      <div class="row align-items-start">
-        <div class="col-md-auto mb-1 mt-1">
-          <p class="txt-large"><%= evento.data.day%></p>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <% if @proximos_eventos.blank? %>
+      <h4 class="text-center">Não há eventos agendados para este mês.</h4>
+      <% else %>
+        <% @proximos_eventos.order(data: :asc, hora: :asc).limit(4).each do |evento| %>
+        <div class="col-md-12 mb-4">
+          <div class="card-event my-auto" style="background-color: #f0f0f0; padding: 20px 20px; border-left: 5px solid #05afea;">
+            <h4 class="align-middle"><b><%= evento.data.day %></b> - <%= evento.nome %></h4>
+            <p class="align-middle"><i class="fas fa-map-marker-alt c-icon"></i><%= evento.local %> - <%= evento.descricao %></p>
+            <% if current_user.admin? %>
+              <%= link_to 'Editar', edit_evento_path(evento), class: 'btn btn-outline-primary btn-next' %>
+              <%= link_to 'Apagar', evento_path(evento), class: 'btn btn-outline-danger btn-next', method: :delete, data: { confirm: 'Tem certeza que deseja apagar o evento selecionado?' } %>
+            <% end %>
+          </div>
         </div>
-        <div class="col-md-8 mb-2 mt-2">
-          <b><%= evento.nome %></b> - <%= evento.hora %> | <i class="fas fa-map-marker-alt c-icon"></i> <%= evento.local %><br>
-          <%= evento.descricao %>
-        </div>
-      </div>
-    </div>
+        <% end %>
+    <% end %>
   </div>
-  <% end %>
-</div>
-
 <script>
   $(document).on('click', '[data-toggle="lightbox"]', function(event) {
                 event.preventDefault();

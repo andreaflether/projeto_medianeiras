@@ -23,7 +23,9 @@
     <%= f.input :estuda, collection: [['true', 'Sim'], ['false', 'Não']], prompt: "Selecione uma opção", label_method: :second,
     value_method: :first, label: "Estuda?", input_html: { class: 'form-control', id: 'boolean'}, label_html: { class: 'select label_b'} %>
     <%= f.input :escola, input_html: { class: 'form-control hidden-fields'}, label_html: { class: 'label label_b hidden-fields'}  %>
-    <%= f.input :serie, label: "Série", input_html: { class: 'form-control hidden-fields'}, label_html: { class: 'label label_b hidden-fields'}  %>
+    <%#= f.input :serie, label: "Série", input_html: { class: 'form-control hidden-fields'}, label_html: { class: 'label label_b hidden-fields'}  %>
+    <%= f.input :serie, prompt: "Escolha uma série", label: "Série", collection: [ "Alfabetização", "2ª série", "3ª série", "4ª série", "5ª série", "6ª série",
+    "7ª série", "8ª série", "9ª série", "1º ano", "2º ano", "3º ano"], input_html: { class: 'form-control'}, label_html: { class: 'label label_b'} %>
     <%= f.association :atividades, :collection => @atividades.order('nome ASC'), :label_method => :nome,
     :value_method => :id, input_html: {id: 'multiselect', style: 'width: 100%; '}, label_html: { class: 'label label_b'} %><br>
     <%= f.button :submit, class: "btn btn-primary btn-criar"%>
@@ -32,6 +34,7 @@
 </div>
 <br>
 
+<!-- Script para habilitar campos "Escola" e "Série" apenas se o usuário selecionar a opção "Sim" em Estuda? -->
 <script>
   $(function() {
     $('#boolean').change(function(){
@@ -44,6 +47,7 @@
 })
 </script>
 
+<!-- Script para habilitar o multiselect no campo "Atividades" -->
 <script>
   $(function() {
     $('#multiselect').multipleSelect({

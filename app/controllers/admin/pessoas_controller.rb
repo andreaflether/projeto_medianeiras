@@ -39,17 +39,17 @@ class Admin::PessoasController < AdminController
   end
 
   def index
+    redirect_to pessoas_path
     @pessoas = Pessoa.all
     @atividades = Atividade.all
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @pessoas }
-    end
   end
 
   def show
     @pessoa = Pessoa.find(params[:id])
+  end
+
+  def idade
+    @idade = Date.today.year - Pessoa.params[:dt_nascimento].to_i
   end
 
   private

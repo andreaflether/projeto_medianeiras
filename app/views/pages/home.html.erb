@@ -59,7 +59,7 @@
   <div class="container">
    <div class="row">
      <div class="col">
-       <h3 class="title-txt text-center">Bem-vindo!</h3>
+       <h3 class="title-txt text-center">Bem-vindo(a)!</h3>
        <p class="text-justify">O Centro Comunitário Nossa Senhora Medianeira é uma porta aberta para <b>acolher, receber, facilitar o encontro e a partilha na contínua
          troca de bens e vivências </b>que é a relação humana, todos com o mesmo objetivo em comum, que é a esperança de um futuro melhor através
          da caridade. Contamos com um corpo de colaboradores profissionais e voluntários que procuram dar resposta à diversidade
@@ -90,18 +90,19 @@
 
 <div class="container">
   <div class="row justify-content-md-center">
+
     <% if @proximos_eventos.blank? %>
       <h4 class="text-center">Não há eventos agendados para este mês.</h4>
     <% end %>
 
-    <% @proximos_eventos.order(data: :asc, hora: :asc).limit(4).each do |evento| %>
-      <% if @proximos_eventos.count == 1 %>
-      <div class="col-md-12 mb-4">
-        <div class="card-event my-auto" style="background-color: #f0f0f0; padding: 20px 20px; border-left: 5px solid #05afea;">
-          <h4 class="align-middle"><b><%= evento.data.day %></b> - <%= evento.nome %></h4>
-          <p class="align-middle"><i class="fas fa-map-marker-alt c-icon"></i><%= evento.local %> - <%= evento.descricao %></p>
+    <% @proximos_eventos.order(data: :asc, hora: :asc).limit(4).each do |evento| %> <!-- Início do loop -->
+      <% if @proximos_eventos.count == 1 %> <!-- Início da condicional -->
+        <div class="col-md-12 mb-4">
+          <div class="card-event my-auto" style="background-color: #f0f0f0; padding: 20px 20px; border-left: 5px solid #05afea;">
+            <h4 class="align-middle"><b><%= evento.data.day %></b> - <%= evento.nome %></h4>
+            <p class="align-middle"><i class="fas fa-map-marker-alt c-icon"></i><%= evento.local %> - <%= evento.descricao %></p>
+          </div>
         </div>
-      </div>
       <% else %>
         <div class="col-md-6 mb-4">
           <div class="card-event my-auto" style="background-color: #f0f0f0; padding: 20px 20px; border-left: 5px solid #05afea;">
@@ -110,14 +111,15 @@
             <%= evento.local %></p>
           </div>
         </div>
-      <% end %>
+      <% end %> <!-- Fim da condicional -->
+    <% end %> <!-- Fim do loop -->
 
       <div class="col-lg-12">
         <div class="row justify-content-md-center justify-content-sm-center btn-row">
         <%= link_to 'Ver todos os eventos', pages_eventos_path, class: 'btn btn-outline-primary btn-all-events' %>
         </div>
       </div>
-    <% end %>
+
   </div>
 </div>
 
@@ -140,23 +142,24 @@
               Fones: (85) 0000-0000 – (85) 00000-0000
             </div>
           </div>
-
       </div>
+
       <br>
+
       <div class="row no-gutters">
         <div class="col-sm-12 col-md-12 col-lg-6 mx-auto text-center">
           <div class="card-event my-auto" style="background-color: #05afea; padding: 20px 20px;">
             <h5><b>Seja um Voluntário</b></h5>
             <p class="text-justify text-center">Precisamos de pessoas para atender a demanda crescente. Conheça todos
             os nossos projetos clicando <a href="/pages/projetos" class="text-white">aqui.</a></p>
-            <button type="button" class="btn btn-outline-light btn-ajuda">Junte-se a nós</button>
+            <a href="http://facebook.com/pg/ccnmedianeira"><button type="button" class="btn btn-outline-light btn-ajuda">Junte-se a nós</button></a>
           </div>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-6 mx-auto my-auto text-center">
           <div class="card-event" style="background-color: #f4bd14; padding: 20px 20px;">
             <h5><b>Torne-se Parceiro</b></h5>
             <p class="text-justify text-center">Ajude-nos a continuar com as nossas atividades. Junte-se ao demais parceiros e vamos todos juntos por essa causa.</p>
-            <button type="button" class="btn btn-outline-light btn-ajuda">Ser parceiro</button>
+            <a href="#"><button type="button" class="btn btn-outline-light btn-ajuda">Ser parceiro</button></a>
           </div>
         </div>
       </div>
@@ -168,7 +171,7 @@
         <div class="fb-page embed-responsive" data-href="https://www.facebook.com/ccnmedianeira" data-tabs="timeline" data-width="500" data-height=""
          data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
          <blockquote cite="https://www.facebook.com/ccnmedianeira" class="fb-xfbml-parse-ignore">
-          <a href="https://www.facebook.com/ccnmedianeira">Centro Comunitario Nossa Senhora Medianeira</a></blockquote></div>
+          <a href="https://www.facebook.com/ccnmedianeira">Centro Comunitário Nossa Senhora Medianeira</a></blockquote></div>
       </div>
     </div>
   </div>

@@ -8,7 +8,7 @@
   <div class="card-body">
     <h4 class="card-title text-primary"><b><%= @pessoa.nome %></b></h4>
     <p class="mb-3"><b>Idade: </b><%= @pessoa.idade %></p>
-    <p class="mb-3"><b>Data de Nascimento: </b><%= @pessoa.dt_nascimento %></p>
+    <p class="mb-3"><b>Data de Nascimento: </b><%= l @pessoa.dt_nascimento, format: :complete_numbers %></p>
     <p class="mb-3"><b>Endereço: </b><%= @pessoa.endereco %></p>
     <p class="mb-3"><b>Bairro: </b><%= @pessoa.bairro %></p>
     <p class="mb-3"><b>Telefone: </b><%= @pessoa.telefone %></p>

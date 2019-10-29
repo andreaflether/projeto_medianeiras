@@ -7,6 +7,9 @@
 <div class="section evt-form">
   <%= simple_form_for @pessoa do |f| %>
     <%= f.input :nome, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%= f.input :dt_nascimento, label: "Data de nascimento", input_html: { class: 'form-control ml-1 mr-1 d-flex col'},
+    label_html: { class: 'label label_b col-md-12'}, wrapper_html: {class: 'form-row'}, start_year: Date.today.year - 90,
+    end_year: Date.today.year %>
     <%= f.input :idade, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
     <%= f.input :endereco, label: "Endereço", input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
     <%= f.input :bairro, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>

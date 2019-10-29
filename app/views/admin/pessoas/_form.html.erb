@@ -12,6 +12,8 @@
     <%= f.input :bairro, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
     <%= f.input :telefone, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
     <%= f.input :religiao, label: "Religião", input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%#= f.input :religiao, prompt: "Escolha uma religião", label: "Religião", collection: [ "Ateu", "Católico(a)", "Evangélico(a)", "Agnóstico(a)", "Outra"],
+    input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}%>
     <%= f.input :responsavel, label: "Responsável", input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
     <%= f.input :dt_entrada, label: "Data de entrada no projeto", input_html: { class: 'form-control ml-1 mr-1 d-flex col'},
     label_html: { class: 'label label_b col-md-12'}, wrapper_html: {class: 'form-row'}  %>

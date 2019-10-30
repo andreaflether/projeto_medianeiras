@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'mensagens/show'
+  get 'mensagens/index'
+  get 'mensagens/create'
+  get 'mensagens/new'
+  get 'mensagens/destroy'
+  get 'mensagens/update'
+  get 'mensagens/edit'
   devise_for :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -41,6 +48,11 @@ Rails.application.routes.draw do
   # namespace /admin em português --> voluntários
   scope(path_names: {new: 'novo', edit: 'editar', show: 'mostrar', destroy: 'excluir'}) do
     resources :voluntarios, path: 'admin/voluntarios', module: :admin
+  end
+
+  # namespace /admin em português --> voluntários
+  scope(path_names: {new: 'novo', edit: 'editar', show: 'mostrar', destroy: 'excluir'}) do
+    resources :mensagens, path: 'admin/mensagens', module: :admin
   end
 
 end

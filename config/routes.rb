@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'voluntarios/index'
+  get 'voluntarios/show'
+  get 'voluntarios/new'
+  get 'voluntarios/create'
+  get 'voluntarios/edit'
+  get 'voluntarios/update'
+  get 'voluntarios/destroy'
   devise_for :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

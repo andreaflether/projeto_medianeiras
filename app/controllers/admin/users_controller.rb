@@ -27,7 +27,7 @@ class Admin::UsersController < AdminController
      @user = User.find(params[:id])
      @user.destroy
 
-     redirect_to admin_users_path, notice: 'Usuário apagado com sucesso.'
+     redirect_to users_path, notice: 'Usuário apagado com sucesso.'
    end
 
    private

@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'voluntarios/index'
-  get 'voluntarios/show'
-  get 'voluntarios/new'
-  get 'voluntarios/create'
-  get 'voluntarios/edit'
-  get 'voluntarios/update'
-  get 'voluntarios/destroy'
   devise_for :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -43,6 +36,11 @@ Rails.application.routes.draw do
   # namespace /admin em português --> users
   scope(path_names: {new: 'novo', edit: 'editar', show: 'mostrar', destroy: 'excluir'}) do
     resources :users, path: 'admin/users', module: :admin
+  end
+
+  # namespace /admin em português --> voluntários
+  scope(path_names: {new: 'novo', edit: 'editar', show: 'mostrar', destroy: 'excluir'}) do
+    resources :voluntarios, path: 'admin/voluntarios', module: :admin
   end
 
 end

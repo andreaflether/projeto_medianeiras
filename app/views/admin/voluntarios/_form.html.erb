@@ -1,0 +1,19 @@
+<div class="section evt-form">
+  <%= simple_form_for @voluntario do |f| %>
+    <%= f.input :nome, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%= f.input :dt_nascimento, label: "Data de nascimento", input_html: { class: 'form-control ml-1 mr-1 d-flex col'},
+    label_html: { class: 'label label_b col-md-12'}, wrapper_html: {class: 'form-row'}, start_year: Date.today.year - 90,
+    end_year: Date.today.year %>
+    <%= f.input :identidade, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%= f.input :telefone, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%= f.input :email, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%= f.input :escolaridade, prompt: "Escolha uma escolaridade", label: "Escolaridade", collection: [ "Ensino fundamental", "Ensino médio",
+    "Ensino superior", "Mestrado", "Doutorado"], input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}%>
+    <%= f.input :dt_entrada, label: "Data de entrada no Centro", input_html: { class: 'form-control ml-1 mr-1 d-flex col'},
+    label_html: { class: 'label label_b col-md-12'}, wrapper_html: {class: 'form-row'}  %>
+    <%#= f.input :dt_saida, label: "Data de saída do Centro", input_html: { class: 'form-control ml-1 mr-1 d-flex col'},
+    label_html: { class: 'label label_b col-md-12'}, wrapper_html: {class: 'form-row'}  %>
+    <%= f.button :submit, class: "btn btn-primary btn-criar"%>
+    <%= link_to 'Voltar', :back, class: "btn btn-outline-secondary" %>
+  <% end %>
+</div>

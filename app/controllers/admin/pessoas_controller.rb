@@ -39,7 +39,6 @@ class Admin::PessoasController < AdminController
   end
 
   def index
-    redirect_to pessoas_path
     @pessoas = Pessoa.all
     @atividades = Atividade.all
   end

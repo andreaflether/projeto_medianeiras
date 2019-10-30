@@ -32,8 +32,25 @@
         <a href="/admin/pessoas" class="list-group-item list-group-item-action bg-light">Ver pessoas cadastradas</a>
         <a href="/admin/atividades/novo" class="list-group-item list-group-item-action bg-light">Cadastrar atividade</a>
         <a href="/admin/atividades" class="list-group-item list-group-item-action bg-light">Ver atividades</a>
+        <a href="/admin/voluntarios/novo" class="list-group-item list-group-item-action bg-light">Cadastrar voluntário</a>
+        <a href="/admin/voluntarios" class="list-group-item list-group-item-action bg-light">Ver voluntários</a>
+        <!-- <span class="list-group-item tsts dropdown-toggle" aria-expanded="true" data-toggle="collapse" data-target="#collapse" style="cursor:pointer;">Teste</span>
+        <a href="/admin/voluntarios" class="list-group-item list-group-item-action bg-light collapse" id="collapse">Testando</a> -->
+        <a href="#demo3" style="text-decoration: none;" class="list-group-item tsts" data-toggle="collapse">Mensagens
+        <i class="icon-action fa fa-chevron-down float-right mt-1"></i></a>
+        <div class="collapse" id="demo3">
+          <a href="" class="list-group-item list-group-item-action bg-light">Ver todas</a>
+          <a href="" class="list-group-item list-group-item-action bg-light">Mensagens lidas</a>
+        </div>
+
+        <a href="#demo4" style="text-decoration: none;" class="list-group-item tsts"
+        data-toggle="collapse">Voluntários<i class="icon-action fa fa-chevron-down float-right mt-1"></i></a>
+        <div class="collapse" id="demo4">
+          <a href="/admin/voluntarios/novo" class="list-group-item list-group-item-action bg-light">Cadastrar voluntário</a>
+          <a href="/admin/voluntarios" class="list-group-item list-group-item-action bg-light">Ver todos</a>
+        </div>
+
         <% if current_user.superadmin? %>
-        <span class="list-group-item tsts">Usuários</span>
         <a href="/admin/users" class="list-group-item list-group-item-action bg-light">Gerenciar usuários</a>
         <% end %>
       </div>

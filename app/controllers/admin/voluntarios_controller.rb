@@ -45,6 +45,7 @@ class Admin::VoluntariosController < AdminController
   private
 
   def voluntario_params
-    params.require(:voluntario).permit(:nome, :dt_entrada, :dt_saida, :email, :telefone, :dt_nascimento, :escolaridade)
+    params.require(:voluntario).permit(:nome, :dt_entrada, :dt_saida, :email, :telefone, :dt_nascimento, :escolaridade,
+    :presenca)
   end
 end

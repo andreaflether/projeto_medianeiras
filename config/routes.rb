@@ -50,9 +50,9 @@ Rails.application.routes.draw do
     resources :voluntarios, path: 'admin/voluntarios', module: :admin
   end
 
-  # namespace /admin em português --> voluntários
+  # namespace /admin em português --> mensagens
   scope(path_names: {new: 'novo', edit: 'editar', show: 'mostrar', destroy: 'excluir'}) do
-    resources :mensagens, path: 'admin/mensagens', module: :admin
+    resources :mensagems, path: 'admin/mensagens', module: :admin
   end
 
 end

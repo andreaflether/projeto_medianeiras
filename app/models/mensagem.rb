@@ -1,3 +1,3 @@
 class Mensagem < ApplicationRecord
-  enum :assunto ['Voluntariar', 'Parceria' ]
+  enum assunto: [ :voluntario, :parceria ]
 end

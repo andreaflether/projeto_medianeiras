@@ -5,8 +5,10 @@
 <div class="card">
   <div class="card-body">
     <h4 class="card-title text-primary"><b><%= @atividade.nome %></b></h4>
-    <p class="mb-3"><b>Professor(a)/Responsável: </b><%= @atividade.professor %></p>
-    <p class="mb-3"><b>Horário </b><%= @atividade.horario %></p>
+    <% @atividade.voluntarios.each do |voluntario| %>
+      <p class="mb-3"><b>Professor(a)/Responsável: </b><%= voluntario.nome %></p>
+    <% end %>
+    <p class="mb-3"><b>Horário: </b><%= @atividade.horario %></p>
     <p class="mb-3"><b>Dia(s): </b><%= @atividade.dias_semana %></p>
 
     <%= link_to 'Editar', edit_atividade_path(@atividade), class: 'btn btn-outline-primary' %>

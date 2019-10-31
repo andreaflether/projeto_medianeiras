@@ -1,11 +1,12 @@
 class Admin::AtividadesController < AdminController
   def new
     @atividade = Atividade.new
+    @voluntarios = Voluntario.all
   end
 
   def create
     @atividade = Atividade.new(atividade_params)
-
+    @voluntarios = Voluntario.all
 
     if @atividade.save
       redirect_to @atividade, notice: "Atividade criada com sucesso!"
@@ -26,6 +27,7 @@ class Admin::AtividadesController < AdminController
 
   def edit
     @atividade = Atividade.find(params[:id])
+    @voluntarios = Voluntario.all
   end
 
   def destroy
@@ -38,10 +40,12 @@ class Admin::AtividadesController < AdminController
   def index
     @pessoas = Pessoa.all
     @atividades = Atividade.all
+    @voluntarios = Voluntario.all
   end
 
   def show
     @atividade = Atividade.find(params[:id])
+    @voluntarios = Voluntario.all
   end
 
   private

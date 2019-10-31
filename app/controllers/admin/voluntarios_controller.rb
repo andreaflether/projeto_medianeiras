@@ -1,10 +1,12 @@
 class Admin::VoluntariosController < AdminController
   def new
     @voluntario = Voluntario.new
+    @atividades = Atividade.all
   end
 
   def create
     @voluntario = Voluntario.new(voluntario_params)
+    @atividades = Atividade.all
 
     if @voluntario.save
       redirect_to @voluntario, notice: "Voluntário cadastrado com sucesso!"
@@ -36,6 +38,7 @@ class Admin::VoluntariosController < AdminController
 
   def index
     @voluntarios = Voluntario.all
+    @atividades = Atividade.all
   end
 
   def show

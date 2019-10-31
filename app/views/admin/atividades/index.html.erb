@@ -13,7 +13,14 @@
     		<span class="badge badge-pill badge-primary badge-qtd"><%= atividade.pessoas.count %></span>
         <a href="#" data-toggle="collapse" data-target="#collapse<%= index+1 %>" aria-expanded="true" class="text-primary alert-link mt-1">
     			<span class="title"><%= atividade.nome %></span><i class="icon-action fa fa-chevron-down float-right mt-1"></i>
-    		</a> - Professor(a)/Responsável: <%= atividade.professor %>
+    		</a> - Professor(a)/Responsável:
+        <% atividade.voluntarios.each do |voluntario| %>
+          <% if atividade.voluntarios.count > 1 %>
+            <%= voluntario.nome %><% if (voluntario != atividade.voluntarios.last )%>, <% end %>
+          <% else %>
+            <%= voluntario.nome %>
+          <% end %>
+        <% end %>
     	</header>
     	<div class="collapse" id="collapse<%= index+1 %>" style="">
     		<article class="card-body">

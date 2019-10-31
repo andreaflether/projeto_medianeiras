@@ -30,7 +30,9 @@ Rails.application.routes.draw do
 
   # namespace /admin em português --> atividades
   scope(path_names: {new: 'novo', edit: 'editar', show: 'mostrar', destroy: 'excluir'}) do
-    resources :atividades, path: 'admin/atividades', module: :admin
+    resources :atividades, path: 'admin/atividades', module: :admin do
+      resources :pessoas, only: [:new, :create, :destroy]
+    end
   end
 
   # namespace /admin em português --> users

@@ -1,7 +1,9 @@
 class Admin::PessoasController < AdminController
   def new
     @pessoa = Pessoa.new
+    @pessoa.atividade_ids = [params[:atividade_id].to_i] if params[:atividade_id]
     @atividades = Atividade.all
+    # raise
   end
 
   def create
@@ -32,10 +34,16 @@ class Admin::PessoasController < AdminController
   end
 
   def destroy
+    @atividade = Atividade.find(params[:atividade_id])
     @pessoa = Pessoa.find(params[:id])
-    @pessoa.destroy
-
-    redirect_to pessoas_path, notice: 'Cadastro apagado com sucesso.'
+    unless @atividade
+      @pessoa.destroy
+      redirect_to pessoas_path, notice: 'Cadastro apagado com sucesso.'
+    else
+      @pessoa.atividades.delete @atividade
+      @pessoa.save
+      redirect_to atividades_path, notice: 'Pessoa removida com sucesso'
+    end
   end
 
   def index

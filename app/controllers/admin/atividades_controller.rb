@@ -47,6 +47,6 @@ class Admin::AtividadesController < AdminController
   private
 
   def atividade_params
-    params.require(:atividade).permit(:nome, :professor, :horario, :dias_semana, pessoa_ids: [])
+    params.require(:atividade).permit(:nome, :professor, :horario, :dias_semana, pessoa_ids: [], voluntario_ids: [])
   end
 end

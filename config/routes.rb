@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'mensagens/show'
-  get 'mensagens/index'
-  get 'mensagens/create'
-  get 'mensagens/new'
-  get 'mensagens/destroy'
-  get 'mensagens/update'
-  get 'mensagens/edit'
   devise_for :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

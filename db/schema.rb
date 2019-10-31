@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_30_203821) do
+ActiveRecord::Schema.define(version: 2019_10_31_161853) do
 
   create_table "atividades", force: :cascade do |t|
     t.string "nome"
@@ -26,6 +26,11 @@ ActiveRecord::Schema.define(version: 2019_10_30_203821) do
     t.integer "pessoa_id", null: false
   end
 
+  create_table "atividades_voluntarios", id: false, force: :cascade do |t|
+    t.integer "atividade_id", null: false
+    t.integer "voluntario_id", null: false
+  end
+
   create_table "eventos", force: :cascade do |t|
     t.string "nome"
     t.date "data"
@@ -39,7 +44,7 @@ ActiveRecord::Schema.define(version: 2019_10_30_203821) do
   create_table "mensagems", force: :cascade do |t|
     t.string "nome"
     t.string "email"
-    t.integer "assunto" 
+    t.integer "assunto"
     t.string "numero"
     t.text "mensagem"
     t.datetime "created_at", null: false

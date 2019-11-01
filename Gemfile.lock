@@ -90,6 +90,8 @@ GEM
     duktape (2.3.0.0)
     erubi (1.9.0)
     execjs (2.7.0)
+    faker (2.6.0)
+      i18n (>= 1.6, < 1.8)
     ffi (1.11.1)
     ffi (1.11.1-x64-mingw32)
     figaro (1.1.1)
@@ -105,6 +107,9 @@ GEM
     io-like (0.3.0)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
+    jquery-turbolinks (2.1.0)
+      railties (>= 3.1.0)
+      turbolinks
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.1.1)
@@ -259,11 +264,13 @@ DEPENDENCIES
   devise-bootstrap-views (~> 1.0)
   devise-i18n
   duktape
+  faker
   figaro
   font-awesome-rails
   font-awesome-sass
   i18n
   jbuilder (~> 2.5)
+  jquery-turbolinks
   kaminari
   pg
   puma (~> 3.11)

@@ -19,6 +19,27 @@ value_method: :first, label: "Estuda?", input_html: { class: 'form-control', id:
 <%= f.input :serie, prompt: "Escolha uma série", label: "Série", collection: [ "Alfabetização", "2ª série", "3ª série", "4ª série", "5ª série", "6ª série",
 "7ª série", "8ª série", "9ª série", "1º ano", "2º ano", "3º ano"], input_html: { class: 'form-control'}, label_html: { class: 'label label_b'} %>
 <%= f.association :atividades, :collection => @atividades.order('nome ASC'), :label_method => :nome,
-:value_method => :id, input_html: {id: 'multiselect', style: 'width: 100%; '}, label_html: { class: 'label label_b'} %><br>
+:value_method => :id, input_html: {class:'select2', style: 'width: 100%; '}, label_html: { class: 'label label_b'} %><br>
 <%= f.button :submit, class: "btn btn-primary btn-criar"%>
 <%= link_to 'Voltar', :back, class: "btn btn-outline-secondary" %>
+
+<script>
+  $(function() {
+    $('#boolean').change(function(){
+        if ($(this).val () == 'true') {
+            $('.hidden-fields').show();
+        } else {
+            $('.hidden-fields').hide();
+        }
+    });
+})
+</script>
+
+<!-- Script para habilitar o select2 no campo "Atividades" -->
+<script>
+  $(document).ready(function() {
+    $('.select2').select2({
+      placeholder: 'Selecionar atividade'
+    });
+});
+</script>

@@ -20,6 +20,7 @@ gem 'bootstrap-multiselect-rails'
 gem 'figaro'
 gem 'kaminari'
 gem 'faker'
+gem 'jquery-turbolinks'
 
 #Bootstrap, JS
 source 'https://rails-assets.org' do

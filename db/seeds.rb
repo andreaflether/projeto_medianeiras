@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+15.times do
+  Pessoa.create([{
+    nome: Faker::Name.name,
+    dt_entrada: Faker::Date.in_date_period
+    }])
+end

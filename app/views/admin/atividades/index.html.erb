@@ -41,7 +41,7 @@
           <% atividade.pessoas.order(nome: :asc).each do |pessoa| %>
     			<p class="mb-0 mt-0">
             <%= link_to pessoa.nome, pessoa, class: 'text-dark', title: "Ver ficha de #{pessoa.nome}" %>
-            <!-- <a href='#'> Remover </a> -->
+            <!-- <a href='#'> Remover </a> --> 
             <%= link_to "Remover", atividade_pessoa_path(atividade, pessoa), method: :delete %>
           </p><hr>
           <% end %>

@@ -37,7 +37,6 @@
               </div>
           </div>
           <hr>
-
           <% atividade.pessoas.order(nome: :asc).each do |pessoa| %>
     			<p class="mb-0 mt-0">
             <%= link_to pessoa.nome, pessoa, class: 'text-dark', title: "Ver ficha de #{pessoa.nome}" %>
@@ -45,7 +44,11 @@
             <%= link_to "Remover", atividade_pessoa_path(atividade, pessoa), method: :delete %>
           </p><hr>
           <% end %>
+
     		</article> <!-- card-body -->
     	</div> <!-- collapse -->
     </div> <!-- card --> <br>
   <% end %>
+
+  <%= paginate @pessoas, remote: true %>
+  <%= page_entries_info @pessoas, entry_name: 'pessoas' %>

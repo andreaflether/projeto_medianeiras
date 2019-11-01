@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get 'admin/eventos/proximos_eventos', to: 'admin/eventos#proximos_eventos'
   get 'admin/eventos/calendario', to: 'admin/eventos#calendario'
 
-  # namespace /admin em português --> eventos
+  # namespace /admin em português --> eventos, pessoas, atividades, users, voluntários e mensagens
   scope(path_names: {new: 'novo', edit: 'editar', show: 'mostrar', destroy: 'excluir'}) do
     resources :eventos, path: 'admin/eventos', module: :admin
     resources :pessoas, path: 'admin/pessoas', module: :admin

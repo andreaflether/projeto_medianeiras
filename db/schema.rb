@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_11_01_191925) do
+=======
+ActiveRecord::Schema.define(version: 2019_11_01_141947) do
+>>>>>>> 79491ea3d8c563ffa4478b36610c2113391fec7c
 
   create_table "atividades", force: :cascade do |t|
     t.string "nome"
@@ -19,6 +23,7 @@ ActiveRecord::Schema.define(version: 2019_11_01_191925) do
     t.datetime "updated_at", null: false
     t.string "horario"
     t.string "dias_semana"
+    t.integer "qtd_max_alunos"
   end
 
   create_table "atividades_pessoas", id: false, force: :cascade do |t|

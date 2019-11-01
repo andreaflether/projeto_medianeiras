@@ -1,4 +1,5 @@
 class Admin::PessoasController < AdminController
+
   def new
     @pessoa = Pessoa.new
     @pessoa.atividade_ids = [params[:atividade_id].to_i] if params[:atividade_id]
@@ -42,7 +43,7 @@ class Admin::PessoasController < AdminController
     else
       @pessoa.atividades.delete @atividade
       @pessoa.save
-      redirect_to atividades_path, notice: 'Pessoa removida com sucesso'
+      redirect_to atividades_path, notice: 'Pessoa removida com sucesso.'
     end
   end
 

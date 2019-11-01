@@ -1,11 +1,11 @@
 <script src="https://kit.fontawesome.com/8d9d868ad3.js" crossorigin="anonymous"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<body style="background-color: rgba(240, 240, 240, 0.7);">
+<body style="background-color: rgba(240, 240, 240, 0.75);">
 
 
 <%= render 'menu_p' %>
 
-<h3 class="title-txt text-center">Atividades</h3>
+<h2 class="title-txt text-center">Atividades</h2>
 <br>
 
 <!-- Balé -->
@@ -22,7 +22,7 @@
         <p class="card-text">As aulas de Balé proporcionam às crianças e adolescentes o fortalecimento da musculatura das pernas,
         a postura do corpo, a coordenação motora, a disciplina da mente e corpo e sobretudo noções de localização
         e orientação de espaço.</p>
-        <i class="fas fa-chalkboard-teacher c-icon"></i> Professora Patrícia Fernandes |
+        <i class="fas fa-chalkboard-teacher c-icon"></i> <span class="link-ativ" data-toggle="modal" data-target="#exampleModal" style="color: #05afea;">Professora Patrícia Fernandes</span> |
         <i class="far fa-calendar-alt c-icon"></i> Sábado, das 9 às 11 horas <hr class="ativ-hr">
         <i class="fas fa-map-marker-alt c-icon"></i> Centro Comunitário Nossa Senhora Medianeira <hr class="ativ-hr">
         <a href="http://m.me/ccnmedianeira" class="btn btn-primary badge-pill btn-inscricao mt-2" target="_blank">Inscrições</a>
@@ -30,7 +30,31 @@
     </div>
   </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><b>Professora Patrícia Fernandes</b></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Voluntária desde 02/10/2018<br>
+        Formada em Educação Física e Pedagogia
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Fim do Balé -->
+
+
 
 <!-- Karatê -->
 <div class="container-fluid sec-esporte mt-2 pb-4">

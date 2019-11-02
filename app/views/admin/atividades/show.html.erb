@@ -10,7 +10,7 @@
     <% end %>
     <p class="mb-3"><b>Horário: </b><%= @atividade.horario %></p>
     <p class="mb-3"><b>Dia(s): </b><%= @atividade.dias_semana %></p>
-
+    <p class="mb-3"><b>Quantidade máx. de alunos: </b><%= @atividade.qtd_max_alunos %></p>
     <%= link_to 'Editar', edit_atividade_path(@atividade), class: 'btn btn-outline-primary' %>
     <%= link_to 'Apagar', atividade_path(@atividade), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza que deseja
     apagar a atividade selecionada?' } %>

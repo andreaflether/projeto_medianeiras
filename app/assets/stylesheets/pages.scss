@@ -21,6 +21,8 @@
 .logotipo {
   margin-left: 30px;
   padding: 0px;
+  width: 12.5%;
+  height: 12.5%;
 }
 
 .fa-facebook {
@@ -88,14 +90,13 @@
   }
 
   .logotipo {
-    position: absolute;
-    left: 45%;
-    top: -9px;
+    position: relative;
+    left: 43%;
+    margin-left: -50px !important;  /* 50% of your logo width */
     display: block;
-    margin-left: -50px !important;
-    padding: 10px 0 !important;
-    width: auto;
-    height: auto;
+    // padding: 10px 0 !important;
+    width: 33.5%;
+    height: 33.5%;
   }
 
   .navbar-collapse {

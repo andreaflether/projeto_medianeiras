@@ -22,6 +22,8 @@ gem 'kaminari'
 gem 'faker'
 gem 'jquery-turbolinks'
 gem 'select2-rails'
+gem 'dependent-fields-rails'
+gem 'inline_svg'
 
 #Bootstrap, JS
 source 'https://rails-assets.org' do

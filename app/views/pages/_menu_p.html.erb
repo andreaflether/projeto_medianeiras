@@ -7,7 +7,9 @@
 
 <!-- Menu -->
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-  <a href="/.."><%= image_tag("ui.png", :class => "navbar-brand logotipo", alt:"Logotipo - CCNMedianeiras")%></a>
+
+  <%#= svg 'logoedit-01'%>
+  <%= inline_svg("logoedit-01.svg", class: "navbar-brand logotipo") %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
   aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -47,4 +49,5 @@
     </ul>
   </div>
 </nav>
+
 <!-- End of Menu -->

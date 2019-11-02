@@ -17,7 +17,12 @@
 //= require tether
 //= require bootstrap-multiselect
 //= require select2
-
+//= require underscore
+//= require dependent-fields
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
+
+$(document).ready(function() {
+     DependentFields.bind()
+ });

@@ -21,6 +21,7 @@ gem 'figaro'
 gem 'kaminari'
 gem 'faker'
 gem 'jquery-turbolinks'
+gem 'select2-rails'
 
 #Bootstrap, JS
 source 'https://rails-assets.org' do

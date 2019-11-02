@@ -16,6 +16,7 @@
 //= require bootstrap
 //= require tether
 //= require bootstrap-multiselect
+//= require select2
 
 //= require rails-ujs
 //= require activestorage

@@ -31,7 +31,7 @@
               <%= atividade.nome %>
             <% end %>
           <% end %></td>
-          <td><%= pessoa.dt_entrada %></td>
+          <td><%= l pessoa.dt_entrada, format: :complete_numbers, default: "-" %></td>
           <td><%= link_to 'Editar', edit_pessoa_path(pessoa), class: 'btn btn-outline-primary btn-next' %>
           <%= link_to 'Apagar', pessoa_path(pessoa), class: 'btn btn-outline-danger btn-next', method: :delete, data: { confirm: 'Tem certeza que deseja apagar o cadastro selecionado?' } %></td>
         </tr>

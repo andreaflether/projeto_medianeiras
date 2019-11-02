@@ -6,11 +6,14 @@
 
 <h1 class="h1-evt">Todas as atividades</h1>
 <br>
-
   <% @atividades.order(nome: :asc).each_with_index do |atividade, index| %>
     <div class="card">
     	<header class="card-header justify-content-center">
-    		<span class="badge badge-pill badge-primary badge-qtd"><%= atividade.pessoas.count %></span>
+        <% if atividade.pessoas.count == atividade.qtd_max_alunos.to_i %>
+          <span class="badge badge-pill badge-danger badge-qtd" style="font-size: 15px;"><%= atividade.pessoas.count %></span>
+        <% else %>
+        <span class="badge badge-pill badge-primary badge-qtd" style="font-size: 13px;"><%= atividade.pessoas.count %></span>
+        <% end %>
         <a href="#" data-toggle="collapse" data-target="#collapse<%= index+1 %>" aria-expanded="true" class="text-primary alert-link mt-1">
     			<span class="title"><%= atividade.nome %></span><i class="icon-action fa fa-chevron-down float-right mt-1"></i>
     		</a> - Professor(a)/Responsável:
@@ -22,28 +25,83 @@
           <% end %>
         <% end %>
     	</header>
+
     	<div class="collapse" id="collapse<%= index+1 %>" style="">
     		<article class="card-body">
+
           <div class="row no-gutters d-flex align-items-start">
-              <div class="col-md-12 mt-2">
-                <p><b>Horário:</b> <%= atividade.dias_semana %> - <%= atividade.horario %></p>
+
+            <% if atividade.pessoas.count == atividade.qtd_max_alunos.to_i %>
+              <div class="col-md-12">
+                <div class="card-event my-auto" style="background-color: #f8d7da; padding: 15px 15px; border: 1px solid #f5c6cb; color: #721c24; border-radius: .25rem;">
+                  <span>Esta atividade está com a capacidade máxima de alunos.</span>
+                </div>
               </div>
 
-              <div class="col d-flex mb-0 mt-0 mr-0 ml-0">
-                <%= link_to 'Cadastrar pessoa', new_atividade_pessoa_path(atividade), class: 'btn btn-outline-success mr-2' %>
-                <%= link_to 'Editar', edit_atividade_path(atividade),
-                class: 'btn btn-outline-primary mr-2' %>
-                <%= link_to 'Apagar', atividade_path(atividade), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza que deseja apagar a atividade selecionado?' } %>
+              <div class="col-md-12 mt-3">
+                <p class="mb-2"><b>Horário:</b> <%= atividade.dias_semana %> - <%= atividade.horario %> </p>
+                <b>Locação total: </b><span class="badge badge-danger" style="font-size: 15px;">
+                <%=atividade.qtd_max_alunos%></span> | <b>Vagas disponíveis:</b> <span class="badge badge-secondary" style="font-size: 15px;">
+                <%= atividade.qtd_max_alunos.to_i - atividade.pessoas.count %></span>
               </div>
+
+              <div class="col d-flex mb-0 mt-3 mr-0 ml-0">
+                <%= link_to 'Cadastrar pessoa', new_atividade_pessoa_path(atividade), class: 'disabled btn btn-outline-success mr-2' %>
+                <%= link_to 'Editar informações', edit_atividade_path(atividade),
+                class: 'btn btn-outline-primary mr-2' %>
+                <%= link_to 'Apagar atividade', atividade_path(atividade), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza que deseja apagar a atividade selecionada?' } %>
+              </div>
+
+            <% else %>
+
+            <div class="col-md-12">
+              <p class="mb-2"><b>Horário:</b> <%= atividade.dias_semana %> - <%= atividade.horario %> </p>
+              <b>Locação total: </b><span class="badge badge-primary" style="font-size: 15px;">
+              <%=atividade.qtd_max_alunos%></span> | <b>Vagas disponíveis:</b> <span class="badge badge-success" style="font-size: 15px;">
+              <%= atividade.qtd_max_alunos.to_i - atividade.pessoas.count %></span>
+            </div>
+
+            <div class="col d-flex mb-0 mt-3 mr-0 ml-0">
+              <!-- <input id="myInput" class="form-control" type="text" placeholder="Pesquisar pessoa nesta atividade..."> -->
+              <%= link_to 'Cadastrar pessoa', new_atividade_pessoa_path(atividade), class: 'btn btn-outline-success mr-2' %>
+              <%= link_to 'Editar informações', edit_atividade_path(atividade),
+              class: 'btn btn-outline-primary mr-2' %>
+              <%= link_to 'Apagar atividade', atividade_path(atividade), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza que deseja apagar a atividade selecionada?' } %>
+            </div>
+            <% end %>
           </div>
           <hr>
+          <div class="input-group md-form form-sm form-1 pl-0 mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-text1"><i class="fas fa-search" aria-hidden="true"></i></span>
+            </div>
+            <input class="form-control my-0 py-1" id="myInput" type="text" placeholder="Procurar pessoa nesta atividade..." aria-label="Search">
+          </div>
+
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
           <% atividade.pessoas.order(nome: :asc).each do |pessoa| %>
-    			<p class="mb-0 mt-0">
-            <%= link_to pessoa.nome, pessoa, class: 'text-dark', title: "Ver ficha de #{pessoa.nome}" %>
-            <!-- <a href='#'> Remover </a> --> 
-            <%= link_to "Remover", atividade_pessoa_path(atividade, pessoa), method: :delete %>
-          </p><hr>
+          <tbody id="teste">
+            <tr>
+              <td class="align-middle"><%= link_to pessoa.nome, pessoa, class: 'text-dark', title: "Ver ficha de #{pessoa.nome}" %></td>
+              <td class="align-middle"><%= pessoa.idade %></td>
+              <td class="align-middle"><%= link_to atividade_pessoa_path(atividade, pessoa), method: :delete, class: 'btn btn-outline-danger', title: "Remover #{pessoa.nome} de #{atividade.nome}",
+              data: { confirm: "Tem certeza que deseja remover #{pessoa.nome} de #{atividade.nome}?" } do %>
+                <i class="fas fa-user-times"></i>
+              <% end %></td>
+            </tr>
+
+          </tbody>
           <% end %>
+          </table>
+
 
     		</article> <!-- card-body -->
     	</div> <!-- collapse -->
@@ -52,3 +110,14 @@
 
   <%= paginate @pessoas, remote: true %>
   <%= page_entries_info @pessoas, entry_name: 'pessoas' %>
+
+  <script>
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#teste tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+  </script>

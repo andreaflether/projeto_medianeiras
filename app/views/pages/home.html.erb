@@ -9,7 +9,7 @@
 <!-- End of Scripts -->
 
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src=""></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v5.0"></script>
 
 <%= render 'menu_p' %>
 
@@ -92,7 +92,7 @@
   <div class="row justify-content-md-center">
 
     <% if @proximos_eventos.blank? %>
-      <h4 class="text-center">Não há eventos agendados para este mês.</h4>
+      <h4 class="text-center mt-2 mb-4">Não há eventos agendados para este mês.</h4>
     <% end %>
 
     <% @proximos_eventos.order(data: :asc, hora: :asc).limit(4).each do |evento| %> <!-- Início do loop -->

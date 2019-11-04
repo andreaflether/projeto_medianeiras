@@ -11,4 +11,10 @@
     nome: Faker::Name.name,
     dt_entrada: Faker::Date.in_date_period
     }])
+
+  Voluntario.create([{
+    nome: Faker::Name.name,
+    dt_entrada: Faker::Date.in_date_period,
+    dt_nascimento: Faker::Date.in_date_period
+    }])
 end

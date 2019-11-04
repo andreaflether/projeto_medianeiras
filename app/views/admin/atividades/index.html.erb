@@ -15,7 +15,7 @@
         <span class="badge badge-pill badge-primary badge-qtd" style="font-size: 13px;"><%= atividade.pessoas.count %></span>
         <% end %>
         <a href="#" data-toggle="collapse" data-target="#collapse<%= index+1 %>" aria-expanded="true" class="text-primary alert-link mt-1">
-    			<span class="title"><%= atividade.nome %></span><i class="icon-action fa fa-chevron-down float-right mt-1"></i>
+    			<span class="title"><%= atividade.nome %></span><i class="icon-action fa fa-chevron-down float-right mt-1 rotated"></i>
     		</a> - Professor(a)/Responsável:
         <% atividade.voluntarios.each do |voluntario| %>
           <% if atividade.voluntarios.count > 1 %>
@@ -75,11 +75,11 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-text1"><i class="fas fa-search" aria-hidden="true"></i></span>
             </div>
-            <input class="form-control my-0 py-1" id="myInput" type="text" placeholder="Procurar pessoa nesta atividade..." aria-label="Search">
+            <input class="form-control my-0 py-1 testiani" data-tableid='#tabela-<%= index+1 %>' id="myInput" type="text" placeholder="Procurar pessoa nesta atividade..." aria-label="Search">
           </div>
 
 
-          <table class="table">
+          <table class="table" id='tabela-<%= index+1 %>'>
             <thead>
               <tr>
                 <th scope="col">Nome</th>
@@ -88,7 +88,7 @@
               </tr>
             </thead>
           <% atividade.pessoas.order(nome: :asc).each do |pessoa| %>
-          <tbody id="teste">
+          <tbody>
             <tr>
               <td class="align-middle"><%= link_to pessoa.nome, pessoa, class: 'text-dark', title: "Ver ficha de #{pessoa.nome}" %></td>
               <td class="align-middle"><%= pessoa.idade %></td>
@@ -97,27 +97,32 @@
                 <i class="fas fa-user-times"></i>
               <% end %></td>
             </tr>
-
           </tbody>
           <% end %>
           </table>
-
-
     		</article> <!-- card-body -->
     	</div> <!-- collapse -->
     </div> <!-- card --> <br>
   <% end %>
 
-  <%= paginate @pessoas, remote: true %>
-  <%= page_entries_info @pessoas, entry_name: 'pessoas' %>
-
   <script>
   $(document).ready(function(){
-    $("#myInput").on("keyup", function() {
-      var value = $(this).val().toLowerCase();
-      $("#teste tr").filter(function() {
-        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-      });
+    $(document).on("input", function() {
+    var value = $(':focus').val().toLowerCase();
+    $($(":focus").data('tableid') + " > tbody > tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+    });
+  });
+
+  </script>
+
+  <script>
+  $(function() {                              //run when the DOM is ready
+    $(".rotated").click(function() {          //use a class, since your ID gets mangled
+      $(this).toggleClass("fa-rotate-180");      //add the class to the clicked element
     });
   });
   </script>
+
+  <!-- link: https://www.quackit.com/jquery/tutorial/jquery_add_class_dynamically.cfm -->

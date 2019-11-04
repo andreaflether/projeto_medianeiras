@@ -38,7 +38,7 @@ class Admin::AtividadesController < AdminController
   end
 
   def index
-    @pessoas = Pessoa.order("nome").page(params[:page]).per(5)
+    @pessoas = Pessoa.order("nome").page(params[:page]).per(10)
     @atividades = Atividade.all
     @voluntarios = Voluntario.all
   end

@@ -1,7 +1,7 @@
 <h1 class="h1-evt">Usuários</h1>
 <br>
 <container>
-  
+
 <!-- Tabela de eventos -->
 
   <div class="table-responsive">
@@ -19,7 +19,7 @@
       <tbody>
         <% @users.each do |user| %>
           <tr>
-            <td class="align-middle align-self-center align-items-center"><%= user.name %></td>
+            <td class="align-middle align-self-center align-items-center"><%= link_to user.name, user %></td>
             <td class="align-middle align-self-center align-items-center"><%= user.email %></td>
             <td class="align-middle align-self-center align-items-center"><%= user.role.capitalize %></td>
             <td class="align-middle align-self-center align-items-center"><%= l user.updated_at.advance(hours: -3), format: :long %></td>

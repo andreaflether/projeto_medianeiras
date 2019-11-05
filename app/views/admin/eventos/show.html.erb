@@ -1,13 +1,13 @@
 <br>
 <div class="card-deck">
       <div class="card mb-2">
-        <div class="card-header card-text-tit">
+        <div class="card-header card-text-tit text-primary">
           <%= @evento.nome.titleize%>
         </div>
         <div class="card-body">
-          <p class="card-text card-bigger"><i class="far fa-calendar-alt c-icon"></i><b><%= l @evento.data, format: :long %></b> às <%= @evento.hora %></p>
+          <p class="card-text card-bigger"><i class="far fa-calendar-alt text-primary mr-2"></i><b><%= l @evento.data, format: :long %></b> às <%= @evento.hora %></p>
           <p class="card-text"><%= @evento.descricao.capitalize %></p>
-          <p class="card-text"><i class="fas fa-map-marker-alt c-icon"></i><%= @evento.local.titleize %></p>
+          <p class="card-text"><i class="fas fa-map-marker-alt text-primary mr-2"></i><%= @evento.local.titleize %></p>
 
           <%= link_to 'Criar novo evento', new_evento_path, class: 'btn btn-outline-success btn-next' %>
           <%= link_to 'Editar', edit_evento_path(@evento), class: 'btn btn-outline-primary btn-next' %>

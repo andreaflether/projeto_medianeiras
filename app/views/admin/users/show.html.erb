@@ -1,24 +1,12 @@
 <h1 class="h1-evt">Detalhes de usuário</h1>
-<h4><%= @user.name %></h4>
-<h5><%= @user.email %></h5>
 
 <div class="card">
   <div class="card-header">
-    <b><%= @user.name %></b> (<%= @user.email %>)
+    <h4 class="my-auto text-primary"><b><%= @user.name %></b> (<%= @user.email %>)</h4>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><%= @user.role.capitalize %></li>
-    <li class="list-group-item"><%= l @user.created_at, format: :long%></li>
-    <li class="list-group-item"><%= @user.updated_at %></li>
+    <li class="list-group-item"><b>Privilégio: </b><%= @user.role.capitalize %></li>
+    <li class="list-group-item"><b>Data de criação:</b><%= l @user.created_at, format: :long%></li>
+    <li class="list-group-item"><b>Última atualização em:</b><%= @user.updated_at %></li>
   </ul>
 </div>
-
-<!-- l user.updated_at.advance(hours: -3) -->
-<!-- Tabela de atividade e pessoa - Relacionamento
-<%= @atividade e @pessoa %>
-<% @pessoas.each do |pessoa| %>
-  <td><%= pessoa.nome %></td>
-  <td><%= pessoa.idade %></td>
-  <td><%= pessoa.atividade.nome%></td>
-<% end %>
--->

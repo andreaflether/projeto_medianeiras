@@ -3,17 +3,17 @@
 
 <div class="container">
 
-  <h3 class="admin-title"><%= l Date.today, format: :month_only %></h3>
+  <h3 class="admin-title-evt"><%= l Date.today, format: :month_only %></h3>
 
   <% if @proximos_eventos.blank? %>
     <h5>Não há eventos agendados para este mês.<h5>
   <% end %>
 
   <% @proximos_eventos.order(data: :asc, hora: :asc).each do |evento| %>
-      <div class="col-md-12 mb-4">
-        <div class="card-event my-auto" style="background-color: #f0f0f0; padding: 20px 20px; border-left: 5px solid #05afea;">
+      <div class="mb-4 mt-3">
+        <div class="card-event my-auto" style="background-color: #f0f0f0; padding: 20px 20px; border-left: 5px solid #007bff;">
           <h4 class="align-middle"><b><%= evento.data.day %></b> - <%= evento.nome %></h4>
-          <p class="align-middle"><i class="fas fa-map-marker-alt c-icon"></i><%= evento.local %> - <%= evento.descricao %></p>
+          <p class="align-middle"><i class="fas fa-map-marker-alt text-primary mr-2"></i><%= evento.local %>, <%= evento.hora %> - <%= evento.descricao %></p>
           <%= link_to 'Editar', edit_evento_path(evento), class: 'btn btn-outline-primary btn-next' %>
           <%= link_to 'Apagar', evento_path(evento), class: 'btn btn-outline-danger btn-next', method: :delete, data: { confirm: 'Tem certeza que deseja apagar o evento selecionado?' } %>
         </div>

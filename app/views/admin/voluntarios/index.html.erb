@@ -1,8 +1,14 @@
 <h1 class="h1-evt">Voluntários - Visão geral</h1>
 
-<br>
+<div class="input-group md-form form-sm form-1 pl-0 mb-3 mt-5">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-text1"><i class="fas fa-search" aria-hidden="true"></i></span>
+  </div>
+  <input class="form-control my-0 py-1" id="myInput" type="text" placeholder="Procurar por voluntário, escolaridade..." aria-label="Search">
+</div>
+
 <div class="table-responsive">
-  <table id="example" class="table table-hover display" style="width:100%">
+  <table id="tabela-vol" class="table table-hover display" style="width:100%">
     <thead class="thead-dark">
       <tr>
         <th>Nome</th>
@@ -13,11 +19,11 @@
       </tr>
     </thead>
 
-    <tbody>
+    <tbody id="teste1">
       <% @voluntarios.each do |voluntario| %>
         <tr>
-          <td><%= link_to voluntario.nome, voluntario, class: "text-dark", title: "Ver ficha cadastral de #{voluntario.nome}" %></td>
-          <td><%= l voluntario.dt_nascimento, format: :complete_numbers %></td>
+          <td><%= link_to voluntario.nome, voluntario, class: "text-dark", title: "Ver ficha de #{voluntario.nome}" %></td>
+          <td><%= l voluntario.dt_nascimento, format: :complete_numbers, default: '-' %></td>
           <td><%= voluntario.escolaridade %></td>
           <td><%= voluntario.form_presente %></td>
           <td><%= link_to 'Editar', edit_voluntario_path(voluntario), class: 'btn btn-outline-primary btn-next' %>
@@ -28,13 +34,15 @@
   </table>
 </div>
 
-<!-- <div id="MainMenu">
-  <div class="list-group panel">
-    <a href="#demo4" class="list-group-item list-group-item-success" data-toggle="collapse">Item 4</a>
-    <div class="collapse" id="demo4">
-      <a href="" class="list-group-item">Subitem 1</a>
-      <a href="" class="list-group-item">Subitem 2</a>
-      <a href="" class="list-group-item">Subitem 3</a>
-    </div>
-  </div>
-</div> -->
+<%= paginate @voluntarios %>
+
+<script>
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#teste1 tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+  </script>

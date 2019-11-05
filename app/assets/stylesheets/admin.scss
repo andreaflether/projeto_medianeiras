@@ -6,15 +6,15 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
 
 
-.select2-search__field {
-  height: 40px !important;
-  font-size: 18px !important;
-}
-
-.select2-selection__choice {
-  font-size: 18px !important;
-  margin-top: 0.8% !important;
-}
+// .select2-search__field {
+//   height: 40px !important;
+//   font-size: 18px !important;
+// }
+//
+// .select2-selection__choice {
+//   font-size: 18px !important;
+//   margin-top: 0.8% !important;
+// }
 
 .breadcrumb {
   background-color: rgb(240, 240, 240) !important;
@@ -68,6 +68,14 @@
   color: #05afea;
   letter-spacing: 0.5px;
   font-size: 24px;
+  font-weight: 600 !important;
+}
+
+.admin-title-evt {
+  text-transform: uppercase;
+  color: #007bff;
+  letter-spacing: 0.5px;
+  font-size: 25px;
   font-weight: 600 !important;
 }
 

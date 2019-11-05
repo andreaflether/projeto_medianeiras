@@ -1,22 +1,15 @@
-<!-- <h1>Atividades#index</h1>
-<p>Find me in app/views/atividades/index.html.erb</p> -->
-
-<!-- source: http://hellotumo.com/2012/11/how-to-embed-specific-cells-when-embedding-a-google-spreadsheet/ -->
-<!-- <iframe src="https://docs.google.com/spreadsheets/d/1j157EqP2-THgWC2Fu1qQ2cSt5_pqQixI_jXS8QLUWhM/pubhtml/sheet?headers=false&amp;gid=1290413671&amp;range=BE1:BK" width="1000" height="120"></iframe> -->
-
 <h1 class="h1-evt">Todas as atividades</h1>
 <br>
   <% @atividades.order(nome: :asc).each_with_index do |atividade, index| %>
     <div class="card">
-    	<header class="card-header align-middle">
+    	<header class="card-header justify-content-center">
         <% if atividade.pessoas.count == atividade.qtd_max_alunos.to_i %>
-          <span class="badge badge-pill badge-danger badge-qtd align-middle" style="font-size: 13px; margin-bottom: 1px !important;"><%= atividade.pessoas.count %></span>
+          <span class="badge badge-pill badge-danger badge-qtd" style="font-size: 15px;"><%= atividade.pessoas.count %></span>
         <% else %>
-        <span class="badge badge-pill badge-primary badge-qtd align-middle" style="font-size: 13px; margin-bottom: 1px !important;"><%= atividade.pessoas.count %></span>
+        <span class="badge badge-pill badge-primary badge-qtd" style="font-size: 13px;"><%= atividade.pessoas.count %></span>
         <% end %>
-
         <a href="#" data-toggle="collapse" data-target="#collapse<%= index+1 %>" aria-expanded="true" class="text-primary alert-link mt-1">
-    			<%= atividade.nome %><i class="icon-action fa fa-chevron-down float-right mt-1"></i>
+    			<span class="title"><%= atividade.nome %></span><i class="icon-action fa fa-chevron-down float-right mt-1 rotated"></i>
     		</a> - Professor(a)/Responsável:
         <% atividade.voluntarios.each do |voluntario| %>
           <% if atividade.voluntarios.count > 1 %>
@@ -41,8 +34,8 @@
 
               <div class="col-md-12 mt-3">
                 <p class="mb-2"><b>Horário:</b> <%= atividade.dias_semana %> - <%= atividade.horario %> </p>
-                <b>Locação total: </b><span class="badge badge-secondary" style="font-size: 15px;">
-                <%=atividade.qtd_max_alunos%></span> | <b>Vagas disponíveis:</b> <span class="badge badge-danger" style="font-size: 15px;">
+                <b>Locação total: </b><span class="badge badge-danger" style="font-size: 15px;">
+                <%=atividade.qtd_max_alunos%></span> | <b>Vagas disponíveis:</b> <span class="badge badge-secondary" style="font-size: 15px;">
                 <%= atividade.qtd_max_alunos.to_i - atividade.pessoas.count %></span>
               </div>
 
@@ -76,11 +69,11 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-text1"><i class="fas fa-search" aria-hidden="true"></i></span>
             </div>
-            <input class="form-control my-0 py-1" id="myInput" type="text" placeholder="Procurar pessoa nesta atividade..." aria-label="Search">
+            <input class="form-control my-0 py-1" data-tableid='#tabela-<%= index+1 %>' id="myInput" type="text" placeholder="Procurar pessoa nesta atividade..." aria-label="Search">
           </div>
 
 
-          <table class="table">
+          <table class="table" id='tabela-<%= index+1 %>'>
             <thead>
               <tr>
                 <th scope="col">Nome</th>
@@ -89,7 +82,7 @@
               </tr>
             </thead>
           <% atividade.pessoas.order(nome: :asc).each do |pessoa| %>
-          <tbody id="teste">
+          <tbody>
             <tr>
               <td class="align-middle"><%= link_to pessoa.nome, pessoa, class: 'text-dark', title: "Ver ficha de #{pessoa.nome}" %></td>
               <td class="align-middle"><%= pessoa.idade %></td>
@@ -98,27 +91,32 @@
                 <i class="fas fa-user-times"></i>
               <% end %></td>
             </tr>
-
           </tbody>
           <% end %>
           </table>
-
-
     		</article> <!-- card-body -->
     	</div> <!-- collapse -->
     </div> <!-- card --> <br>
   <% end %>
 
-  <%= paginate @pessoas, remote: true %>
-  <%= page_entries_info @pessoas, entry_name: 'pessoas' %>
-
   <script>
   $(document).ready(function(){
-    $("#myInput").on("keyup", function() {
-      var value = $(this).val().toLowerCase();
-      $("#teste tr").filter(function() {
+    $(document).on("input", function() {
+      var value = $(':focus').val().toLowerCase();
+      $($(":focus").data('tableid') + " > tbody > tr").filter(function() {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
       });
     });
   });
+
   </script>
+
+  <script>
+  $(function() {
+    $(document).on('click', '.rotated', function() {          //use a class, since your ID gets mangled
+      $(this).toggleClass("fa-rotate-180");                   //add the class to the clicked element
+    });
+  });
+  </script>
+
+  <!-- link: https://www.quackit.com/jquery/tutorial/jquery_add_class_dynamically.cfm -->

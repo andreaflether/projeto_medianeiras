@@ -6,9 +6,10 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
 
 
-.select2-search__field {
-  height: calc(1.6em + 0.75rem + 2px) !important;
-}
+// .select2-search__field {
+//   height: calc(1.6em + 0.75rem + 2px) !important;
+// }
+
 .devise-txt {
   margin-top: 40px;
 }
@@ -20,6 +21,10 @@
 .admin-txt {
   color: #696969;
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+.voluntario-nome {
+  color: #05afea;
 }
 
 .admin-welcome {

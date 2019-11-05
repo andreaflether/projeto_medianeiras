@@ -108,18 +108,18 @@
   <script>
   $(document).ready(function(){
     $(document).on("input", function() {
-    var value = $(':focus').val().toLowerCase();
-    $($(":focus").data('tableid') + " > tbody > tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
+      var value = $(':focus').val().toLowerCase();
+      $($(":focus").data('tableid') + " > tbody > tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
     });
   });
 
   </script>
 
   <script>
-  $(function() {                              //run when the DOM is ready
-    $(".rotated").click(function() {          //use a class, since your ID gets mangled
+  $(function() {
+    $(document).on('click', '.rotated', function() {          //use a class, since your ID gets mangled
       $(this).toggleClass("fa-rotate-180");      //add the class to the clicked element
     });
   });

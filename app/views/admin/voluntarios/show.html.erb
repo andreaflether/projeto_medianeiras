@@ -1,2 +1,22 @@
-<h1>Voluntarios#show</h1>
-<p>Find me in app/views/voluntarios/show.html.erb</p>
+<h1 class="h1-evt">Ficha de voluntário</h1>
+
+<div class="card mt-2">
+  <div class="card-header">
+    <h4 class="my-auto text-primary"><b><%= @voluntario.nome %></b></h4>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><b>Data de entrada: </b><%= l @voluntario.dt_entrada, format: :long %></li>
+    <li class="list-group-item"><b>Data de nascimento: </b><%= l @voluntario.dt_nascimento, format: :complete_numbers %></li>
+    <li class="list-group-item"><b>Telefone: </b><%= @voluntario.telefone %></li>
+    <li class="list-group-item"><b>E-mail: </b><%= @voluntario.email %></li>
+    <li class="list-group-item"><b>Identidade: </b><%= @voluntario.identidade %></li>
+    <li class="list-group-item"><b>Escolaridade: </b><%= @voluntario.escolaridade %></li>
+    <li class="list-group-item"><b>Especialização: </b><%= @voluntario.escolaridade %></li>
+
+    <% if @voluntario.presenca? %>
+      <li class="list-group-item"><b>Status: </b>Em atividade</li>
+    <% else %>
+      <li class="list-group-item"><b>Status: </b>Inativo(a)</li>
+    <% end %>
+  </ul>
+</div>

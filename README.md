@@ -33,5 +33,14 @@ Rotas disponíveis (todos os usuários:
   - **/admin/pessoas/1** - Ver pessoa pelo ID
   - **/admin/pessoas/1/editar** - Editar pessoa específica (Todos os campos)
 
+  ## 2.5. Voluntários
+  - **/admin/voluntarios** - Página inicial
+  - **/admin/voluntarios/1** - Ver pessoa pelo ID
+  - **/admin/voluntarios/editar** - Editar voluntário específico (Todos os campos)
+  
+  ## 2.6. Mensagens (Formulário de Contato) 
+  - **/admin/mensagens** - Página inicial (Admin)
+  - **/admin/mensagens/1** - Ver mensagem pelo ID
+  
 
 

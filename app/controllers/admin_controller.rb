@@ -12,6 +12,10 @@ class AdminController < ApplicationController
   #   end
   # end
 
+  def index
+    @voluntarios = Voluntario.all
+  end
+
   def show
   end
 

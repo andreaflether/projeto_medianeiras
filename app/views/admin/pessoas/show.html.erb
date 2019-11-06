@@ -3,36 +3,37 @@
 <div class="container">
 
   <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/admin/pessoas/novo">Novo cadastro de pessoa</a></li>
-    <li class="breadcrumb-item"><a href="/admin/pessoas">Ver todas as pessoas cadastradas</a></li>
-    <li class="breadcrumb-item"><a href="/admin/atividades">Ver atividades</a></li>
-  </ol>
-</nav>
-<div class="card">
-  <div class="card-body">
-    <h4 class="card-title text-primary"><b><%= @pessoa.nome %></b></h4>
-    <p class="mb-3"><b>Idade: </b><%= @pessoa.idade %></p>
-    <p class="mb-3"><b>Data de Nascimento: </b><%= l @pessoa.dt_nascimento, format: :complete_numbers, default: "" %></p>
-    <p class="mb-3"><b>Endereço: </b><%= @pessoa.endereco %></p>
-    <p class="mb-3"><b>Bairro: </b><%= @pessoa.bairro %></p>
-    <p class="mb-3"><b>Telefone: </b><%= @pessoa.telefone %></p>
-    <p class="mb-3"><b>Religião: </b><%= @pessoa.religiao %></p>
-    <p class="mb-3"><b>Responsável: </b><%= @pessoa.responsavel %></p>
-    <p class="mb-3"><b>Data de entrada: </b><%= l @pessoa.dt_entrada, format: :complete_numbers, default: ""  %></p>
-    <p class="mb-3"><b>Estuda? </b><%= @pessoa.form_estuda %></p>
-    <% if @pessoa.estuda %>
-      <p class="mb-3"><b>Escola: </b><%= @pessoa.escola %></p>
-      <p class="mb-3"><b>Série: </b><%= @pessoa.serie %></p>
-    <% end %>
-    <p><b>Atividades:</b>
-    <% @pessoa.atividades.each do |atividade| %>
-      <%= link_to atividade.nome, atividade, class: "badge badge-primary", style: "font-size: 16px;" %>
-    <% end %></p>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/admin/pessoas/novo">Novo cadastro de pessoa</a></li>
+      <li class="breadcrumb-item"><a href="/admin/pessoas">Ver todas as pessoas cadastradas</a></li>
+      <li class="breadcrumb-item"><a href="/admin/atividades">Ver atividades</a></li>
+    </ol>
+  </nav>
 
-    <!-- <p class="card-text"><small class="text-muted">Cadastrado(a) no projeto a alguns dias</small></p> -->
-    <%= link_to 'Editar informações', edit_pessoa_path(@pessoa), class: 'btn btn-outline-primary' %>
-    <%= link_to 'Apagar cadastro', pessoa_path(@pessoa), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza que deseja
-    apagar o formulário selecionado?' } %>
-  </div>
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title text-primary"><b><%= @pessoa.nome %></b></h4>
+      <p class="mb-3"><b>Idade: </b><%= @pessoa.idade %></p>
+      <p class="mb-3"><b>Data de Nascimento: </b><%= l @pessoa.dt_nascimento, format: :complete_numbers, default: "" %></p>
+      <p class="mb-3"><b>Endereço: </b><%= @pessoa.endereco %></p>
+      <p class="mb-3"><b>Bairro: </b><%= @pessoa.bairro %></p>
+      <p class="mb-3"><b>Telefone: </b><%= @pessoa.telefone %></p>
+      <p class="mb-3"><b>Religião: </b><%= @pessoa.religiao %></p>
+      <p class="mb-3"><b>Responsável: </b><%= @pessoa.responsavel %></p>
+      <p class="mb-3"><b>Data de entrada: </b><%= l @pessoa.dt_entrada, format: :complete_numbers, default: ""  %></p>
+      <p class="mb-3"><b>Estuda? </b><%= @pessoa.form_estuda %></p>
+      <% if @pessoa.estuda %>
+        <p class="mb-3"><b>Escola: </b><%= @pessoa.escola %></p>
+        <p class="mb-3"><b>Série: </b><%= @pessoa.serie %></p>
+      <% end %>
+      <p><b>Atividades:</b>
+      <% @pessoa.atividades.each do |atividade| %>
+        <%= link_to atividade.nome, atividade, class: "badge badge-primary", style: "font-size: 16px;" %>
+      <% end %></p>
+
+      <!-- <p class="card-text"><small class="text-muted">Cadastrado(a) no projeto a alguns dias</small></p> -->
+      <%= link_to 'Editar informações', edit_pessoa_path(@pessoa), class: 'btn btn-outline-primary' %>
+      <%= link_to 'Apagar cadastro', pessoa_path(@pessoa), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza que deseja
+      apagar o formulário selecionado?' } %>
+    </div>
 </div>

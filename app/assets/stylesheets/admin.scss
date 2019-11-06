@@ -1,20 +1,10 @@
-// Place all the styles related to the Admin controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
 
-
-// .select2-search__field {
-//   height: 40px !important;
-//   font-size: 18px !important;
-// }
-//
-// .select2-selection__choice {
-//   font-size: 18px !important;
-//   margin-top: 0.8% !important;
-// }
+.list-group-item {
+  padding: 0.60rem 1.25rem !important;
+}
 
 .breadcrumb {
   background-color: rgb(240, 240, 240) !important;

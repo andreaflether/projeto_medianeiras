@@ -4,6 +4,9 @@ pt-BR:
       evento:
         one: Evento
         other: Eventos
+      voluntario:
+        one: Voluntário
+        other: Voluntários
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

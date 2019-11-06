@@ -1,12 +1,10 @@
-<!-- <h1 class="h1-evt">Atividades#show</h1>
-<p>Find me in app/views/atividades/show.html.erb</p> -->
 <br>
 <div class="container">
-<div class="card">
+<!-- <div class="card">
   <div class="card-body">
     <h4 class="card-title text-primary"><b><%= @atividade.nome %></b></h4>
-    <% @atividade.voluntarios.each do |voluntario| %>
-      <p class="mb-3"><b>Professor(a)/Responsável: </b><%= voluntario.nome %></p>
+    <% @atividade.voluntarios.each_with_index do |voluntario, index| %>
+      <p class="mb-3"><b>Professor(a)/Responsável <%= index+1 %>: </b><%= voluntario.nome %></p>
     <% end %>
     <p class="mb-3"><b>Horário: </b><%= @atividade.horario %></p>
     <p class="mb-3"><b>Dia(s): </b><%= @atividade.dias_semana %></p>
@@ -15,4 +13,29 @@
     <%= link_to 'Apagar', atividade_path(@atividade), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza que deseja
     apagar a atividade selecionada?' } %>
   </div>
+</div> -->
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/admin/pessoas/novo">Novo cadastro de atividade</a></li>
+    <li class="breadcrumb-item"><a href="/admin/pessoas">Ver todas as atividades cadastradas</a></li>
+    <li class="breadcrumb-item"><a href="/admin/atividades">Ver pessoas cadastradas</a></li>
+  </ol>
+</nav>
+
+<div class="card">
+  <div class="card-header">
+    <h4 class="my-auto text-primary"><b><%= @atividade.nome %></b></h4>
+  </div>
+  <ul class="list-group list-group-flush">
+    <% @atividade.voluntarios.each_with_index do |voluntario, index| %>
+      <li class="list-group-item"><b>Professor(a)/Responsável <%= index+1 %>: </b><%= voluntario.nome %></li>
+    <% end %>
+    <li class="list-group-item"><b>Horário: </b><%= @atividade.horario %></li>
+    <li class="list-group-item"><b>Dia(s): </b><%= @atividade.dias_semana %></li>
+    <li class="list-group-item"><b>Quantidade máx. de alunos: </b><%= @atividade.qtd_max_alunos %></li>
+    <li class="list-group-item"><%= link_to 'Editar', edit_atividade_path(@atividade), class: 'btn btn-outline-primary' %>
+    <%= link_to 'Apagar', atividade_path(@atividade), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza que deseja
+    apagar a atividade selecionada?' } %></li>
+  </ul>
 </div>

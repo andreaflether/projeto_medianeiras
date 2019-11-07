@@ -2,6 +2,19 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
 
+.bg-active {
+  background-color: #dae0e5 !important;
+}
+
+.bg-active:hover {
+  background-color: #B0B0B0 !important;
+}
+
+
+
+
+
+
 .list-group-item {
   padding: 0.60rem 1.25rem !important;
 }

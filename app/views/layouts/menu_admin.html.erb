@@ -22,26 +22,36 @@
         <!-- <a href="/admin" class="list-group-item list-group-item-action bg-light">Início</a> -->
 
         <span class="list-group-item tsts">Pessoas</span>
-        <a href="/admin/pessoas/novo" class="list-group-item list-group-item-action bg-light">Cadastrar pessoa</a>
-        <a href="/admin/pessoas" class="list-group-item list-group-item-action bg-light">Ver cadastros</a>
+        <a href="/admin/pessoas/novo" class="list-group-item list-group-item-action bg-light <%='bg-active' if current_page?(new_pessoa_path)%>">Cadastrar pessoa</a>
+        <a href="/admin/pessoas" class="list-group-item list-group-item-action bg-light
+        <%='bg-active' if current_page?(pessoas_path)%>">Ver cadastros</a>
 
         <span class="list-group-item tsts">Atividades</span>
-        <a href="/admin/atividades/novo" class="list-group-item list-group-item-action bg-light">Cadastrar atividade</a>
-        <a href="/admin/atividades" class="list-group-item list-group-item-action bg-light">Ver todas</a>
+        <a href="/admin/atividades/novo" class="list-group-item list-group-item-action bg-light
+        <%='bg-active' if current_page?(new_atividade_path)%>">Cadastrar atividade</a>
+        <a href="/admin/atividades" class="list-group-item list-group-item-action bg-light
+        <%='bg-active' if current_page?(atividades_path)%>">Ver todas</a>
 
         <span class="list-group-item tsts">Voluntários</span>
-        <a href="/admin/voluntarios/novo" class="list-group-item list-group-item-action bg-light">Cadastrar voluntário</a>
-        <a href="/admin/voluntarios" class="list-group-item list-group-item-action bg-light">Ver todos</a>
+        <a href="/admin/voluntarios/novo" class="list-group-item list-group-item-action bg-light
+        <%='bg-active' if current_page?(new_voluntario_path)%>">Cadastrar voluntário</a>
+        <a href="/admin/voluntarios" class="list-group-item list-group-item-action bg-light
+        <%='bg-active' if current_page?(voluntarios_path)%>">Ver todos</a>
 
         <span class="list-group-item tsts">Eventos</span>
-        <a href="/admin/eventos/calendario" class="list-group-item list-group-item-action bg-light">Calendário</a>
-        <a href="/admin/eventos/novo" class="list-group-item list-group-item-action bg-light">Novo evento</a>
-        <a href="/admin/eventos/proximos_eventos" class="list-group-item list-group-item-action bg-light">Próximos eventos</a>
-        <a href="/admin/eventos/" class="list-group-item list-group-item-action bg-light">Ver todos os eventos</a>
+        <a href="/admin/eventos/calendario" class="list-group-item list-group-item-action bg-light
+        <%='bg-active' if current_page?(admin_eventos_calendario_path)%>">Calendário</a>
+        <a href="/admin/eventos/novo" class="list-group-item list-group-item-action bg-light
+        <%='bg-active' if current_page?(new_evento_path)%>">Novo evento</a>
+        <a href="/admin/eventos/proximos_eventos" class="list-group-item list-group-item-action bg-light
+        <%='bg-active' if current_page?(admin_eventos_proximos_eventos_path)%>">Próximos eventos</a>
+        <a href="/admin/eventos/" class="list-group-item list-group-item-action bg-light
+        <%='bg-active' if current_page?(eventos_path)%>">Ver todos os eventos</a>
 
         <% if current_user.superadmin? %>
         <span class="list-group-item tsts">Usuários</span>
-        <a href="/admin/users" class="list-group-item list-group-item-action bg-light">Gerenciar usuários</a>
+        <a href="/admin/users" class="list-group-item list-group-item-action bg-light
+        <%='bg-active' if current_page?(users_path)%>">Gerenciar usuários</a>
         <% end %>
       </div>
     </div>

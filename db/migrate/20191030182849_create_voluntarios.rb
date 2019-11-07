@@ -7,7 +7,7 @@ class CreateVoluntarios < ActiveRecord::Migration[5.2]
       t.string :telefone
       t.string :email
       t.string :identidade
-      t.string :dt_nascimento
+      t.date :dt_nascimento
       t.string :escolaridade
 
       t.timestamps

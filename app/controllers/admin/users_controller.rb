@@ -37,7 +37,7 @@ class Admin::UsersController < AdminController
 
    def authorize
      unless current_user.superadmin?
-       redirect_to root_path
+       redirect_to root_path, alert: 'Você não possui acesso a esta página.'
        return
      end
    end

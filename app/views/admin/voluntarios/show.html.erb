@@ -1,5 +1,13 @@
 <h1 class="h1-evt">Ficha de voluntário</h1>
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/admin/voluntarios/novo">Novo cadastro de voluntário</a></li>
+    <li class="breadcrumb-item"><a href="/admin/voluntarios">Ver todas os voluntários cadastrados</a></li>
+    <li class="breadcrumb-item"><a href="/admin/atividades">Ver atividades</a></li>
+  </ol>
+</nav>
+
 <div class="card mt-2">
   <div class="card-header">
     <h4 class="my-auto text-primary"><b><%= @voluntario.nome %></b>
@@ -12,10 +20,10 @@
         <%= link_to edit_voluntario_path(@voluntario), title: "Editar informações de #{@voluntario.nome}" do %>
         <i class="fas fa-user-edit text-primary float-right mr-3 mt-1"></i>
         <% end %>
-
       </span>
     </h4>
   </div>
+
   <div class="card-body">
     <p class="card-text"><b>Data de entrada: </b><%= l @voluntario.dt_entrada, format: :long %></p>
     <p class="card-text"><b>Data de nascimento: </b><%= l @voluntario.dt_nascimento, format: :complete_numbers %></p>
@@ -30,7 +38,9 @@
       <p class="card-text"><b>Status: </b>Inativo(a)</p>
     <% end %>
   </div>
+
   <div class="card-footer text-muted">
     Voluntário há <%= time_ago_in_words(@voluntario.created_at) %>
   </div>
+  
 </div>

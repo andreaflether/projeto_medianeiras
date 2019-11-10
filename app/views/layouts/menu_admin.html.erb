@@ -17,11 +17,10 @@
   <div class="d-flex" id="wrapper">
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading"><a href="/admin" class="admin-menu-title">Medianeiras Admin</a></div>
+      <div class="sidebar-heading"><a href="/admin" class="admin-menu-title"><i class="fas fa-cog"></i> Medianeiras Admin</a></div>
       <div class="list-group list-group-flush">
-        <!-- <a href="/admin" class="list-group-item list-group-item-action bg-light">Início</a> -->
 
-        <span class="list-group-item tsts">Pessoas</span>
+        <span class="list-group-item tsts"">Pessoas</span>
         <a href="/admin/pessoas/novo" class="list-group-item list-group-item-action bg-light <%='bg-active' if current_page?(new_pessoa_path)%>">Cadastrar pessoa</a>
         <a href="/admin/pessoas" class="list-group-item list-group-item-action bg-light
         <%='bg-active' if current_page?(pessoas_path)%>">Ver cadastros</a>
@@ -61,7 +60,7 @@
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn btn-primary" title="Expandir/encolher menu" id="menu-toggle"><i class="fas fa-arrows-alt-h"></i></button>
+        <button class="btn btn-primary" title="Expandir/encolher menu" id="menu-toggle"><i class="fas fa-bars"></i></button>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

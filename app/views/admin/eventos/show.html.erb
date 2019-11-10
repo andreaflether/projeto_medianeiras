@@ -1,11 +1,11 @@
 <br>
 <div class="card-deck">
       <div class="card mb-2">
-        <div class="card-header card-text-tit text-primary">
-          <%= @evento.nome.titleize%>
+        <div class="card-header text-primary">
+          <h4 class="my-auto"><b><%= @evento.nome.titleize%></b></h4>
         </div>
         <div class="card-body">
-          <p class="card-text card-bigger"><i class="far fa-calendar-alt text-primary mr-2"></i><b><%= l @evento.data, format: :long %></b> às <%= @evento.hora %></p>
+          <p class="card-text card-bigger"><i class="far fa-calendar-alt text-primary mr-2"></i><b><%= l @evento.data, format: :long %></b> - <%= @evento.hora %></p>
           <p class="card-text"><%= @evento.descricao.capitalize %></p>
           <p class="card-text"><i class="fas fa-map-marker-alt text-primary mr-2"></i><%= @evento.local.titleize %></p>
 

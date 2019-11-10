@@ -6,6 +6,11 @@
   background-color: #dae0e5 !important;
 }
 
+abbr[title],
+abbr[data-original-title] {
+  text-decoration: none!important;
+}
+
 .bg-active:hover {
   background-color: #B0B0B0 !important;
 }

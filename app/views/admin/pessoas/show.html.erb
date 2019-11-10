@@ -1,7 +1,6 @@
 <h1 class="h1-evt">Formulário de Pessoa</h1>
 
 <div class="container">
-
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="/admin/pessoas/novo">Novo cadastro de pessoa</a></li>
@@ -10,30 +9,47 @@
     </ol>
   </nav>
 
-  <div class="card">
+  <div class="card mt-2">
+    <div class="card-header">
+      <h4 class="my-auto text-primary text-center"><b><%= @pessoa.nome %></b>
+        <span style="font-size: 20px;">
+          <%= link_to pessoa_path(@pessoa), method: :delete, title: "Apagar ficha de #{@pessoa.nome}",
+          data: { confirm: "Tem certeza que deseja apagar a ficha de #{@pessoa.nome}?" } do %>
+          <i class="fas fa-user-times text-danger float-right mt-1"></i>
+          <% end %>
+
+          <%= link_to edit_pessoa_path(@pessoa), title: "Editar informações de #{@pessoa.nome}" do %>
+          <i class="fas fa-user-edit text-primary float-right mr-3 mt-1"></i>
+          <% end %>
+        </span>
+      </h4>
+    </div>
+
     <div class="card-body">
-      <h4 class="card-title text-primary"><b><%= @pessoa.nome %></b></h4>
-      <p class="mb-3"><b>Idade: </b><%= @pessoa.idade %></p>
-      <p class="mb-3"><b>Data de Nascimento: </b><%= l @pessoa.dt_nascimento, format: :complete_numbers, default: "" %></p>
-      <p class="mb-3"><b>Endereço: </b><%= @pessoa.endereco %></p>
-      <p class="mb-3"><b>Bairro: </b><%= @pessoa.bairro %></p>
-      <p class="mb-3"><b>Telefone: </b><%= @pessoa.telefone %></p>
-      <p class="mb-3"><b>Religião: </b><%= @pessoa.religiao %></p>
-      <p class="mb-3"><b>Responsável: </b><%= @pessoa.responsavel %></p>
-      <p class="mb-3"><b>Data de entrada: </b><%= l @pessoa.dt_entrada, format: :complete_numbers, default: ""  %></p>
-      <p class="mb-3"><b>Estuda? </b><%= @pessoa.form_estuda %></p>
+      <p><b>Idade: </b><%= @pessoa.idade %></p>
+      <p><b>Data de Nascimento: </b><%= l @pessoa.dt_nascimento, format: :complete_numbers, default: "" %></p>
+      <p><b>Endereço: </b><%= @pessoa.endereco %></p>
+      <p><b>Bairro: </b><%= @pessoa.bairro %></p>
+      <p><b>Telefone: </b><%= @pessoa.telefone %></p>
+      <p><b>Religião: </b><%= @pessoa.religiao %></p>
+      <p><b>Responsável: </b><%= @pessoa.responsavel %></p>
+      <p><b>Data de entrada: </b><%= l @pessoa.dt_entrada, format: :complete_numbers, default: ""  %></p>
+      <p><b>Estuda? </b><%= @pessoa.form_estuda %></p>
       <% if @pessoa.estuda %>
-        <p class="mb-3"><b>Escola: </b><%= @pessoa.escola %></p>
-        <p class="mb-3"><b>Série: </b><%= @pessoa.serie %></p>
+        <p><b>Escola: </b><%= @pessoa.escola %></p>
+        <p><b>Série: </b><%= @pessoa.serie %></p>
       <% end %>
       <p><b>Atividades:</b>
-      <% @pessoa.atividades.each do |atividade| %>
+      <% if @pessoa.atividades.count == 0 %>
+        Esta pessoa não está cadastrado(a) em nenhuma atividade.
+      <% else %>
+        <% @pessoa.atividades.each do |atividade| %>
         <%= link_to atividade.nome, atividade, class: "badge badge-primary", style: "font-size: 16px;" %>
+        <% end %>
       <% end %></p>
-
-      <!-- <p class="card-text"><small class="text-muted">Cadastrado(a) no projeto a alguns dias</small></p> -->
-      <%= link_to 'Editar informações', edit_pessoa_path(@pessoa), class: 'btn btn-outline-primary' %>
-      <%= link_to 'Apagar cadastro', pessoa_path(@pessoa), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza que deseja
-      apagar o formulário selecionado?' } %>
     </div>
+    <div class="card-footer text-muted">
+      Cadastrado(a) há <%= time_ago_in_words(@pessoa.created_at) %>
+    </div>
+  </div>
 </div>

@@ -4,7 +4,7 @@
     <div class="card">
     	<header class="card-header justify-content-center">
         <% if atividade.pessoas.count == atividade.qtd_max_alunos.to_i %>
-          <span class="badge badge-pill badge-danger badge-qtd" style="font-size: 15px;"><%= atividade.pessoas.count %></span>
+          <span class="badge badge-pill badge-danger badge-qtd" style="font-size: 13px;"><%= atividade.pessoas.count %></span>
         <% else %>
         <span class="badge badge-pill badge-primary badge-qtd" style="font-size: 13px;"><%= atividade.pessoas.count %></span>
         <% end %>

@@ -2,21 +2,35 @@
 
 <div class="card mt-2">
   <div class="card-header">
-    <h4 class="my-auto text-primary"><b><%= @voluntario.nome %></b></h4>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"><b>Data de entrada: </b><%= l @voluntario.dt_entrada, format: :long %></li>
-    <li class="list-group-item"><b>Data de nascimento: </b><%= l @voluntario.dt_nascimento, format: :complete_numbers %></li>
-    <li class="list-group-item"><b>Telefone: </b><%= @voluntario.telefone %></li>
-    <li class="list-group-item"><b>E-mail: </b><%= @voluntario.email %></li>
-    <li class="list-group-item"><b>Identidade: </b><%= @voluntario.identidade %></li>
-    <li class="list-group-item"><b>Escolaridade: </b><%= @voluntario.escolaridade %></li>
-    <li class="list-group-item"><b>Especialização: </b><%= @voluntario.especializacao %></li>
+    <h4 class="my-auto text-primary"><b><%= @voluntario.nome %></b>
+      <span style="font-size: 20px;">
+        <%= link_to voluntario_path(@voluntario), method: :delete, title: "Apagar ficha de #{@voluntario.nome}",
+        data: { confirm: "Tem certeza que deseja apagar a ficha de #{@voluntario.nome}?" } do %>
+        <i class="fas fa-user-times text-danger float-right mt-1"></i>
+        <% end %>
 
+        <%= link_to edit_voluntario_path(@voluntario), title: "Editar informações de #{@voluntario.nome}" do %>
+        <i class="fas fa-user-edit text-primary float-right mr-3 mt-1"></i>
+        <% end %>
+
+      </span>
+    </h4>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><b>Data de entrada: </b><%= l @voluntario.dt_entrada, format: :long %></p>
+    <p class="card-text"><b>Data de nascimento: </b><%= l @voluntario.dt_nascimento, format: :complete_numbers %></p>
+    <p class="card-text"><b>Telefone: </b><%= @voluntario.telefone %></p>
+    <p class="card-text"><b>E-mail: </b><%= @voluntario.email %></p>
+    <p class="card-text"><b>Identidade: </b><%= @voluntario.identidade %></p>
+    <p class="card-text"><b>Escolaridade: </b><%= @voluntario.escolaridade %></p>
+    <p class="card-text"><b>Especialização: </b><%= @voluntario.especializacao %></p>
     <% if @voluntario.presenca? %>
-      <li class="list-group-item"><b>Status: </b>Em atividade</li>
+      <p class="card-text"><b>Status: </b>Em atividade</p>
     <% else %>
-      <li class="list-group-item"><b>Status: </b>Inativo(a)</li>
+      <p class="card-text"><b>Status: </b>Inativo(a)</p>
     <% end %>
-  </ul>
+  </div>
+  <div class="card-footer text-muted">
+    Voluntário há <%= time_ago_in_words(@voluntario.created_at) %>
+  </div>
 </div>

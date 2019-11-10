@@ -14,7 +14,7 @@
         <th>Nome</th>
         <th>Data de entrada no Centro</th>
         <th>Escolaridade</th>
-        <th>Em atividade?</th>
+        <th>Status</th>
         <th colspan="2">Ações</th>
       </tr>
     </thead>
@@ -22,11 +22,17 @@
     <tbody id="teste1">
       <% @voluntarios.each do |voluntario| %>
         <tr>
-          <td><%= link_to voluntario.nome, voluntario, class: "text-dark", title: "Ver ficha de #{voluntario.nome}" %></td>
-          <td><%= l voluntario.dt_nascimento, format: :complete_numbers, default: '-' %></td>
-          <td><%= voluntario.escolaridade %></td>
-          <td><%= voluntario.form_presente %></td>
-          <td><%= link_to 'Editar', edit_voluntario_path(voluntario), class: 'btn btn-outline-primary btn-next' %>
+          <td class="align-middle align-self-center align-items-center"><%= link_to voluntario.nome, voluntario, class: "text-dark", title: "Ver ficha de #{voluntario.nome}" %></td>
+          <td class="align-middle align-self-center align-items-center"><%= l voluntario.dt_nascimento, format: :complete_numbers, default: '-' %></td>
+          <td class="align-middle align-self-center align-items-center"><%= voluntario.escolaridade %></td>
+          <td class="align-middle align-self-center align-items-center">
+            <% if voluntario.presenca? %>
+            Ativo(a)
+            <% else %>
+            Inativo(a)
+            <% end %>
+          </td>
+          <td class="align-middle align-self-center align-items-center"><%= link_to 'Editar', edit_voluntario_path(voluntario), class: 'btn btn-outline-primary btn-next' %>
           <%= link_to 'Apagar', voluntario_path(voluntario), class: 'btn btn-outline-danger btn-next', method: :delete, data: { confirm: 'Tem certeza que deseja apagar o cadastro do voluntário selecionado?' } %></td>
         </tr>
       <% end %>

@@ -1,10 +1,7 @@
 <div class="container admin-txt-top">
   <br>
-
   <h4 class="text-center admin-txt">Olá, <span class="admin-welcome text-primary"><%= current_user.name.titleize %></span>!</h4>
-
   <br>
-
   <div class="input-group mb-3">
     <div class="input-group-prepend">
       <span class="input-group-text" id="basic-addon1"><i class="fas fa-user-alt text-light"></i></span>
@@ -69,30 +66,23 @@
           <span class="b-day"><i class="fas fa-birthday-cake text-primary"></i> <b><%= pessoa.dt_nascimento.day %></b> - <%= pessoa.nome %></span>
         </div>
       </div>
-    <% elsif %>
+    <% else %>
     <div class="card mb-2">
       <div class="card-body">
         <span class="b-day"><b><%= pessoa.dt_nascimento.day %></b> - <%= pessoa.nome %></span>
       </div>
     </div>
 
-    <% else %>
+    <% end %>
+
+    <% if @pessoas.proximos_aniversarios.blank? %>
     <div class="card mb-2">
       <div class="card-body">
-        <span class="b-day">Nenhum aniversário recente.</span>
+        <span class="b-day">Nenhum aniversário a ser exibido.</span>
       </div>
     </div>
     <% end %>
+
   <% end %>
-
-</div>
-
-
-
-
-
-
-
-
 
 </div>

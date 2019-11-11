@@ -4,23 +4,23 @@
   <br>
   <div class="input-group mb-3">
     <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1"><i class="fas fa-user-alt text-light"></i></span>
+      <span class="input-group-text bg-input-group" id="basic-addon1"><i class="fas fa-user-alt text-light"></i></span>
     </div>
-    <li class="list-group-item flex-fill"><b>Última pessoa cadastrada:</b> <%= link_to Pessoa.pluck(:nome).last %></li>
+    <li class="list-group-item flex-fill"><b>Última pessoa cadastrada:</b> <%= link_to @pessoa.nome, @pessoa %></li>
   </div>
 
   <div class="input-group mb-3">
     <div class="input-group-prepend">
-      <span class="input-group-text" style="width: 45px;" id="basic-addon1"><i class="fas fa-tags text-light"></i></span>
+      <span class="input-group-text bg-input-group" style="width: 43px;" id="basic-addon1"><i class="fas fa-tags text-light"></i></span>
     </div>
-    <li class="list-group-item flex-fill"><b>Última atividade cadastrada:</b> <%= link_to Atividade.pluck(:nome).last %></li>
+    <li class="list-group-item flex-fill"><b>Última atividade cadastrada:</b> <%= link_to @atividade.nome, @atividade %></li>
   </div>
 
   <div class="input-group mb-3">
     <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1"><i class="fas fa-id-card-alt text-light"></i></span>
+      <span class="input-group-text bg-input-group" id="basic-addon1"><i class="fas fa-id-card-alt text-light"></i></span>
     </div>
-    <li class="list-group-item flex-fill"><b>Último voluntário cadastrado:</b> <%= link_to Voluntario.pluck(:nome).last %></li>
+    <li class="list-group-item flex-fill"><b>Último voluntário cadastrado:</b> <%= link_to @voluntario.nome, @voluntario %></li>
   </div>
 
 <br>
@@ -29,28 +29,28 @@
 
     <div class="card">
       <div class="card-body text-center">
-        <div class="h1 m-0 text-primary"><%= @pessoas.count %></div>
+        <div class="h1 m-0 text-primary"><%= link_to @pessoas, pessoas_path, class: "nmb-link" %></div>
         <div class="text-muted mb-3 mt-1">Pessoas cadastradas</div>
       </div>
     </div>
 
     <div class="card">
       <div class="card-body text-center">
-        <div class="h1 m-0 text-primary"><%= @atividades.count %></div>
+        <div class="h1 m-0 text-primary"><%= link_to @atividades, atividades_path, class: "nmb-link" %></div>
         <div class="text-muted mb-3 mt-1">Total de atividades</div>
       </div>
     </div>
 
     <div class="card">
       <div class="card-body text-center">
-        <div class="h1 m-0 text-primary"><%= @voluntarios.count %></div>
+        <div class="h1 m-0 text-primary"><%= link_to @voluntarios, voluntarios_path, class: "nmb-link" %></div>
         <div class="text-muted mb-3 mt-1">Voluntários cadastrados</div>
       </div>
     </div>
 
     <div class="card">
       <div class="card-body text-center">
-        <div class="h1 m-0 text-primary"><%= @eventos.proximos_eventos.count %></div>
+        <div class="h1 m-0 text-primary"><%= link_to @eventos, admin_eventos_proximos_eventos_path, class: "nmb-link" %></div>
         <div class="text-muted mb-3 mt-1">Eventos em <%= l Date.today, format: :month_only %></div>
       </div>
     </div>
@@ -58,8 +58,12 @@
 
 <br>
 
-<h3 class="mb-4 text-center">Aniversários - <%= l Date.today, format: :month_only %></h3>
-  <% @pessoas.proximos_aniversarios.each do |pessoa| %>
+<h3 class="mb-4 text-center mt-2">Aniversários - <%= l Date.today, format: :month_only %></h3>
+  <% if @proximos_aniversarios.blank? %>
+    <p class="b-day text-center mt-2 text-primary">Nenhum aniversário a ser exibido.</p>
+
+  <% end %>
+  <% @proximos_aniversarios.each do |pessoa| %>
     <% if pessoa.dt_nascimento.day == Date.today.day %>
       <div class="card mb-2">
         <div class="card-body">
@@ -74,15 +78,6 @@
     </div>
 
     <% end %>
-
-    <% if @pessoas.proximos_aniversarios.blank? %>
-    <div class="card mb-2">
-      <div class="card-body">
-        <span class="b-day">Nenhum aniversário a ser exibido.</span>
-      </div>
-    </div>
-    <% end %>
-
   <% end %>
 
 </div>

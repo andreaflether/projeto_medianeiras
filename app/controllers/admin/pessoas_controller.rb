@@ -21,12 +21,12 @@ class Admin::PessoasController < AdminController
 
   def update
     @pessoa = Pessoa.find(params[:id])
+    @atividades = Atividade.all
     if @pessoa.update(pessoa_params)
       redirect_to @pessoa, notice: "Cadastro atualizado com sucesso."
     else
       render 'edit'
     end
-    @atividades = Atividade.all
   end
 
   def edit

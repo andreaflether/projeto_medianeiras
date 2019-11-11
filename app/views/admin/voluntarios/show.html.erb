@@ -11,16 +11,6 @@
 <div class="card mt-2">
   <div class="card-header">
     <h4 class="my-auto text-primary"><b><%= @voluntario.nome %></b>
-      <span style="font-size: 20px;">
-        <%= link_to voluntario_path(@voluntario), method: :delete, title: "Apagar ficha de #{@voluntario.nome}",
-        data: { confirm: "Tem certeza que deseja apagar a ficha de #{@voluntario.nome}?" } do %>
-        <i class="fas fa-user-times text-danger float-right mt-1"></i>
-        <% end %>
-
-        <%= link_to edit_voluntario_path(@voluntario), title: "Editar informações de #{@voluntario.nome}" do %>
-        <i class="fas fa-user-edit text-primary float-right mr-3 mt-1"></i>
-        <% end %>
-      </span>
     </h4>
   </div>
 
@@ -37,10 +27,21 @@
     <% else %>
       <p class="card-text"><b>Status: </b>Inativo(a)</p>
     <% end %>
+
+    <span style="font-size: 20px;">
+      <%= link_to voluntario_path(@voluntario), method: :delete, class: "btn btn-outline-danger", title: "Apagar ficha de #{@voluntario.nome}",
+      data: { confirm: "Tem certeza que deseja apagar a ficha de #{@voluntario.nome}?" } do %>
+      <i class="fas fa-user-times float-right"></i>
+      <% end %>
+
+      <%= link_to edit_voluntario_path(@voluntario), title: "Editar informações de #{@voluntario.nome}", class: "btn btn-outline-primary" do %>
+      <i class="fas fa-user-edit float-right"></i>
+      <% end %>
+    </span>
   </div>
 
   <div class="card-footer text-muted">
     Voluntário há <%= time_ago_in_words(@voluntario.created_at) %>
   </div>
-  
+
 </div>

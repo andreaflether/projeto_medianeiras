@@ -13,10 +13,17 @@ class AdminController < ApplicationController
   # end
 
   def index
-    @voluntarios = Voluntario.all
-    @eventos = Evento.all
-    @pessoas = Pessoa.all
-    @atividades = Atividade.all
+    @voluntarios = Voluntario.count
+    @eventos = Evento.proximos_eventos.count
+    @pessoas = Pessoa.count
+    @atividades = Atividade.count
+
+    @pessoa = Pessoa.last
+    @atividade = Atividade.last
+    @voluntario = Voluntario.last
+    @evento = Evento.proximos_eventos.last
+
+    @proximos_aniversarios = Pessoa.proximos_aniversarios
   end
 
   def show

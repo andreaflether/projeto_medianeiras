@@ -9,3 +9,11 @@ div.dataTables_length label select{
 #example_paginate, .dataTables_info {
   margin-top: 15px;
 }
+
+span.error {
+  color: #dc3545;
+  font-size: 15px;
+  display: inline-block !important;
+  margin-top: 0 !important;
+  margin-bottom: 15px !important;
+}

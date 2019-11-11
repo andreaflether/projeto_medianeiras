@@ -6,14 +6,14 @@
 
 <div class="section evt-form">
   <%= simple_form_for @pessoa do |f| %>
-  <%= f.input :nome, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}, required: true  %>
+  <%= f.input :nome, input_html: { class: 'form-control mb-0', required: true}, label_html: { class: 'label label_b'} %>
   <%= f.input :dt_nascimento, label: "Data de nascimento", input_html: { class: 'form-control ml-1 mr-1 d-flex col'},
   label_html: { class: 'label label_b col-md-12'}, wrapper_html: {class: 'form-row'}, start_year: Date.today.year - 90,
   end_year: Date.today.year, required: true %>
-  <%= f.input :idade, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}, required: true  %>
+  <%= f.input :idade, input_html: { class: 'form-control mb-0'}, label_html: { class: 'label label_b'}, required: true  %>
   <%= f.input :endereco, label: "Endereço", input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
   <%= f.input :bairro, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
-  <%= f.input :telefone, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}, required: true  %>
+  <%= f.input :telefone, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'} %>
   <%= f.input :religiao, prompt: "Escolha uma religião", label: "Religião", collection: [ "Ateu", "Católico(a)", "Evangélico(a)", "Agnóstico(a)", "Outra"],
   input_html: { class: 'form-control', id: 'religiao'}, label_html: { class: 'label label_b'}%>
   <%= content_tag :div, class: 'js-dependent-fields', data: { 'select-id': 'religiao', 'option-value': 'Outra'} do %>
@@ -21,7 +21,7 @@
   <% end %>
   <%= f.input :responsavel, label: "Responsável", input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
   <%= f.input :dt_entrada, label: "Data de entrada no Centro Comunitário", input_html: { class: 'form-control ml-1 mr-1 d-flex col'},
-  label_html: { class: 'label label_b col-md-12'}, wrapper_html: {class: 'form-row'}, required: true  %>
+  label_html: { class: 'label label_b col-md-12 mb-0'}, wrapper_html: {class: 'form-row'}, required: true  %>
   <%= f.input :estuda, collection: [['true', 'Sim'], ['false', 'Não']], prompt: "Selecione uma opção", label_method: :second,
   value_method: :first, label: "Estuda?", input_html: { class: 'form-control', id: 'estudo'}, label_html: { class: 'select label_b'} %>
 

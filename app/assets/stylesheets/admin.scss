@@ -11,8 +11,12 @@ abbr[data-original-title] {
   text-decoration: none!important;
 }
 
-.input-group-text {
+.bg-input-group {
   background-color: #007bff !important;
+}
+
+.nmb-link:hover {
+  text-decoration: none !important;
 }
 
 .b-day {
@@ -28,7 +32,7 @@ abbr[data-original-title] {
 }
 
 .breadcrumb {
-  background-color: rgb(240, 240, 240) !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
 .devise-txt {

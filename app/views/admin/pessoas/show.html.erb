@@ -11,17 +11,7 @@
 
   <div class="card mt-2">
     <div class="card-header">
-      <h4 class="my-auto text-primary text-center"><b><%= @pessoa.nome %></b>
-        <span style="font-size: 20px;">
-          <%= link_to pessoa_path(@pessoa), method: :delete, title: "Apagar ficha de #{@pessoa.nome}",
-          data: { confirm: "Tem certeza que deseja apagar a ficha de #{@pessoa.nome}?" } do %>
-          <i class="fas fa-user-times text-danger float-right mt-1"></i>
-          <% end %>
-
-          <%= link_to edit_pessoa_path(@pessoa), title: "Editar informações de #{@pessoa.nome}" do %>
-          <i class="fas fa-user-edit text-primary float-right mr-3 mt-1"></i>
-          <% end %>
-        </span>
+      <h4 class="my-auto text-primary"><b><%= @pessoa.nome %></b>
       </h4>
     </div>
 
@@ -47,8 +37,18 @@
         <%= link_to atividade.nome, atividade, class: "badge badge-primary", style: "font-size: 16px;" %>
         <% end %>
       <% end %></p>
+      <span style="font-size: 20px;">
+        <%= link_to pessoa_path(@pessoa), method: :delete, class: "btn btn-outline-danger", title: "Apagar ficha de #{@pessoa.nome}",
+        data: { confirm: "Tem certeza que deseja apagar a ficha de #{@pessoa.nome}?" } do %>
+        <i class="fas fa-user-times float-right"></i>
+        <% end %>
+
+        <%= link_to edit_pessoa_path(@pessoa), title: "Editar informações de #{@pessoa.nome}", class: "btn btn-outline-primary" do %>
+        <i class="fas fa-user-edit float-right"></i>
+        <% end %>
+      </span>
     </div>
-    <div class="card-footer text-muted">
+    <div class="card-footer text-muted text-center">
       Cadastrado(a) há <%= time_ago_in_words(@pessoa.created_at) %>
     </div>
   </div>

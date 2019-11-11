@@ -14,6 +14,9 @@ class AdminController < ApplicationController
 
   def index
     @voluntarios = Voluntario.all
+    @eventos = Evento.all
+    @pessoas = Pessoa.all
+    @atividades = Atividade.all
   end
 
   def show

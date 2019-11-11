@@ -11,6 +11,14 @@ abbr[data-original-title] {
   text-decoration: none!important;
 }
 
+.input-group-text {
+  background-color: #007bff !important;
+}
+
+.b-day {
+  font-size: 18px;
+}
+
 .bg-active:hover {
   background-color: #B0B0B0 !important;
 }
@@ -27,17 +35,13 @@ abbr[data-original-title] {
   margin-top: 40px;
 }
 
-.admin-txt-top {
-  margin: 28px 0 20px 0;
-}
-
 .admin-txt {
   color: #696969;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
 .admin-welcome {
-  color: #05afea;
+  // color: #05afea;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 700;
 }

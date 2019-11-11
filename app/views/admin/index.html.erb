@@ -1,11 +1,98 @@
 <div class="container admin-txt-top">
-  <h4 class="text-center admin-txt">Olá, <span class="admin-welcome"><%= current_user.name.titleize %></span>!</h4>
+  <br>
+
+  <h4 class="text-center admin-txt">Olá, <span class="admin-welcome text-primary"><%= current_user.name.titleize %></span>!</h4>
 
   <br>
 
-  <p><b>Última atividade cadastrada:</b></p>
-  <p><b>Última pessoa cadastrada:</b></p>
-  <p><b>Último voluntário cadastrado:</b></p>
-  <p><b>Próximo evento:</b></p>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><i class="fas fa-user-alt text-light"></i></span>
+    </div>
+    <li class="list-group-item flex-fill"><b>Última pessoa cadastrada:</b> <%= link_to Pessoa.pluck(:nome).last %></li>
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" style="width: 45px;" id="basic-addon1"><i class="fas fa-tags text-light"></i></span>
+    </div>
+    <li class="list-group-item flex-fill"><b>Última atividade cadastrada:</b> <%= link_to Atividade.pluck(:nome).last %></li>
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><i class="fas fa-id-card-alt text-light"></i></span>
+    </div>
+    <li class="list-group-item flex-fill"><b>Último voluntário cadastrado:</b> <%= link_to Voluntario.pluck(:nome).last %></li>
+  </div>
+
+<br>
+
+<div class="card-deck justify-content-center">
+
+    <div class="card">
+      <div class="card-body text-center">
+        <div class="h1 m-0 text-primary"><%= @pessoas.count %></div>
+        <div class="text-muted mb-3 mt-1">Pessoas cadastradas</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body text-center">
+        <div class="h1 m-0 text-primary"><%= @atividades.count %></div>
+        <div class="text-muted mb-3 mt-1">Total de atividades</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body text-center">
+        <div class="h1 m-0 text-primary"><%= @voluntarios.count %></div>
+        <div class="text-muted mb-3 mt-1">Voluntários cadastrados</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body text-center">
+        <div class="h1 m-0 text-primary"><%= @eventos.proximos_eventos.count %></div>
+        <div class="text-muted mb-3 mt-1">Eventos em <%= l Date.today, format: :month_only %></div>
+      </div>
+    </div>
+  </div>
+
+<br>
+
+<h3 class="mb-4 text-center">Aniversários - <%= l Date.today, format: :month_only %></h3>
+  <% @pessoas.proximos_aniversarios.each do |pessoa| %>
+    <% if pessoa.dt_nascimento.day == Date.today.day %>
+      <div class="card mb-2">
+        <div class="card-body">
+          <span class="b-day"><i class="fas fa-birthday-cake text-primary"></i> <b><%= pessoa.dt_nascimento.day %></b> - <%= pessoa.nome %></span>
+        </div>
+      </div>
+    <% elsif %>
+    <div class="card mb-2">
+      <div class="card-body">
+        <span class="b-day"><b><%= pessoa.dt_nascimento.day %></b> - <%= pessoa.nome %></span>
+      </div>
+    </div>
+
+    <% else %>
+    <div class="card mb-2">
+      <div class="card-body">
+        <span class="b-day">Nenhum aniversário recente.</span>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+
+</div>
+
+
+
+
+
+
+
+
 
 </div>

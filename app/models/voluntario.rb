@@ -4,4 +4,5 @@ class Voluntario < ApplicationRecord
   def form_presente
     presenca ? "Sim" : "Não"
   end
+
 end

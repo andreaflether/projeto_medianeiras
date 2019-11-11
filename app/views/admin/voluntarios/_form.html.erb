@@ -1,23 +1,23 @@
 <div class="section evt-form">
   <%= simple_form_for @voluntario do |f| %>
-    <%= f.input :nome, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}, required: true  %>
-    <%= f.input :dt_nascimento, label: "Data de nascimento", input_html: { class: 'form-control ml-1 mr-1 d-flex col'},
-    label_html: { class: 'label label_b col-md-12'}, wrapper_html: {class: 'form-row'}, start_year: Date.today.year - 90,
+    <%= f.input :nome, input_html: { class: 'form-control mb-0'}, label_html: { class: 'label label_b'}, required: true  %>
+    <%= f.input :dt_nascimento, label: "Data de nascimento", input_html: { class: 'form-control ml-1 mr-1 d-flex col mb-0'},
+    label_html: { class: 'label label_b col-md-12 mt-4'}, wrapper_html: {class: 'form-row'}, start_year: Date.today.year - 90,
     end_year: Date.today.year, required: true %>
-    <%= f.input :identidade, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+    <%= f.input :identidade, input_html: { class: 'form-control'}, label_html: { class: 'label label_b mt-4'}  %>
     <%= f.input :telefone, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
-    <%= f.input :email, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}, required: true  %>
+    <%= f.input :email, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'} %>
     <%= f.input :escolaridade, prompt: "Escolha uma escolaridade", label: "Escolaridade", collection: [ "Ensino fundamental", "Ensino médio",
-    "Curso técnico","Ensino superior", "Mestrado", "Doutorado"], input_html: { class: 'form-control', id: "escolaridade"},
+    "Curso técnico","Ensino superior", "Mestrado", "Doutorado"], input_html: { class: 'form-control mb-0', id: "escolaridade"},
     label_html: { class: 'label label_b'}, required: true%>
 
     <%= content_tag :div, class: 'js-dependent-fields', data: { 'select-id': 'escolaridade', 'option-value': 'Ensino superior|Mestrado|Doutorado|Curso técnico'} do %>
-      <%= f.input :especializacao, label: "Especialização", input_html: { class: 'form-control ml-1 mr-1 d-flex col hidden-field'},
-      label_html: { class: 'label label_b col-md-12 hidden-field'}, wrapper_html: {class: 'form-row hidden-field'}%>
+      <%= f.input :especializacao, label: "Especialização", input_html: { class: 'form-control ml-1 mr-1 d-flex col hidden-field mb-0 '},
+      label_html: { class: 'label label_b col-md-12 hidden-field mt-3'}, wrapper_html: {class: 'form-row hidden-field'}%>
     <% end %>
 
     <%= f.input :dt_entrada, label: "Data de entrada no Centro", input_html: { class: 'form-control ml-1 mr-1 d-flex col'},
-    label_html: { class: 'label label_b col-md-12'}, wrapper_html: {class: 'form-row'}, required: true  %>
+    label_html: { class: 'label label_b col-md-12 mt-4'}, wrapper_html: {class: 'form-row'}, required: true  %>
 
     <%= f.input :presenca, collection: [['true', 'Sim'], ['false', 'Não']], selected: 1, prompt: "Selecione uma opção", label_method: :second,
     value_method: :first, label: "Voluntário está no Centro Comunitário atualmente?", input_html: { class: 'form-control', id: 'boolean'}, label_html: { class: 'select label_b'},

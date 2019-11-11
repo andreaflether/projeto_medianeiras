@@ -8,10 +8,10 @@
   <%= simple_form_for @pessoa do |f| %>
   <%= f.input :nome, input_html: { class: 'form-control mb-0', required: true}, label_html: { class: 'label label_b'} %>
   <%= f.input :dt_nascimento, label: "Data de nascimento", input_html: { class: 'form-control ml-1 mr-1 d-flex col'},
-  label_html: { class: 'label label_b col-md-12'}, wrapper_html: {class: 'form-row'}, start_year: Date.today.year - 90,
+  label_html: { class: 'label label_b col-md-12 mt-4'}, wrapper_html: {class: 'form-row'}, start_year: Date.today.year - 90,
   end_year: Date.today.year, required: true %>
   <%= f.input :idade, input_html: { class: 'form-control mb-0'}, label_html: { class: 'label label_b'}, required: true  %>
-  <%= f.input :endereco, label: "Endereço", input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
+  <%= f.input :endereco, label: "Endereço", input_html: { class: 'form-control'}, label_html: { class: 'label label_b mt-4'}  %>
   <%= f.input :bairro, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
   <%= f.input :telefone, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'} %>
   <%= f.input :religiao, prompt: "Escolha uma religião", label: "Religião", collection: [ "Ateu", "Católico(a)", "Evangélico(a)", "Agnóstico(a)", "Outra"],

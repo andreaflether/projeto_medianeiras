@@ -8,8 +8,10 @@
     <%= f.input :endereco, label: "Endereço", input_html: { class: 'form-control'}, label_html: { class: 'label label_b mt-4'}  %>
     <%= f.input :bairro, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
     <%= f.input :telefone, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'} %>
-    <%= f.input :religiao, prompt: "Escolha uma religião", label: "Religião", collection: [ "Ateu", "Católico(a)", "Evangélico(a)", "Agnóstico(a)", "Outra"],
+    <%= f.input :religiao, prompt: "Escolha uma religião", label: "Religião",
+    collection: [ "Ateu", "Católico(a)", "Evangélico(a)", "Agnóstico(a)", "Outra"],
     input_html: { class: 'form-control', id: 'religiao'}, label_html: { class: 'label label_b'}%>
+
     <%= content_tag :div, class: 'js-dependent-fields', data: { 'select-id': 'religiao', 'option-value': 'Outra'} do %>
       <%= f.input :religiao, label: "Informe a religião", input_html: { class: 'form-control hidden-fields'}, label_html: { class: 'label label_b hidden-fields'}  %>
     <% end %>
@@ -55,4 +57,13 @@
         }
     });
 })
+</script>
+
+<script>
+  $('#religiao').change(function() {
+    if($('#religiao').val() === 'Outra')
+      $('#pessoa_religiao').val('')
+    else
+      $("#pessoa_religiao").val($('#religiao').val());
+  });
 </script>

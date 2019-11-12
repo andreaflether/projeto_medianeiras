@@ -1,26 +1,25 @@
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/i18n/pt-BR.js" integrity="sha256-/pqU7mByO80szYr1JmBQCoGGTtAgj2viXKUnyEK7I5k=" crossorigin="anonymous"></script> -->
-
 <div class="section evt-form">
   <%= simple_form_for @atividade do |f| %>
-    <%= f.input :nome, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}, required: true  %>
-    <%= f.input :qtd_max_alunos, label: "Quantidade máxima de alunos", input_html: { class: 'form-control'}, label_html: { class: 'label label_b'},
-    required: true  %>
-    <%= f.association :voluntarios, label: "Professor(a)/Responsável", :collection => @voluntarios.order('nome ASC'), :label_method => :nome,
-    :value_method => :id, input_html: {class: 'select21', style: 'width: 100%; '}, label_html: { class: 'label label_b'}, required: true %><br>
-    <%= f.input :horario, label: "Horário", input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}, required: true %>
-    <%= f.input :dias_semana, label: "Dias da semana", input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}, required: true %>
-    <%= f.button :submit, class: "btn btn-primary btn-criar"%>
-    <%= link_to 'Voltar', :back, class: "btn btn-outline-secondary" %>
+    <%= f.input :nome, input_html: { class: 'form-control mb-0'}, label_html: { class: 'label label_b'}, required: true  %>
+    <%= f.input :qtd_max_alunos, label: "Quantidade máxima de alunos", input_html: { class: 'form-control mb-0'},
+    label_html: { class: 'label label_b mt-4'}, required: true  %>
+    <%= f.association :voluntarios, label: "Professor(a)/Responsável", :collection => @voluntarios.order('nome ASC'),
+    :label_method => :nome, :value_method => :id, input_html: {class: 'select21 mb-0', style: 'width: 100%; '},
+    label_html: { class: 'label label_b mt-4'}, required: true %><br>
+    <%= f.input :horario, label: "Horário", input_html: { class: 'form-control mb-0'}, label_html: { class: 'label label_b'}, required: true %>
+    <%= f.input :dias_semana, label: "Dias da semana", input_html: { class: 'form-control mb-0'}, label_html: { class: 'label label_b mt-4'}, required: true %>
+    <%= f.button :submit, class: "btn btn-primary btn-criar mt-4"%>
+    <%= link_to 'Voltar', :back, class: "btn btn-outline-secondary mt-4" %>
   <% end %>
 <div>
 
-  <!-- Script para habilitar o select2 no campo "Atividades" -->
-  <script>
-    $(document).ready(function() {
-      $('.select21').select2({
-        theme: 'bootstrap',
-        placeholder: 'Selecionar Professor(a)/Responsável',
-        language: 'pt-BR'
-      });
-  });
-  </script>
+<!-- Script para habilitar o select2 no campo "Atividades" -->
+<script>
+  $(document).ready(function() {
+    $('.select21').select2({
+      theme: 'bootstrap',
+      placeholder: 'Selecionar Professor(a)/Responsável',
+      language: 'pt-BR'
+    });
+});
+</script>

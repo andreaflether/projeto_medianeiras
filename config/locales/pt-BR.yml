@@ -7,6 +7,11 @@ pt-BR:
       voluntario:
         one: Voluntário
         other: Voluntários
+    attributes:
+      atividade:
+        qtd_max_alunos: Quantidade máxima de alunos
+        horario: Horário
+        dias_semana: Dias da semana
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

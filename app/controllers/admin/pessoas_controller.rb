@@ -4,19 +4,21 @@ class Admin::PessoasController < AdminController
     @pessoa = Pessoa.new
     @pessoa.atividade_ids = [params[:atividade_id].to_i] if params[:atividade_id]
     @atividades = Atividade.all
+    @pessoas_atividades = Pessoa.includes(:atividades).all.count
     # raise
   end
 
   def create
     @pessoa = Pessoa.new(pessoa_params)
     @atividades = Atividade.all
+    @pessoas_atividades = Pessoa.includes(:atividades).all.count
 
     if @pessoa.save
       redirect_to @pessoa, notice: "Cadastro realizado com sucesso!"
+
     else
       render 'new'
     end
-
   end
 
   def update

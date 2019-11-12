@@ -4,7 +4,6 @@ class Atividade < ApplicationRecord
 
   validates :nome, presence: true
   validates :qtd_max_alunos, presence: true
-  validates :professor, presence: true
   validates :horario, presence: true
   validates :dias_semana, presence: true
 

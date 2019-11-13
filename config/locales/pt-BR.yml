@@ -186,13 +186,14 @@ pt-BR:
       complete_numbers: "%d/%m/%Y"
       complete_plus_hours: "%d de %B de %Y, %H:%M"
   views:
+    pagination:
+      previous: "Anterior"
+      next: "Próximo &raquo;"
+      truncate: "…"
+      first: "&laquo; Início"
   admin:
     home:
       name: Home
-    pagination:
-      previous: "&laquo; Anterior"
-      next: "Próximo &raquo;"
-      truncate: "…"
     misc:
       search: "Procurar"
       filter: "Filtrar"

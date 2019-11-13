@@ -3,8 +3,8 @@ class Admin::EventosController < AdminController
   layout 'menu_admin'
 
   def index
-    @eventos = Evento.all
-    #@eventos = Evento.all.order("created_at DESC")
+    # @eventos = Evento.all
+    @eventos = Evento.order("data").page(params[:page]).per(10)
   end
 
   def new

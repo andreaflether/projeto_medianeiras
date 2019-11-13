@@ -77,7 +77,7 @@
         <% @proximos_eventos.order(data: :asc, hora: :asc).limit(4).each do |evento| %>
         <div class="col-md-12 mb-4">
           <div class="card-event my-auto" style="background-color: #f0f0f0; padding: 20px 20px; border-left: 5px solid #05afea;">
-            <h4 class="align-middle"><b><%= evento.data.day %></b> - <%= evento.nome %></h4>
+            <h4 class="align-middle"><b><%= evento.data.day %></b> - <%= evento.nome %> - <%= evento.hora %></h4>
             <p class="align-middle"><i class="fas fa-map-marker-alt c-icon"></i><%= evento.local %> - <%= evento.descricao %></p>
             <% if current_user.admin? %>
               <%= link_to 'Editar', edit_evento_path(evento), class: 'btn btn-outline-primary btn-next' %>

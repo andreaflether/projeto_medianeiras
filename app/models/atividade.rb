@@ -7,4 +7,8 @@ class Atividade < ApplicationRecord
   validates :horario, presence: true
   validates :dias_semana, presence: true
 
+  # scope :disponiveis, lambda {
+  #   joins(:pessoas).group('atividades_pessoas.pessoa_id')
+  #   .having('qtd_max_alunos < count(pessoas.id)')
+  # }
 end

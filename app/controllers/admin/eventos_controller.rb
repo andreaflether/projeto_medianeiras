@@ -3,7 +3,6 @@ class Admin::EventosController < AdminController
   layout 'menu_admin'
 
   def index
-    # @eventos = Evento.all
     @eventos = Evento.order("data").page(params[:page]).per(10)
   end
 
@@ -24,7 +23,6 @@ class Admin::EventosController < AdminController
 
   def proximos_eventos
     @title = 'Admin - Próximos Eventos'
-    #@eventos = Evento.all.order("created_at ASC")
     @proximos_eventos = Evento.proximos_eventos
   end
 

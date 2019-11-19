@@ -5,7 +5,6 @@ class Admin::PessoasController < AdminController
     @pessoa.atividade_ids = [params[:atividade_id].to_i] if params[:atividade_id]
     @atividades = Atividade.all
     @pessoas_atividades = Pessoa.includes(:atividades).all.count
-    # raise
   end
 
   def create
@@ -58,9 +57,9 @@ class Admin::PessoasController < AdminController
     @pessoa = Pessoa.find(params[:id])
   end
 
-  def idade
-    @idade = Date.today.year - Pessoa.params[:dt_nascimento].to_i
-  end
+  def promulher
+
+  end 
 
   private
 

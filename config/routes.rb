@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'pages/projetos'
   get 'pages/atividades'
   get 'pages/eventos'
+  get 'admin/pessoas/promulher'
 
   # Admin main route
   get 'admin/', to: 'admin#index'

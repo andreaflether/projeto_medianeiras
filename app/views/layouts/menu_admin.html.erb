@@ -9,7 +9,6 @@
   <script src="https://kit.fontawesome.com/8d9d868ad3.js" crossorigin="anonymous"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
   <title>Medianeiras - Admin</title>
 </head>
 
@@ -20,39 +19,44 @@
       <div class="sidebar-heading"><a href="/admin" class="admin-menu-title"><i class="fas fa-cog"></i> Medianeiras Admin</a></div>
       <div class="list-group list-group-flush">
 
-        <span class="list-group-item tsts"">Pessoas</span>
-        <a href="/admin/pessoas/novo" class="list-group-item list-group-item-action bg-light <%='bg-active' if current_page?(new_pessoa_path)%>">Cadastrar pessoa</a>
+        <!-- Pessoas -->
+        <span class="list-group-item tsts">Pessoas</span>
+        <a href="/admin/pessoas/novo" class="list-group-item list-group-item-action
+        bg-light menu-item">Cadastrar pessoa</a>
         <a href="/admin/pessoas" class="list-group-item list-group-item-action bg-light
-        <%='bg-active' if current_page?(pessoas_path)%>">Ver cadastros</a>
-        <a href="/admin/pessoas/promulher" class="list-group-item list-group-item-action bg-light <%='bg-active' if current_page?(admin_pessoas_promulher_path)%>">Cadastro Promulher</a>
+        menu-item">Ver cadastros</a>
+        <a href="/admin/pessoas/promulher" class="list-group-item list-group-item-action
+        bg-light menu-item">Cadastro Promulher</a>
 
-
+        <!-- Atividades -->
         <span class="list-group-item tsts">Atividades</span>
-        <a href="/admin/atividades/novo" class="list-group-item list-group-item-action bg-light
-        <%='bg-active' if current_page?(new_atividade_path)%>">Cadastrar atividade</a>
-        <a href="/admin/atividades" class="list-group-item list-group-item-action bg-light
-        <%='bg-active' if current_page?(atividades_path)%>">Ver todas</a>
+        <a href="/admin/atividades/novo" class="list-group-item list-group-item-action
+        bg-light menu-item">Cadastrar atividade</a>
+        <a href="/admin/atividades" class="list-group-item list-group-item-action
+        bg-light menu-item">Ver todas</a>
 
+        <!-- Voluntários -->
         <span class="list-group-item tsts">Voluntários</span>
-        <a href="/admin/voluntarios/novo" class="list-group-item list-group-item-action bg-light
-        <%='bg-active' if current_page?(new_voluntario_path)%>">Cadastrar voluntário</a>
-        <a href="/admin/voluntarios" class="list-group-item list-group-item-action bg-light
-        <%='bg-active' if current_page?(voluntarios_path)%>">Ver todos</a>
+        <a href="/admin/voluntarios/novo" class="list-group-item list-group-item-action
+        bg-light menu-item">Cadastrar voluntário</a>
+        <a href="/admin/voluntarios" class="list-group-item list-group-item-action
+        bg-light menu-item">Ver todos</a>
 
+        <!-- Eventos -->
         <span class="list-group-item tsts">Eventos</span>
-        <a href="/admin/eventos/calendario" class="list-group-item list-group-item-action bg-light
-        <%='bg-active' if current_page?(admin_eventos_calendario_path)%>">Calendário</a>
-        <a href="/admin/eventos/novo" class="list-group-item list-group-item-action bg-light
-        <%='bg-active' if current_page?(new_evento_path)%>">Novo evento</a>
-        <a href="/admin/eventos/proximos_eventos" class="list-group-item list-group-item-action bg-light
-        <%='bg-active' if current_page?(admin_eventos_proximos_eventos_path)%>">Próximos eventos</a>
+        <a href="/admin/eventos/calendario" class="list-group-item list-group-item-action
+        bg-light menu-item">Calendário</a>
+        <a href="/admin/eventos/novo" class="list-group-item list-group-item-action
+        bg-light menu-item">Novo evento</a>
+        <a href="/admin/eventos/proximos_eventos" class="list-group-item
+        list-group-item-action bg-light menu-item">Próximos eventos</a>
         <a href="/admin/eventos/" class="list-group-item list-group-item-action bg-light
-        <%='bg-active' if current_page?(eventos_path)%>">Ver todos os eventos</a>
+        menu-item">Ver todos os eventos</a>
 
         <% if current_user.superadmin? %>
         <span class="list-group-item tsts">Usuários</span>
-        <a href="/admin/users" class="list-group-item list-group-item-action bg-light
-        <%='bg-active' if current_page?(users_path)%>">Gerenciar usuários</a>
+        <a href="/admin/users" class="list-group-item list-group-item-action bg-light menu-item
+        ">Gerenciar usuários</a>
         <% end %>
       </div>
     </div>
@@ -116,22 +120,48 @@
   </div>
   <!-- /#wrapper -->
 
-  <!-- Menu Toggle Script -->
+  <!-- Menu toggle script -->
   <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
   </script>
 
-  <!-- Alerts -->
-  <script>
+  <!-- <script>
   $(".alert").fadeTo(4000, 500).slideUp(500, function(){
       $(".alert").alert('close');
       $(this).remove();
   });
+  </script> -->
+
+  <!-- Alertas -->
+  <script>
+
+  $(".alert").fadeIn();
+  closeSnoAlertBox();
+  showAlert();
+
+  function showAlert() {
+    $(".alert").addClass("in");
+  }
+
+  function closeSnoAlertBox(){
+    window.setTimeout(function () {
+    $(".alert").fadeOut(300)
+    }, 3000);
+    }
+  </script>
+
+  <!-- Itens do menu (Active) -->
+  <script>
+    $('a.menu-item').each(function () {
+      var curr_page = ($(this)).attr('href');
+      if (window.location.pathname == curr_page) {
+        $(this).addClass("bg-active")
+      }
+    });
   </script>
 
 </body>
-
 </html>

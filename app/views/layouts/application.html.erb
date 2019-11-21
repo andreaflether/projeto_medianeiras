@@ -42,3 +42,20 @@ $(".alert").fadeTo(4000, 500).slideUp(500, function(){
 });
 
 </script> -->
+
+<script>
+
+$(".alert").fadeIn();
+closeSnoAlertBox();
+showAlert();
+
+function showAlert() {
+  $(".alert").addClass("in");
+}
+
+function closeSnoAlertBox(){
+  window.setTimeout(function () {
+  $(".alert").fadeOut(300)
+}, 5000);
+  }
+</script>

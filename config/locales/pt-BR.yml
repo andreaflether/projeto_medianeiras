@@ -184,6 +184,7 @@ pt-BR:
     formats:
       month_only: "%B"
       complete_numbers: "%d/%m/%Y"
+      day_month: "%d/%B"
       complete_plus_hours: "%d de %B de %Y, %H:%M"
   views:
     pagination:

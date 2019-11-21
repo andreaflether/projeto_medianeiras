@@ -3,7 +3,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js" integrity="sha256-jGAkJO3hvqIDc4nIY1sfh/FPbV+UK+1N+xJJg6zzr7A=" crossorigin="anonymous"></script>
 
 <div class="container">
-  <h4 class="title-txt text-center text-justify">5 anos da presença das Irmãs do Preciosíssimo Sangue</h4>
+  <h3 class="title-txt text-center text-justify">5 anos da presença das Irmãs do Preciosíssimo Sangue</h3>
   <p class="text-justify text-center"><b>Em agosto de 2019, completamos 5 anos da existência do Centro Comunitário Nossa Senhora Medianeira.</b></p>
 
   <p class="text-justify">
@@ -57,7 +57,7 @@
   </div>
 </div>
 
-<h4 class="title-txt text-center">Vídeo</h4>
+<h3 class="title-txt text-center">Vídeo</h3>
 <p class="text-center">Colocar vídeo de 5 anos.</p>
 <div class="row text-center justify-content-center align-items-center">
   <div class="col-md-8 embed-responsive embed-responsive-16by9 d-flex">
@@ -67,27 +67,29 @@
 </div>
 <br>
 
-<h4 class="title-txt text-center">Próximos eventos - <%= l Date.today, format: :month_only %></h4>
 
-<div class="container">
-  <div class="row justify-content-md-center">
+<h3 class="title-txt text-center">Próximos eventos - <%= l Date.today, format: :month_only %></h3>
+  <div class="container mt-4">
     <% if @proximos_eventos.blank? %>
-      <h4 class="text-center">Não há eventos agendados para este mês.</h4>
-      <% else %>
-        <% @proximos_eventos.order(data: :asc, hora: :asc).limit(4).each do |evento| %>
-        <div class="col-md-12 mb-4">
-          <div class="card-event my-auto" style="background-color: #f0f0f0; padding: 20px 20px; border-left: 5px solid #05afea;">
-            <h4 class="align-middle"><b><%= evento.data.day %></b> - <%= evento.nome %> - <%= evento.hora %></h4>
-            <p class="align-middle"><i class="fas fa-map-marker-alt c-icon"></i><%= evento.local %> - <%= evento.descricao %></p>
-            <% if current_user.admin? %>
-              <%= link_to 'Editar', edit_evento_path(evento), class: 'btn btn-outline-primary btn-next' %>
-              <%= link_to 'Apagar', evento_path(evento), class: 'btn btn-outline-danger btn-next', method: :delete, data: { confirm: 'Tem certeza que deseja apagar o evento selecionado?' } %>
-            <% end %>
-          </div>
-        </div>
-        <% end %>
+    <h4 class="text-center">Não há eventos agendados para este mês.</h4>
+    <% else %>
+    <% @proximos_eventos.order(data: :asc, hora: :asc).limit(5).each do |evento| %>
+    <div class="row justify-content-center mb-2">
+      <div class="col-md-2">
+        <h3><span class="badge badge-primary bl-color"><%= l evento.data, format: :day_month %></span></h3>
+      </div>
+      <div class="col-md-6">
+        <h4><strong><%= evento.nome %></strong></h4>
+        <em><%= evento.local %></em> - <%= evento.hora %> <br>
+        <span class="small"><%= evento.descricao %></span>
+      </div>
+    </div>
+    <br>
     <% end %>
+
   </div>
+  <% end %>
+
 <script>
   $(document).on('click', '[data-toggle="lightbox"]', function(event) {
                 event.preventDefault();

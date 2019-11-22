@@ -5,3 +5,34 @@
 .link-ativ:hover {
   color: #049ACC;
 }
+
+.ativ-card {
+  border-radius: 5px;
+  box-shadow: 0 4px 6px -1px rgb(198, 207, 234);
+  background-color: white;
+}
+
+.card-txt {
+  color: #747373;
+  font-size: 1rem;
+}
+
+.btn-inscricoes {
+  background-color: #05afea !important;
+  border: 1px solid #05afea !important;
+  transition: 0.2s !important;
+}
+
+.btn-inscricoes:hover {
+  background-color: #049ACC !important;
+  border: 1px solid #049ACC !important;
+}
+
+.p-btn {
+  padding: 0.375rem 6rem;
+}
+
+.no-bkg {
+  background-color: transparent !important;
+  color: #05afea;
+}

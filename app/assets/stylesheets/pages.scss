@@ -76,6 +76,20 @@
   color: white;
 }
 
+.teacher {
+  color: #05afea;
+  cursor: help;
+}
+
+.teste-obj {
+  object-fit: cover !important;
+  width: auto !important;
+  height: 420px !important;
+}
+
+.btn-hour:hover {
+  cursor: default !important;
+}
 
 @media (max-width: 991px) {
 
@@ -115,6 +129,38 @@
   }
 
   .c-evento {
+    text-align: center;
+  }
+}
+@media (max-width: 1321px) {
+
+
+  .new-break {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .obj-teste {
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 450px !important;
+  }
+
+  .new-break-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+
+}
+
+@media (max-width: 768px) {
+  .obj-teste {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+  .new-break-content {
     text-align: center;
   }
 }

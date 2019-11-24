@@ -86,9 +86,10 @@
     </div>
     <br>
     <% end %>
-
-  </div>
   <% end %>
+</div>
+
+  <%= render 'footer' %>
 
 <script>
   $(document).on('click', '[data-toggle="lightbox"]', function(event) {
@@ -96,4 +97,3 @@
                 $(this).ekkoLightbox();
             });
 </script>
-<%= render 'footer' %>

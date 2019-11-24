@@ -7,70 +7,121 @@
 <h2 class="title-txt text-center">Atividades</h2>
 <br>
 
- <!-- Link card: https://bootsnipp.com/snippets/nNQyv e https://mdbootstrap.com/plugins/jquery/extended-cards/ -->
 <div class="container-fluid sec-esporte">
 
-  <div class="row no-gutters ativ-card">
-    <div class="col-md-4">
-      <%= image_tag("bale_1.jpg", :class => "img-fluid", alt:"...")%>
+  <!-- Balé -->
+  <div class="row no-gutters ativ-card align-items-center">
+    <div class="col-md-4 col-sm-12 new-break">
+      <%= image_tag("bale_5.jpg", :class => "img-fluid obj-teste", alt:"...")%>
     </div>
-    <div class="col-md-8 px-5 bg-white">
-      <h2 class="card-title tit-esporte mt-3">Balé</h2>
+
+    <div class="col-md-8 px-5 bg-white py-4 new-break-content">
+      <h2 class="card-title tit-esporte mt-2">Balé</h2>
       <p class="card-txt">As aulas de Balé proporcionam às crianças e adolescentes o fortalecimento da musculatura das pernas,
         a postura do corpo, a coordenação motora, a disciplina da mente e corpo e sobretudo noções de localização
         e orientação de espaço.</p>
         <hr>
-        <div class="row no-gutters">
-          <div class="col-md-5">
+        <div class="row">
+          <div class="col-lg-5 col-md-5 col-sm-12">
             <p style="font-size: 19px;">Disponibilidade de horário</p>
-            <p class="card-txt"><button type="button" class="btn btn-primary btn-inscricoes no-bkg badge-pill px-3 py-1 mr-2">Terças e quintas</button>- 9 às 11 horas</p>
+            <p class="card-txt"><button type="button" class="btn btn-primary btn-inscricoes no-bkg badge-pill px-3 py-1 mr-2">
+              Sábados</button>- 9 às 11 horas</p>
           </div>
-          <div class="col-md-4">
+          <div class="col-lg-3 col-md-3 col-sm-12">
             <p style="font-size: 19px;">Professor(a)</p>
-            <p class="card-txt">Patrícia Fernandes</p>
+            <p class="card-txt teacher" data-toggle="tooltip" data-placement="top" title="Voluntária desde 2013 Formada em Educação Física">
+              <b>Patrícia Fernandes</b>
+            </p>
           </div>
-          <div class="col-md-3">
+          <div class="col-lg-4 col-md-4 col-sm-12">
             <p style="font-size: 19px;">Local</p>
             <p class="card-txt">Centro Comunitário Nossa Senhora Medianeira</p>
           </div>
+          <div class="text-center col-md-12" style="font-size: 19px;">Vagas: 25/30 - <b>5 vagas disponíveis</b></div>
           <div class="col-md-12 d-flex justify-content-center">
-            <button type="button" class="btn btn-primary btn-inscricoes p-btn">Inscrições</button>
+            <button type="button" class="btn btn-primary btn-inscricoes p-btn mt-4">Inscrições</button>
           </div>
         </div>
       </div>
     </div>
-</div>
+    <br>
 
-<br>
-<br>
-
-<!-- <i class="fas fa-map-marker-alt c-icon"></i> Centro Comunitário Nossa Senhora Medianeira <br> -->
-<!-- <a href="http://m.me/ccnmedianeira" class="btn btn-primary btn-inscricao mt-3" target="_blank">Inscrições</a> -->
-<!-- <i class="fas fa-chalkboard-teacher c-icon"></i> <span class="link-ativ" data-toggle="modal" data-target="#exampleModal">Professora Patrícia Fernandes</span> | -->
-<!-- <i class="far fa-calendar-alt c-icon"></i> Sábado, das 9 às 11 horas <br> -->
-
-<!-- Balé -->
-<div class="container-fluid sec-esporte pb-4">
-  <div class="row no-gutters align-items-center" style="background-color: white; padding: 20px 20px; border-left: 5px solid #05afea;">
-
-    <div class="col-md-4">
-      <%= image_tag("bale_1.jpg", :class => "img-fluid mt-2", alt:"...")%>
-    </div>
-
-    <div class="col-md-8">
-      <div class="card-body">
-        <h2 class="card-title tit-esporte">Balé</h2> <hr>
-        <p class="card-text">As aulas de Balé proporcionam às crianças e adolescentes o fortalecimento da musculatura das pernas,
-        a postura do corpo, a coordenação motora, a disciplina da mente e corpo e sobretudo noções de localização
-        e orientação de espaço.</p>
-        <i class="fas fa-chalkboard-teacher c-icon"></i> <span class="link-ativ" data-toggle="modal" data-target="#exampleModal" style="color: #05afea;">Professora Patrícia Fernandes</span> |
-        <i class="far fa-calendar-alt c-icon"></i> Sábado, das 9 às 11 horas <hr class="ativ-hr">
-        <i class="fas fa-map-marker-alt c-icon"></i> Centro Comunitário Nossa Senhora Medianeira <hr class="ativ-hr">
-        <a href="http://m.me/ccnmedianeira" class="btn btn-primary badge-pill btn-inscricao mt-2" target="_blank">Inscrições</a>
+    <!-- Karatê -->
+    <div class="row no-gutters align-items-center ativ-card">
+      <div class="col-md-4 new-break">
+        <%= image_tag("karate_2.jpg", :class => "img-fluid teste-obj obj-teste", alt:"...")%>
       </div>
-    </div>
-  </div>
+      <div class="col-md-8 px-5 bg-white new-break-content py-4">
+        <h2 class="card-title tit-esporte">Karatê</h2>
+        <p class="card-txt">O Karatê proporciona grande condicionamento cardiovascular, muscular e desenvolve a coordenação motora.
+          A arte marcial exige exercício mental em que o lutador passa a criar estratégias e aprende a controlar
+          as suas emoções. Faixa etária: de 7 a 14 anos.</p>
+          <hr>
+          <div class="row">
+            <div class="col-md-5">
+              <p style="font-size: 19px;">Disponibilidade de horário</p>
+              <p class="card-txt">
+                <button type="button" class="btn btn-primary btn-inscricoes no-bkg badge-pill px-3 py-1 mr-2 btn-hour">
+                  Qua/Qui/Sex</button>- 9 às 11 horas
+                </p>
+            </div>
+            <div class="col-md-3">
+              <p style="font-size: 19px;">Professor(a)</p>
+              <p class="card-txt teacher" data-toggle="tooltip" data-placement="top"
+              title="Voluntária desde 2013 Formada em Educação Física"><b>Neto / Juscelino / Júnior</b></p>
+            </div>
+            <div class="col-md-4">
+              <p style="font-size: 19px;">Local</p>
+              <p class="card-txt">Centro Comunitário Nossa Senhora Medianeira</p>
+            </div>
+            <div class="text-center col-md-12" style="font-size: 19px;">Vagas: 25/30 - <b>5 vagas disponíveis</b></div>
+            <div class="col-md-12 d-flex justify-content-center">
+              <button type="button" class="btn btn-primary btn-inscricoes p-btn mt-4">Inscrições</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <!-- Muay Thay -->
+      <div class="row no-gutters ativ-card">
+        <div class="col-md-4">
+          <%= image_tag("mtay.jpg", :class => "img-fluid teste-obj", alt:"...")%>
+        </div>
+        <div class="col-md-8 px-5 bg-white py-4">
+          <h2 class="card-title tit-esporte mt-2">Muay Thay</h2>
+          <p class="card-txt">As aulas trazem benefícios para os jovens e adultos. Desenvolve habilidades de autodefesa,
+            ensina a conviver com os outros, melhora a coordenação motora, o raciocínio, o equilíbrio mental, torna ágil
+            e ensina, sobretudo, a disciplina.</p>
+            <hr>
+            <div class="row no-gutters">
+              <div class="col-md-5">
+                <p style="font-size: 19px;">Disponibilidade de horário</p>
+                <p class="card-txt">
+                  <button type="button" class="btn btn-primary btn-inscricoes no-bkg badge-pill px-3 py-1 mr-2">
+                    Qua/Qui/Sex</button>- 9 às 11 horas
+                  </p>
+              </div>
+              <div class="col-md-3">
+                <p style="font-size: 19px;">Professor(a)</p>
+                <p class="card-txt">Brayner CB</p>
+              </div>
+              <div class="col-md-4">
+                <p style="font-size: 19px;">Local</p>
+                <p class="card-txt">Centro Comunitário Nossa Senhora Medianeira</p>
+              </div>
+              <div class="text-center col-md-12" style="font-size: 19px;">Lotação: 25/30 - <b>5 vagas disponíveis</b></div>
+
+              <div class="col-md-12 d-flex justify-content-center">
+                <button type="button" class="btn btn-primary btn-inscricoes p-btn mt-4">Inscrições</button>
+              </div>
+            </div>
+          </div>
+        </div>
 </div>
+
+<br>
+<br>
 
 <!-- Modal -->
 <div class="modal fade in" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -95,54 +146,11 @@
 </div>
 <!-- Fim do Balé -->
 
-<!-- Karatê -->
-<div class="container-fluid sec-esporte mt-2 pb-4">
-  <div class="row no-gutters align-items-center" style="background-color: white; padding: 20px 20px; border-left: 5px solid #05afea;">
-
-    <div class="col-md-4">
-      <%= image_tag("karate_1.jpg", :class => "img-fluid mt-2", alt:"...")%>
-    </div>
-
-    <div class="col-md-8">
-      <div class="card-body">
-        <h2 class="card-title tit-esporte">Karatê</h2><hr>
-        <p class="card-text">O Karatê proporciona grande condicionamento cardiovascular, muscular e desenvolve a coordenação motora.
-          A arte marcial exige exercício mental em que o lutador passa a criar estratégias e aprende a controlar
-          as suas emoções. Faixa etária: de 7 a 14 anos.</p>
-          <i class="fas fa-chalkboard-teacher c-icon"></i> Professores Neto e Juscelino |
-          <i class="far fa-calendar-alt c-icon"></i> Quartas e Sextas <hr class="ativ-hr">
-          <i class="fas fa-map-marker-alt c-icon"></i> Centro Comunitário Nossa Senhora Medianeira <hr class="ativ-hr">
-          <a href="http://m.me/ccnmedianeira" class="btn btn-primary badge-pill btn-inscricao mt-2" target="_blank">Inscrições</a>
-      </div>
-    </div>
-
-  </div>
-</div>
-<!-- Fim do Karatê -->
-
-<!-- Muay Thay -->
-<div class="container-fluid sec-esporte mt-2">
-  <div class="row no-gutters align-items-center" style="background-color: #f8f8f8; padding: 20px 20px; border-left: 5px solid #05afea;">
-
-    <div class="col-md-4">
-      <%= image_tag("mthay_1.jpg", :class => "img-fluid mt-2", alt:"...")%>
-    </div>
-
-    <div class="col-md-8">
-      <div class="card-body">
-        <h2 class="card-title tit-esporte">Muay Thay</h2><hr>
-        <p class="card-text">As aulas trazem benefícios para os jovens e adultos.
-        Desenvolve habilidades de autodefesa, ensina a conviver com os outros, melhora a coordenação motora, o raciocínio,
-        o equilíbrio mental, torna ágil e ensina, sobretudo, a disciplina.</p>
-          <i class="fas fa-chalkboard-teacher c-icon"></i> Professor Brayner CB |
-          <i class="far fa-calendar-alt c-icon"></i> Quartas, Quintas e Sextas <hr class="ativ-hr">
-          <i class="fas fa-map-marker-alt c-icon"></i> Centro Comunitário Nossa Senhora Medianeira <hr class="ativ-hr">
-          <a href="http://m.me/ccnmedianeira" class="btn btn-primary badge-pill btn-inscricao mt-2" target="_blank">Inscrições</a>
-      </div>
-    </div>
-
-  </div>
-</div>
-<!-- Fim do Muay Thay -->
 </body>
 <%= render 'footer' %>
+
+<script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>

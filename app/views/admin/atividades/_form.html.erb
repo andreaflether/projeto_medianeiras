@@ -6,6 +6,18 @@
     <%= f.association :voluntarios, label: "Professor(a)/Responsável", :collection => @voluntarios.order('nome ASC'),
     :label_method => :nome, :value_method => :id, input_html: {class: 'select21 mb-0', style: 'width: 100%; '},
     label_html: { class: 'label label_b mt-4'}, required: true %><br>
+    <%= f.input :tipo, collection: [["atividade", "Atividade prática"], ["unifametro", "Projeto Unifametro"],
+    ["medianeiras", "Projeto Medianeiras"]], prompt: "Selecionar tipo da atividade",
+    label_method: :second, value_method: :first, label: "Tipo", input_html: { class: 'form-control', id: 'tipo'},
+    label_html: { class: 'select label_b'}%>
+
+    <%= content_tag :div, class: 'js-dependent-fields', data: { 'select-id': 'tipo', 'option-value': 'atividade'} do %>
+      <%= f.input :link_imagem, label: "Link da imagem", input_html: { class: 'form-control ml-1 mr-1 d-flex col hidden-field mb-0 '},
+      label_html: { class: 'label label_b col-md-12 hidden-field mt-2'}, wrapper_html: {class: 'form-row hidden-field'}%>
+      <%= f.input :descricao, label: "Descrição", input_html: { class: 'form-control ml-1 mr-1 d-flex col hidden-field mb-4 '},
+      label_html: { class: 'label label_b col-md-12 hidden-field mt-3'}, wrapper_html: {class: 'form-row hidden-field'}%>
+    <% end %>
+
     <%= f.input :horario, label: "Horário", input_html: { class: 'form-control mb-0'}, label_html: { class: 'label label_b'}, required: true %>
     <%= f.input :dias_semana, label: "Dias da semana", input_html: { class: 'form-control mb-0'}, label_html: { class: 'label label_b mt-4'}, required: true %>
     <%= f.button :submit, class: "btn btn-primary btn-criar mt-4"%>

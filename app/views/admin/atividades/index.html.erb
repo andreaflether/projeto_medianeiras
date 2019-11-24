@@ -76,6 +76,7 @@
               <tr>
                 <th scope="col">Nome</th>
                 <th scope="col">Idade</th>
+                <th scope="col">Tempo na atividade</th>
                 <th scope="col">Ações</th>
               </tr>
             </thead>
@@ -84,9 +85,13 @@
             <tr>
               <td class="align-middle"><%= link_to pessoa.nome, pessoa, class: 'text-dark', title: "Ver ficha de #{pessoa.nome}" %></td>
               <td class="align-middle"><%= pessoa.idade %></td>
-              <td class="align-middle"><%= link_to atividade_pessoa_path(atividade, pessoa), method: :delete, class: 'btn btn-outline-danger', title: "Remover #{pessoa.nome} de #{atividade.nome}",
+              <td class="align-middle"><%= time_ago_in_words(pessoa.dt_entrada) %></td>
+              <td class="align-middle"><%= link_to atividade_pessoa_path(atividade, pessoa), method: :delete, class: 'btn btn-outline-danger mr-2', title: "Remover #{pessoa.nome} de #{atividade.nome}",
               data: { confirm: "Tem certeza que deseja remover #{pessoa.nome} de #{atividade.nome}?" } do %>
                 <i class="fas fa-user-times"></i>
+              <% end %>
+              <%= link_to edit_pessoa_path(pessoa), title: "Editar informações de #{pessoa.nome}", class: "btn btn-outline-primary" do %>
+              <i class="fas fa-user-edit"></i>
               <% end %></td>
             </tr>
           </tbody>

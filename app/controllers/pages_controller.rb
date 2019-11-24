@@ -10,4 +10,10 @@ class PagesController < ApplicationController
     @proximos_eventos = Evento.proximos_eventos
   end
 
+  def atividades
+    @atividades = Atividade.where(tipo: "atividade")
+    @voluntarios = Voluntario.all
+    @pessoas = Pessoa.all
+  end
+
 end

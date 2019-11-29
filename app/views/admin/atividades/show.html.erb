@@ -25,3 +25,7 @@
     apagar a atividade selecionada?' } %></li>
   </ul>
 </div>
+
+<% if @atividade.imagem.present? %>
+  <%= image_tag(@atividade.imagem, :crop => :fill, :width => 150, :heigth => 150) %>
+<% end %>

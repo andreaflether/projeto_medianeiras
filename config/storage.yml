@@ -7,7 +7,7 @@ local:
   root: <%= Rails.root.join("storage") %>
 
 cloudinary:
-  cloud_name: "andreaflether"
+  cloud_name: "medianeiras"
   service: Cloudinary
   api_key: <%= ENV['MEDIANEIRAS_API_KEY'] %>
   api_secret: <%= ENV['MEDIANEIRAS_API_SECRET'] %>

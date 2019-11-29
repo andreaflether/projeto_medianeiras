@@ -12,5 +12,6 @@
 //= require_tree .
 
 $(document).ready(function() {
-     DependentFields.bind()
+  DependentFields.bind();
+  $('[data-toggle="tooltip"]').tooltip();
  });

@@ -65,13 +65,13 @@
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </div>
-<br>
 
+<br>
 
 <h3 class="title-txt text-center">Próximos eventos - <%= l Date.today, format: :month_only %></h3>
   <div class="container mt-4">
     <% if @proximos_eventos.blank? %>
-    <h4 class="text-center">Não há eventos agendados para este mês.</h4>
+    <h5 class="text-center">Não há eventos agendados para este mês.</h5>
     <% else %>
     <% @proximos_eventos.order(data: :asc, hora: :asc).limit(5).each do |evento| %>
     <div class="row justify-content-center mb-2">
@@ -89,7 +89,7 @@
   <% end %>
 </div>
 
-  <%= render 'footer' %>
+<%= render 'footer' %>
 
 <script>
   $(document).on('click', '[data-toggle="lightbox"]', function(event) {

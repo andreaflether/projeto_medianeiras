@@ -13,7 +13,6 @@ class Admin::AtividadesController < AdminController
     else
       render 'new'
     end
-
   end
 
   def update

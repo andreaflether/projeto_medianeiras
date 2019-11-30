@@ -22,7 +22,7 @@
     <tbody>
       <% @pessoas.each do |pessoa| %>
         <tr>
-          <td><%= link_to pessoa.nome, pessoa, class: "text-dark", title: "Ver ficha cadastral de #{pessoa.nome}" %></td>
+          <td><%= link_to pessoa.nome, pessoa, { :class => "text-dark", 'data-toggle' => 'tooltip', 'data-placement' => 'top', :title => "Ver ficha cadastral de #{pessoa.nome}" } %></td>
           <td><%= pessoa.idade %></td>
           <td><% pessoa.atividades.order(nome: :asc).each do |atividade| %>
             <% if pessoa.atividades.length > 1 %>
@@ -53,5 +53,10 @@
       }
     }
     );
+    // $('[data-toggle="tooltip"]').tooltip();
 });
+
+
+
+
 </script>

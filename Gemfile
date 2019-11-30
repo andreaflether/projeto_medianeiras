@@ -26,6 +26,7 @@ gem 'dependent-fields-rails'
 gem 'inline_svg'
 gem "simple_calendar", "~> 2.0"
 gem 'cloudinary'
+gem 'popper_js', '~> 1.14.5'
 
 #Bootstrap, JS
 source 'https://rails-assets.org' do

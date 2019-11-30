@@ -22,7 +22,9 @@
     <tbody id="teste1">
       <% @voluntarios.each do |voluntario| %>
         <tr>
-          <td class="align-middle align-self-center align-items-center"><%= link_to voluntario.nome, voluntario, class: "text-dark", title: "Ver ficha de #{voluntario.nome}" %></td>
+          <td class="align-middle align-self-center align-items-center"><%= link_to voluntario.nome, voluntario,
+          { :class => "text-dark", 'data-toggle' => 'tooltip', 'data-placement' => 'top',
+          :title => "Ver ficha cadastral de #{voluntario.nome}" } %></td>
           <td class="align-middle align-self-center align-items-center"><%= l voluntario.dt_nascimento, format: :complete_numbers, default: '-' %></td>
           <td class="align-middle align-self-center align-items-center"><%= voluntario.escolaridade %></td>
           <td class="align-middle align-self-center align-items-center">

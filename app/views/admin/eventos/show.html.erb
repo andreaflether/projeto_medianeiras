@@ -7,7 +7,7 @@
     <div class="card-body-text mb-3">
       <p class="card-text card-bigger"><i class="far fa-calendar-alt text-primary mr-2"></i>
         <b><%= l @evento.data, format: :long %> - <%= @evento.hora %></b></p>
-      <p class="card-text"><%= @evento.descricao.capitalize %></p>
+      <p class="card-text"><%= @evento.descricao%></p>
       <p class="card-text"><i class="fas fa-map-marker-alt text-primary mr-2"></i><%= @evento.local %></p>
     </div>
 

@@ -2,6 +2,7 @@
 //= require jquery.turbolinks
 //= require bootstrap
 //= require tether
+//= require popper
 //= require bootstrap-multiselect
 //= require select2
 //= require select2_locale_pt-BR
@@ -13,5 +14,4 @@
 
 $(document).ready(function() {
   DependentFields.bind();
-  $('[data-toggle="tooltip"]').tooltip();
- });
+});

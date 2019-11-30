@@ -130,15 +130,11 @@
   });
   </script>
 
-  <!-- <script>
-  $(".alert").fadeTo(4000, 500).slideUp(500, function(){
-      $(".alert").alert('close');
-      $(this).remove();
-  });
-  </script> -->
-
   <!-- Alertas -->
   <script>
+  $(document).ready(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
 
   $(".alert").fadeIn();
   closeSnoAlertBox();

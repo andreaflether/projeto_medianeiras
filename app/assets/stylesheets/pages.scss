@@ -6,24 +6,35 @@
 }
 
 .carousel-item {
-  object-fit: cover !important;
-  // object-position: 0 -1000px !important;
+  // object-fit: cover !important;
   width: 100% !important;
   height: 100vh !important;
 }
 
 .card-event {
   border-radius: 5px;
+  // box-shadow: 0 4px 6px -1px rgb(198, 207, 234);
 }
 
+.img-sobre:after {
+  background: rgba(0,0,0,0.6);
+}
 .card-event-yellow {
   border-top-left-radius: none !important;
   border-bottom-left-radius: none !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
 }
 
 .card-event-blue {
   border-top-right-radius: none !important;
   border-bottom-right-radius: none !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.card-event-blue, .card-event-yellow {
+  box-shadow: none !important;
 }
 
 .nav-texto {

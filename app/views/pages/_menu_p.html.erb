@@ -4,7 +4,7 @@
 <!-- Menu -->
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
 
-  <%= inline_svg("logoedit-01.svg", class: "navbar-brand logotipo") %>
+  <%= inline_svg("logoedit-01.svg", class: "navbar-brand logotipo", style: "cursor: pointer;") %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
   aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -15,16 +15,16 @@
         <%= link_to "Início", root_path, class: "nav-link nav-teste" %>
       </li>
       <li class="nav-item nav-texto">
-        <%= link_to "Sobre Nós", pages_sobre_path, class: "nav-link nav-teste" %>
+        <%= link_to "Sobre Nós", sobre_path, class: "nav-link nav-teste" %>
       </li>
       <li class="nav-item nav-texto">
-        <%= link_to "Projetos", pages_projetos_path, class: "nav-link nav-teste" %>
+        <%= link_to "Projetos", projetos_path, class: "nav-link nav-teste" %>
       </li>
       <li class="nav-item nav-texto">
-        <%= link_to "Atividades", pages_atividades_path, class: "nav-link nav-teste" %>
+        <%= link_to "Atividades", atividades_path, class: "nav-link nav-teste" %>
       </li>
       <li class="nav-item nav-texto">
-        <%= link_to "Eventos", pages_eventos_path, class: "nav-link nav-teste" %>
+        <%= link_to "Eventos", eventos_path, class: "nav-link nav-teste" %>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="http://facebook.com/pg/ccnmedianeira" target="_blank"><i class="fab fa-facebook"></i></a>

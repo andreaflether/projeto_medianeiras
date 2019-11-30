@@ -1,17 +1,19 @@
 Rails.application.routes.draw do
 
   devise_for :users
-
   root to: 'pages#home'
 
-  get 'pages/sobre'
-  get 'pages/projetos'
-  get 'pages/atividades'
-  get 'pages/eventos'
-  get 'admin/pessoas/promulher'
+  # Redirecionando ações do controller 'Pages' para namespace do /
+  get '/sobre', to: 'pages#sobre'
+  get '/atividades', to: 'pages#atividades'
+  get '/eventos', to: 'pages#eventos'
+  get '/projetos', to: 'pages#projetos'
 
   # Admin main route
   get 'admin/', to: 'admin#index'
+
+  # Página Promulher
+  get 'admin/pessoas/promulher'
 
   #Admin Eventos
   get 'admin/eventos/proximos_eventos', to: 'admin/eventos#proximos_eventos'

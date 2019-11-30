@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   # Admin main route
   get 'admin/', to: 'admin#index'
 
+  post '/eventos', to: 'admin/eventos#create'
+
   # Página Promulher
   get 'admin/pessoas/promulher'
 

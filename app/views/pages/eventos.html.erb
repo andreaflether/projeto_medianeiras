@@ -30,28 +30,28 @@
     <div class="col-sm-4">
       <%= link_to image_tag('ips_1.jpg', class: "img-fluid about-img"), 'https://github.com/andreaflether/projeto_medianeiras/blob/master/app/assets/images/ips_1.jpg?raw=true',
        data:{ title:'Evento - 5 anos de presença das irmãs do Preciosíssimo Sangue', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
-       title: "Ver foto"%>
+       data: {toggle: "tooltip", placement: "left"}, title: "Ver foto"%>
       <%= link_to image_tag('ips_2.jpg', class: "img-fluid about-img"), 'https://github.com/andreaflether/projeto_medianeiras/blob/master/app/assets/images/ips_2.jpg?raw=true',
        data:{ title:'Evento - 5 anos de presença das irmãs do Preciosíssimo Sangue', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
-       title: "Ver foto"%>
+       data: {toggle: "tooltip", placement: "left"}, title: "Ver foto"%>
     </div>
 
     <div class="col-sm-4">
       <%= link_to image_tag('ips_6.jpg', class: "img-fluid about-img"), 'https://github.com/andreaflether/projeto_medianeiras/blob/master/app/assets/images/ips_6.jpg?raw=true',
        data:{ title:'Evento - 5 anos de presença das irmãs do Preciosíssimo Sangue', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
-       title: "Ver foto"%>
+       data: {toggle: "tooltip", placement: "bottom"}, title: "Ver foto"%>
        <%= link_to image_tag('ips_7.jpg', class: "img-fluid about-img"), 'https://github.com/andreaflether/projeto_medianeiras/blob/master/app/assets/images/ips_7.jpg?raw=true',
         data:{ title:'Evento - 5 anos de presença das irmãs do Preciosíssimo Sangue', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
-        title: "Ver foto"%>
+        data: {toggle: "tooltip", placement: "bottom"}, title: "Ver foto"%>
     </div>
 
     <div class="col-sm-4">
       <%= link_to image_tag('ips_8.jpg', class: "img-fluid about-img"), 'https://github.com/andreaflether/projeto_medianeiras/blob/master/app/assets/images/ips_8.jpg?raw=true',
        data:{ title:'Evento - 5 anos de presença das irmãs do Preciosíssimo Sangue', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
-       title: "Ver foto"%>
+       data: {toggle: "tooltip", placement: "right"}, title: "Ver foto"%>
        <%= link_to image_tag('ips_11.jpg', class: "img-fluid about-img"), 'https://github.com/andreaflether/projeto_medianeiras/blob/master/app/assets/images/ips_11.jpg?raw=true',
         data:{ title:'Evento - 5 anos de presença das irmãs do Preciosíssimo Sangue', toggle:'lightbox', gallery:'example-gallery'}, class: "img-fluid about-img",
-        title: "Ver foto"%>
+        data: {toggle: "tooltip", placement: "right"}, title: "Ver foto"%>
     </div>
 
   </div>
@@ -74,13 +74,13 @@
     <h5 class="text-center">Não há eventos agendados para este mês.</h5>
     <% else %>
     <% @proximos_eventos.order(data: :asc, hora: :asc).limit(5).each do |evento| %>
-    <div class="row justify-content-center mb-2">
-      <div class="col-md-2">
+    <div class="row justify-content-center mt-2">
+      <div class="col-md-2 mr-3">
         <h3><span class="badge badge-primary bl-color"><%= l evento.data, format: :day_month %></span></h3>
       </div>
-      <div class="col-md-6">
-        <h4><strong><%= evento.nome %></strong></h4>
-        <em><%= evento.local %></em> - <%= evento.hora %> <br>
+      <div class="col-md-6 mt-1">
+        <h4 class="mb-3"><strong><%= evento.nome %></strong></h4>
+        <p class="mb-2"><i class="fas fa-map-marker-alt c-icon"></i><em><%= evento.local %></em> - <%= evento.hora %></p>
         <span class="small"><%= evento.descricao %></span>
       </div>
     </div>

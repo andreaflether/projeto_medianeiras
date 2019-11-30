@@ -1,17 +1,18 @@
 <br>
-<div class="card-deck">
-  <div class="card mb-2">
-    <div class="card-header text-primary">
-      <h4 class="my-auto"><b><%= @evento.nome %></b></h4>
-    </div>
-    <div class="card-body">
-      <p class="card-text card-bigger"><i class="far fa-calendar-alt text-primary mr-2"></i><b><%= l @evento.data, format: :long %></b> - <%= @evento.hora %></p>
+
+<div class="card text-center" style="border-top: 5px solid #007bff;">
+  <div class="card-body">
+    <h3><b><%= @evento.nome %></b></h3>
+    <br>
+    <div class="card-body-text mb-3">
+      <p class="card-text card-bigger"><i class="far fa-calendar-alt text-primary mr-2"></i>
+        <b><%= l @evento.data, format: :long %> - <%= @evento.hora %></b></p>
       <p class="card-text"><%= @evento.descricao.capitalize %></p>
       <p class="card-text"><i class="fas fa-map-marker-alt text-primary mr-2"></i><%= @evento.local %></p>
-
-      <%= link_to 'Criar novo evento', new_evento_path, class: 'btn btn-outline-success btn-next' %>
-      <%= link_to 'Editar', edit_evento_path(@evento), class: 'btn btn-outline-primary btn-next' %>
-      <%= link_to 'Apagar', evento_path(@evento), class: 'btn btn-outline-danger btn-next', method: :delete, data: { confirm: 'Tem certeza que deseja apagar o evento selecionado?' } %>
     </div>
+
+    <%= link_to 'Criar novo evento', new_evento_path, class: 'btn btn-outline-success btn-next' %>
+    <%= link_to 'Editar', edit_evento_path(@evento), class: 'btn btn-outline-primary btn-next' %>
+    <%= link_to 'Apagar', evento_path(@evento), class: 'btn btn-outline-danger btn-next', method: :delete, data: { confirm: 'Tem certeza que deseja apagar o evento selecionado?' } %>
   </div>
 </div>

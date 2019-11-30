@@ -92,41 +92,32 @@
        </div>
      </div>
   </div>
-
-<h3 class="title-txt text-center">Próximos eventos - <%= l Date.today, format: :month_only %></h3>
+<br>
+<h3 class="title-txt text-center mt-5 mb-4">Próximos eventos - <%= l Date.today, format: :month_only %></h3>
 
 <div class="container">
-  <div class="row justify-content-md-center">
+  <% if @proximos_eventos.blank? %>
+    <h5 class="text-center mb-4">Não há eventos agendados para este mês.</h5>
+  <% end %>
 
-    <% if @proximos_eventos.blank? %>
-      <h5 class="text-center mt-2 mb-4">Não há eventos agendados para este mês.</h5>
-    <% end %>
-
-    <% @proximos_eventos.order(data: :asc, hora: :asc).limit(4).each do |evento| %> <!-- Início do loop -->
-      <% if @proximos_eventos.count == 1 %> <!-- Início da condicional -->
-        <div class="col-md-12 mb-4">
-          <div class="card-event my-auto" style="background-color: #f0f0f0; padding: 20px 20px; border-left: 5px solid #05afea;">
-            <h4 class="align-middle"><b><%= evento.data.day %></b> - <%= evento.nome %> - <%= evento.hora %></h4>
-            <p class="align-middle"><i class="fas fa-map-marker-alt c-icon"></i><%= evento.local %> - <%= evento.descricao %></p>
-          </div>
+  <% @proximos_eventos.order(data: :asc, hora: :asc).limit(4).each do |evento| %> <!-- Início do loop -->
+      <div class="row justify-content-center mt-2">
+        <div class="col-md-2 mr-3">
+          <h3><span class="badge badge-primary bl-color"><%= l evento.data, format: :day_month %></span></h3>
         </div>
-      <% else %>
-        <div class="col-md-6 mb-4">
-          <div class="card-event my-auto" style="background-color: #f0f0f0; padding: 20px 20px; border-left: 5px solid #05afea;">
-            <h5 class="align-middle"><b><%= evento.nome %> - <%= l evento.data, format: :complete_numbers %></b> - <%= evento.hora %></h5>
-            <p class="align-middle"><%= evento.descricao %> <br>
-            <%= evento.local %></p>
-          </div>
-        </div>
-      <% end %> <!-- Fim da condicional -->
-    <% end %> <!-- Fim do loop -->
-
-      <div class="col-lg-12">
-        <div class="row justify-content-md-center justify-content-sm-center btn-row">
-        <%= link_to 'Ver todos os eventos', eventos_path, class: 'btn btn-outline-primary btn-all-events' %>
+        <div class="col-md-6 mt-1">
+          <h4 class="mb-3"><strong><%= evento.nome %></strong></h4>
+          <p class="mb-2"><i class="fas fa-map-marker-alt c-icon"></i><em><%= evento.local %></em> - <%= evento.hora %></p>
+          <span class="small"><%= evento.descricao %></span>
         </div>
       </div>
-  </div>
+    <br>
+  <% end %> <!-- Fim do loop -->
+    <div class="col-lg-12 mt-2 mb-2">
+      <div class="row justify-content-md-center justify-content-sm-center btn-row">
+      <%= link_to 'Ver todos os eventos', eventos_path, class: 'btn btn-outline-secondary badge-pill px-4' %>
+      </div>
+    </div>
 </div>
 
 <br>

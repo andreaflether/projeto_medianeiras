@@ -14,7 +14,7 @@
     <%# Campos disponíveis apenas se a opção selecionada for 'Atividade Prática' %>
     <%= content_tag :div, class: 'js-dependent-fields', data: { 'select-id': 'tipo', 'option-value': 'atividade'} do %>
       <p> <i class="fas fa-exclamation-circle text-danger"></i>
-      <b>Essa categoria é destinada a atividades que, sejam, prefencialmente, "Esportes" e seja necessário divulgar que
+      <b>Essa categoria é destinada a atividades em que seja necessário divulgar que
         há vagas disponíveis.</b> Ao selecioná-la, a atividade cadastrada será exibida na página principal do site (ATIVIDADES),
         com uma imagem, o professor/responsável, o número total de alunos e a quantidade de vagas disponíveis.
       </p>
@@ -22,7 +22,7 @@
       label_html: { class: 'label col-md-12 hidden-field mt-3 custom-file-label', for: 'customFile' },
       wrapper_html: { class: 'custom-file mb-4'} %>
 
-      <%= f.input :descricao, label: "Descrição", input_html: { class: 'form-control ml-1 mr-1 d-flex col hidden-field mb-4 '},
+      <%= f.input :descricao, label: "Descrição", input_html: { class: 'form-control ml-1 mr-1 d-flex col hidden-field mb-3 '},
       label_html: { class: 'label label_b col-md-12 hidden-field mt-3'}, wrapper_html: {class: 'form-row hidden-field'}%>
     <% end %>
 

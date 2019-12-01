@@ -9,12 +9,12 @@
 </nav>
 
 <div class="card mt-2">
-  <div class="card-header">
+  <div class="card-header" style="border-left: 5px solid #007bff;">
     <h4 class="my-auto text-primary"><b><%= @voluntario.nome %></b>
     </h4>
   </div>
 
-  <div class="card-body">
+  <div class="card-body card-body-text">
     <p class="card-text"><b>Data de entrada: </b><%= l @voluntario.dt_entrada, format: :long %></p>
     <p class="card-text"><b>Data de nascimento: </b><%= l @voluntario.dt_nascimento, format: :complete_numbers %></p>
     <p class="card-text"><b>Telefone: </b><%= @voluntario.telefone %></p>

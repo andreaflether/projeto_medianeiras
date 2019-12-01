@@ -1,10 +1,11 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css" integrity="sha256-kIxwtDqhOVbQysWu0OpR9QfijdXCfqvXgAUJuv7Uxmg=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.js" integrity="sha256-cZscUlm0eijiNFM/i2/km0RUU5I03jYJoU/nM/e6yLg=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha256-FEqEelWI3WouFOo2VWP/uJfs1y8KJ++FLh2Lbqc8SJk=" crossorigin="anonymous"></script>
 <div class="section evt-form">
   <%= simple_form_for @evento do |f| %>
     <%= f.input :nome, label: "Título", input_html: { class: 'form-control mb-0'}, label_html: { class: 'label label_b'}, required: true %>
     <%= label(:evento, :data, class: "label label_b mt-3") %>
-    <%= date_field("evento", "data", min: Date.today, class: "form-control mb-2") %>
-    <!-- <%= f.input :data, label: "Data do evento", input_html: { class: 'form-control ml-1 mr-1 d-flex col'},
-    label_html: { class: 'label label_b col-md-12 mt-4'}, wrapper_html: {class: 'form-row'}, required: true  %> -->
+    <%= text_field("evento", "data", min: Date.today, class: "form-control mb-2", id: "datetimepicker", autocomplete: 'off') %>
     <%= f.input :hora, input_html: { class: 'form-control mb-0'}, label_html: { class: 'label label_b hora_label'}, required: true  %>
     <%= f.input :local, input_html: { class: 'form-control mb-0'}, label_html: { class: 'label label_b mt-4'}, required: true %>
     <%= f.input :descricao, placeholder: "Descrição do evento", input_html: { class: 'form-control'},
@@ -13,4 +14,14 @@
     <%= link_to 'Voltar', :back, class: "btn btn-outline-secondary" %>
   <% end %>
 </div>
+
 <br>
+
+
+<script>
+  $.datetimepicker.setLocale('pt-BR');
+  $('#datetimepicker').datetimepicker({
+    timepicker:false,
+    format:'d/m/Y'
+  });
+</script>

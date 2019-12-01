@@ -67,3 +67,27 @@
       $("#pessoa_religiao").val($('#religiao').val());
   });
 </script>
+
+<script>
+  $(document).on("change", function () {
+    var ano_nasc = $('#pessoa_dt_nascimento_1i').find(":selected").text();
+    var ano = (new Date).getFullYear();
+
+    var mes = (new Date).getMonth();
+    var mes_nasc = $('#pessoa_dt_nascimento_2i').find(":selected").val();
+
+    var dia = (new Date).getDay();
+    var dia_nasc = parseInt($('#pessoa_dt_nascimento_2i').find(":selected").val());
+
+    var dob = ano_nasc+'-'+mes_nasc+'-'+dia_nasc
+    dob = new Date(dob);
+    var today = new Date();
+    var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+
+    if (age != 0 ) {
+      $('#pessoa_idade').val(age);
+    }
+  });
+
+  $('#pessoa_telefone').val('(85) ')
+</script>

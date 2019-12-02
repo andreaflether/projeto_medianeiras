@@ -14,24 +14,56 @@
   </div>
   <ul class="list-group list-group-flush card-body-text">
     <li class="list-group-item">
-    <% @atividade.voluntarios.each_with_index do |voluntario, index| %>
-      <b>Professor(a)/Responsável <%= index+1 %>: </b><%= voluntario.nome %> <br>
-    <% end %>
+      <b>Professor(a)/Responsável:</b>
+      <% @atividade.voluntarios.each do |voluntario| %>
+        <% if @atividade.voluntarios.count > 1 %>
+          <%= voluntario.nome %><% if (voluntario != @atividade.voluntarios.last )%> / <% end %>
+        <% else %>
+          <%= voluntario.nome %>
+        <% end %>
+      <% end %>
     </li>
-    <li class="list-group-item"><b>Horário: </b><%= @atividade.horario %></li>
-    <li class="list-group-item"><b>Dia(s): </b><%= @atividade.dias_semana %></li>
+    <li class="list-group-item"><b>Dia(s): </b><%= @atividade.dias_semana %> - <%= @atividade.horario %></li>
+
     <li class="list-group-item"><b>Quantidade máx. de alunos: </b><%= @atividade.qtd_max_alunos %></li>
     <li class="list-group-item">
-    <%= link_to 'Editar', edit_atividade_path(@atividade), class: 'btn btn-outline-primary' %>
-    <%= link_to 'Apagar', atividade_path(@atividade), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza que deseja
-    apagar a atividade selecionada?' } %>
-    </li>
-  </ul>
-</div>
-<br>
-<% if @atividade.imagem.present? %>
-  <h5 class="text-center mb-4"><b>Imagem de exibição:</b></h5> 
-  <div class="col-md-8 mx-auto">
-    <%= image_tag(@atividade.imagem, :crop => :fill, :class => "img-fluid") %>
+      <%= link_to 'Editar', edit_atividade_path(@atividade), class: 'btn btn-outline-primary' %>
+      <%= link_to 'Apagar', atividade_path(@atividade), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza que deseja
+        apagar a atividade selecionada?' } %>
+      </li>
+    </ul>
   </div>
+
+<br>
+
+<% if @atividade.imagem.present? %>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+Ver foto de exibição
+</button>
+
+<!-- Modal -->
+<div class="modal fade in" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h5 class="text-center mb-4"><b>Imagem de exibição:</b></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row text-center">
+          <div class="col-md-12">
+            <%= image_tag(@atividade.imagem, :crop => :fill, :class => "img-fluid mx-auto") %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 <% end %>
+</div>

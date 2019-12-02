@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'admin/', to: 'admin#index'
 
   post '/eventos', to: 'admin/eventos#create'
+  post '/atividades', to: 'admin/atividades#create'
 
   # Página Promulher
   get 'admin/pessoas/promulher'

@@ -1,12 +1,18 @@
 <h1 class="h1-evt">Detalhes de usuário</h1>
 
-<div class="card">
-  <div class="card-header">
-    <h4 class="my-auto text-primary"><b><%= @user.name %></b> (<%= @user.email %>)</h4>
+<div class="card mt-2">
+  <div class="card-header" style="border-left: 5px solid #007bff;">
+    <h4 class="my-auto text-primary"><b><%= @user.name %></b> (<%= @user.email %>)
+    </h4>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"><b>Privilégio: </b><%= @user.role.capitalize %></li>
-    <li class="list-group-item"><b>Data de criação: </b><%= l @user.created_at, format: :long%></li>
-    <li class="list-group-item"><b>Última atualização em: </b><%= l @user.updated_at.advance(hours: -3), format: :long %></li>
-  </ul>
+
+  <div class="card-body card-body-text">
+    <p class="card-text"><b>Privilégio: </b><%= @user.role.capitalize %></p>
+    <p class="card-text"><b>Data de criação: </b><%= l @user.created_at, format: :long%></p>
+    <p class="card-text"><b>Última atualização em: </b><%= l @user.updated_at.advance(hours: -3), format: :long %></p>
+  </div>
+  <div class="card-footer text-muted text-center">
+    Cadastrado há <%= time_ago_in_words(@user.created_at) %>
+  </div>
+
 </div>

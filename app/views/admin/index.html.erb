@@ -7,7 +7,7 @@
     <li class="list-group-item text-center d-flex justify-content-between align-items-center" style="background-color: #007bff;">
       <i class="fa fa-user-alt text-light"></i></li>
     <li class="list-group-item w-100">
-      <b>Última pessoa cadastrada:</b> <%= link_to @pessoa.nome, @pessoa %>
+      <b>Última pessoa cadastrada:</b> <%= link_to @pessoa.nome, @pessoa, class: "nmb-link" %>
     </li>
   </ul>
 
@@ -17,7 +17,7 @@
     <li class="list-group-item text-center d-flex justify-content-between align-items-center" style="background-color: #007bff;">
       <i class="fas fa-shapes text-light"></i></li>
     <li class="list-group-item w-100">
-      <b>Última atividade cadastrada:</b> <%= link_to @atividade.nome, @atividade %>
+      <b>Última atividade cadastrada:</b> <%= link_to @atividade.nome, @atividade, class: "nmb-link" %>
     </li>
   </ul>
 
@@ -27,7 +27,7 @@
     <li class="list-group-item text-center d-flex justify-content-between align-items-center" style="background-color: #007bff;">
       <i class="fas fa-id-card-alt text-light"></i></li>
     <li class="list-group-item w-100">
-      <b>Último voluntário cadastrado:</b> <%= link_to @voluntario.nome, @voluntario %>
+      <b>Último voluntário cadastrado:</b> <%= link_to @voluntario.nome, @voluntario, class: "nmb-link" %>
     </li>
   </ul>
 

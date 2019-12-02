@@ -13,7 +13,6 @@ class Admin::VoluntariosController < AdminController
     else
       render 'new'
     end
-
   end
 
   def update

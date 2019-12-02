@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%=@title or 'Medianeiras'%></title>
+    <title><%=@title or 'Centro Comunitário Nossa Senhora Medianeira'%></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <script src="https://kit.fontawesome.com/8d9d868ad3.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="favicon.png">
 
     <% if alert %>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -34,16 +35,10 @@
   </body>
 </html>
 
-<!-- <script type="text/javascript">
-
-$(".alert").fadeTo(4000, 500).slideUp(500, function(){
-    $(".alert").alert('close');
-    $(this).remove();
-});
-
-</script> -->
-
 <script>
+$(document).ready(function() {
+  $('[data-toggle="tooltip"]').tooltip();
+});
 
 $(".alert").fadeIn();
 closeSnoAlertBox();
@@ -56,6 +51,6 @@ function showAlert() {
 function closeSnoAlertBox(){
   window.setTimeout(function () {
   $(".alert").fadeOut(300)
-}, 5000);
-  }
+  }, 5000);
+}
 </script>

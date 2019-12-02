@@ -24,6 +24,9 @@ gem 'jquery-turbolinks'
 gem 'select2-rails'
 gem 'dependent-fields-rails'
 gem 'inline_svg'
+gem "simple_calendar", "~> 2.0"
+gem 'cloudinary'
+gem 'popper_js', '~> 1.14.5'
 
 #Bootstrap, JS
 source 'https://rails-assets.org' do
@@ -32,7 +35,6 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether'
 end
 
-gem "simple_calendar", "~> 2.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
@@ -43,7 +45,7 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'duktape'
+# gem 'duktape'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

@@ -2,6 +2,10 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.card-body-text {
+  color: #505050;
+}
+
 .label_b {
   font-weight: bold;
 }
@@ -24,7 +28,7 @@ h1 {
 }
 
 .form-control {
-  margin: 4px 0 20px 0;
+  margin: 4px 0 24px 0;
 }
 
 .data-input {
@@ -50,7 +54,6 @@ h1 {
 
 .bl-color {
   background-color: #05afea !important;
-
 }
 
 .txt-large {
@@ -64,6 +67,5 @@ h1 {
 
 .btn-next {
   margin-top: 6.5px;
-  // float: right;
   margin-right: 4px;
 }

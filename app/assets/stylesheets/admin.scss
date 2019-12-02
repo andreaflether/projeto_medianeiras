@@ -45,6 +45,10 @@ abbr[data-original-title] {
   background-color: #B0B0B0 !important;
 }
 
+.custom-file-label:after {
+	content: "Escolher";
+}
+
 .list-group-item {
   padding: 0.60rem 1.25rem !important;
 }

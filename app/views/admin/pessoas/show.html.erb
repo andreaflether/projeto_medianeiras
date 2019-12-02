@@ -10,12 +10,12 @@
   </nav>
 
   <div class="card mt-2">
-    <div class="card-header">
+    <div class="card-header" style="border-left: 5px solid #007bff;">
       <h4 class="my-auto text-primary"><b><%= @pessoa.nome %></b>
       </h4>
     </div>
 
-    <div class="card-body">
+    <div class="card-body card-body-text">
       <p><b>Idade: </b><%= @pessoa.idade %></p>
       <p><b>Data de Nascimento: </b><%= l @pessoa.dt_nascimento, format: :complete_numbers, default: "" %></p>
       <p><b>Endereço: </b><%= @pessoa.endereco %></p>
@@ -39,11 +39,12 @@
       <% end %></p>
       <span style="font-size: 20px;">
         <%= link_to pessoa_path(@pessoa), method: :delete, class: "btn btn-outline-danger", title: "Apagar ficha de #{@pessoa.nome}",
-        data: { confirm: "Tem certeza que deseja apagar a ficha de #{@pessoa.nome}?" } do %>
+        data: { confirm: "Tem certeza que deseja apagar a ficha de #{@pessoa.nome}?", toggle: "tooltip", placement: "bottom" } do %>
         <i class="fas fa-user-times float-right"></i>
         <% end %>
 
-        <%= link_to edit_pessoa_path(@pessoa), title: "Editar informações de #{@pessoa.nome}", class: "btn btn-outline-primary" do %>
+        <%= link_to edit_pessoa_path(@pessoa), title: "Editar informações de #{@pessoa.nome}", class: "btn btn-outline-primary",
+        'data-toggle' => 'tooltip', 'placement' => 'bottom' do %>
         <i class="fas fa-user-edit float-right"></i>
         <% end %>
       </span>

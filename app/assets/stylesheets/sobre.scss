@@ -16,6 +16,20 @@
   background-color: rgba(255, 255, 255, 0) !important;
 }
 
+.btn-sobre a {
+  transition: 0.4s;
+  color: white;
+}
+
+.btn-overlay {
+  color: #05afea !important;
+}
+
+.btn-sobre a:hover {
+  color: #05afea !important;
+  text-decoration: none;
+}
+
 .title-txt {
   text-transform: uppercase;
   color: #05afea;

@@ -13,7 +13,6 @@ class Admin::AtividadesController < AdminController
     else
       render 'new'
     end
-
   end
 
   def update
@@ -51,7 +50,7 @@ class Admin::AtividadesController < AdminController
   private
 
   def atividade_params
-    params.require(:atividade).permit(:nome, :qtd_max_alunos, :professor, :horario, :dias_semana, :tipo, :link_imagem, :descricao, pessoa_ids: [],
-      voluntario_ids: [])
+    params.require(:atividade).permit(:nome, :qtd_max_alunos, :professor, :horario, :dias_semana, :tipo, :imagem,
+      :descricao, pessoa_ids: [], voluntario_ids: [])
   end
 end

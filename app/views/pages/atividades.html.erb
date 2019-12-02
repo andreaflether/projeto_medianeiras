@@ -6,12 +6,17 @@
 
 <h2 class="title-txt text-center">Atividades</h2>
 <br>
-<div class="container-fluid sec-esporte">
+<div class="container-fluid sec-atividades">
 
 <% @atividades.order(nome: :asc).each do |atividade| %>
 <div class="row no-gutters ativ-card align-items-center">
   <div class="col-md-4 col-sm-12 new-break">
-    <%= image_tag(atividade.link_imagem, :class => "img-fluid teste-obj", alt:"...")%>
+    <% if atividade.imagem.nil? %>
+      vai tomar no cu
+
+    <% else %>
+      <%= image_tag(atividade.imagem, :class => "img-fluid teste-obj", alt:"...")%>
+    <% end %>
   </div>
 
   <div class="col-md-8 px-5 bg-white py-4 new-break-content">

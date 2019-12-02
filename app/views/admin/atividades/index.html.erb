@@ -83,14 +83,17 @@
           <% atividade.pessoas.order(nome: :asc).each do |pessoa| %>
           <tbody>
             <tr>
-              <td class="align-middle"><%= link_to pessoa.nome, pessoa, class: 'text-dark', title: "Ver ficha de #{pessoa.nome}" %></td>
+              <td class="align-middle"><%= link_to pessoa.nome, pessoa, { :class => 'text-dark',
+              'data-toggle' => 'tooltip', 'data-placement' => 'bottom', :title => "Ver ficha de #{pessoa.nome}" } %></td>
               <td class="align-middle"><%= pessoa.idade %></td>
               <td class="align-middle"><%= time_ago_in_words(pessoa.dt_entrada) %></td>
-              <td class="align-middle"><%= link_to atividade_pessoa_path(atividade, pessoa), method: :delete, class: 'btn btn-outline-danger mr-2', title: "Remover #{pessoa.nome} de #{atividade.nome}",
-              data: { confirm: "Tem certeza que deseja remover #{pessoa.nome} de #{atividade.nome}?" } do %>
+              <td class="align-middle"><%= link_to atividade_pessoa_path(atividade, pessoa), method: :delete,
+              class: 'btn btn-outline-danger mr-2', title: "Remover #{pessoa.nome} de #{atividade.nome}",
+              data: { confirm: "Tem certeza que deseja remover #{pessoa.nome} de #{atividade.nome}?", toggle: "tooltip", placement: "bottom" } do %>
                 <i class="fas fa-user-times"></i>
               <% end %>
-              <%= link_to edit_pessoa_path(pessoa), title: "Editar informações de #{pessoa.nome}", class: "btn btn-outline-primary" do %>
+              <%= link_to edit_pessoa_path(pessoa), { :class => "btn btn-outline-primary", 'data-toggle' => 'tooltip',
+              'data-placement' => 'bottom', :title => "Editar informações de #{pessoa.nome}" } do %>
               <i class="fas fa-user-edit"></i>
               <% end %></td>
             </tr>
@@ -116,7 +119,7 @@
   <script>
   $(function() {
     $(document).on('click', '.rotated', function() {          //use a class, since your ID gets mangled
-      $(this).toggleClass("fa-rotate-180");                   //add the class to the clicked element
+      $(this).toggleClass("fa-rotate-180");                 //add the class to the clicked element
     });
   });
   </script>

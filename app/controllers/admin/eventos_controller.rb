@@ -40,7 +40,6 @@ class Admin::EventosController < AdminController
     @evento = Evento.find(params[:id])
 
     if @evento.update(evento_params)
-      # redirect_to @evento
       redirect_to @evento, notice: 'Evento atualizado com sucesso.'
     else
       render 'edit'

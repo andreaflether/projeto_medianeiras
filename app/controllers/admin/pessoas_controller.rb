@@ -1,6 +1,7 @@
 class Admin::PessoasController < AdminController
 
   def new
+    @title = 'Medianeiras - Cadastrar Pessoa'
     @pessoa = Pessoa.new
     @pessoa.atividade_ids = [params[:atividade_id].to_i] if params[:atividade_id]
     @atividades = Atividade.all
@@ -31,6 +32,7 @@ class Admin::PessoasController < AdminController
   end
 
   def edit
+    @title = 'Medianeiras - Editar informações de pessoa'
     @pessoa = Pessoa.find(params[:id])
     @atividades = Atividade.all
   end
@@ -49,17 +51,19 @@ class Admin::PessoasController < AdminController
   end
 
   def index
+    @title = 'Medianeiras - Cadastros de Pessoa'
     @pessoas = Pessoa.all
     @atividades = Atividade.all
   end
 
   def show
+    @title = 'Medianeiras - Informações de Cadastro'
     @pessoa = Pessoa.find(params[:id])
   end
 
   def promulher
-
-  end 
+    @title = 'Medianeiras - Promulher '
+  end
 
   private
 

@@ -7,7 +7,7 @@ class Admin::EventosController < AdminController
   end
 
   def new
-    @title = 'Admin - Criar Evento'
+    @title = 'Medianeiras - Criar Evento'
     @evento = Evento.new
   end
 
@@ -22,17 +22,17 @@ class Admin::EventosController < AdminController
   end
 
   def proximos_eventos
-    @title = 'Admin - Próximos Eventos'
+    @title = 'Medianeira - Próximos Eventos'
     @proximos_eventos = Evento.proximos_eventos
   end
 
   def calendario
-    @title = 'Admin - Calendário'
+    @title = 'Medianeiras - Calendário'
     @eventos = Evento.all
   end
 
   def show
-    @title = 'Admin - Mostrar Evento'
+    @title = 'Medianeiras - Mostrar Evento'
     @evento = Evento.find(params[:id])
   end
 
@@ -47,7 +47,7 @@ class Admin::EventosController < AdminController
   end
 
   def edit
-    @title = 'Admin - Editar Evento'
+    @title = 'Medianeiras - Editar Evento'
     @evento = Evento.find(params[:id])
   end
 

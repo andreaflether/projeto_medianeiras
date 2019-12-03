@@ -8,45 +8,51 @@
   </ol>
 </nav>
 
-<div class="card mt-3 text-center" style="border-top: 5px solid #007bff;">
-  <div class="card-header">
-    <h3 class="my-auto py-2"><b><%= @atividade.nome %></b></h3>
-  </div>
-  <ul class="list-group list-group-flush card-body-text">
-    <li class="list-group-item">
-      <b>Professor(a)/Responsável:</b>
-      <% @atividade.voluntarios.each do |voluntario| %>
-        <% if @atividade.voluntarios.count > 1 %>
+    <div class="card mt-3">
+      <div class="card-header" style="border-left: 5px solid #007bff;">
+        <h3 class="my-auto py-2 text-primary"><b><%= @atividade.nome %></b></h3>
+      </div>
+      <ul class="list-group list-group-flush card-body-text">
+        <li class="list-group-item">
+          <b>Professor(a)/Responsável:</b>
+          <% @atividade.voluntarios.each do |voluntario| %>
+          <% if @atividade.voluntarios.count > 1 %>
           <%= voluntario.nome %><% if (voluntario != @atividade.voluntarios.last )%> / <% end %>
-        <% else %>
+          <% else %>
           <%= voluntario.nome %>
+          <% end %>
+          <% end %>
+        </li>
+        <li class="list-group-item"><b>Dia(s): </b><%= @atividade.dias_semana %> - <%= @atividade.horario %></li>
+
+        <li class="list-group-item"><b>Quantidade máx. de alunos: </b><%= @atividade.qtd_max_alunos %></li>
+        <% if @atividade.descricao.present? %>
+          <li class="list-group-item"><b>Descrição: </b><%= @atividade.descricao %></li>
         <% end %>
-      <% end %>
-    </li>
-    <li class="list-group-item"><b>Dia(s): </b><%= @atividade.dias_semana %> - <%= @atividade.horario %></li>
-
-    <li class="list-group-item"><b>Quantidade máx. de alunos: </b><%= @atividade.qtd_max_alunos %></li>
-    <li class="list-group-item">
-      <%= link_to 'Editar', edit_atividade_path(@atividade), class: 'btn btn-outline-primary' %>
-      <%= link_to 'Apagar', atividade_path(@atividade), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza que deseja
-        apagar a atividade selecionada?' } %>
-      </li>
-    </ul>
-  </div>
-
+        <li class="list-group-item text-center">
+          <%= link_to 'Editar', edit_atividade_path(@atividade), class: 'btn btn-outline-primary' %>
+          <%= link_to 'Apagar', atividade_path(@atividade), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza que deseja
+          apagar a atividade selecionada?' } %>
+        </li>
+      </ul>
+    </div>
 <br>
 
 <% if @atividade.imagem.present? %>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-Ver foto de exibição
-</button>
+<div class="row">
+  <div class="col-md-12 text-center">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Ver imagem de exibição
+    </button>
+  </div>
+</div>
 
 <!-- Modal -->
 <div class="modal fade in" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h5 class="text-center mb-4"><b>Imagem de exibição:</b></h5>
+    <div class="modal-content" style="border: none;">
+      <div class="modal-header text-center my-auto">
+        <h5 class="text-center my-auto"><b>Imagem de exibição</b></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -59,8 +65,8 @@ Ver foto de exibição
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <%= link_to 'Editar', edit_atividade_path(@atividade), class: 'btn btn-primary' %>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
       </div>
     </div>
   </div>

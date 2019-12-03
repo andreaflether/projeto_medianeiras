@@ -1,24 +1,21 @@
-<h1 class="h1-evt">Próximos eventos</h1>
-
-<br>
+<h1 class="h1-evt mb-5">Próximos eventos</h1>
 
 <div class="container">
   <% if @proximos_eventos.blank? %>
-    <h5 class="mt-3 text-center">Não há eventos agendados para este mês.<h5>
+    <h5 class="text-center mt-4">Não há eventos agendados para este mês.<h5>
   <% end %>
 
   <% @proximos_eventos.order(data: :asc, hora: :asc).each do |evento| %>
     <div class="row justify-content-center mt-2">
       <div class="col-md-2 mr-3">
-        <h3><span class="badge badge-primary bl-color"><%= l evento.data, format: :day_month %></span></h3>
+        <h3><span class="badge badge-primary"><%= l evento.data, format: :day_month %></span></h3>
       </div>
       <div class="col-md-6 mt-1">
         <h4 class="mb-3"><strong><%= evento.nome %></strong></h4>
-        <p class="mb-2"><i class="fas fa-map-marker-alt c-icon"></i><em><%= evento.local %></em> - <%= evento.hora %></p>
+        <p class="mb-2"><i class="text-primary fas fa-map-marker-alt c-icon"></i><em><%= evento.local %></em> - <%= evento.hora %></p>
         <span class="small"><%= evento.descricao %></span>
       </div>
     </div>
     <br>
-
   <% end %>
 </div>

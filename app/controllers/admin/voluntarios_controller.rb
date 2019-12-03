@@ -1,5 +1,6 @@
 class Admin::VoluntariosController < AdminController
   def new
+    @title = 'Medianeiras - Cadastrar voluntário'
     @voluntario = Voluntario.new
     @atividades = Atividade.all
   end
@@ -25,6 +26,7 @@ class Admin::VoluntariosController < AdminController
   end
 
   def edit
+    @title = 'Medianeiras - Editar informações de voluntário'
     @voluntario = Voluntario.find(params[:id])
   end
 
@@ -36,11 +38,13 @@ class Admin::VoluntariosController < AdminController
   end
 
   def index
+    @title = 'Medianeiras - Voluntários'
     @voluntarios = Voluntario.order("nome").page(params[:page]).per(10)
     @atividades = Atividade.all
   end
 
   def show
+    @title = 'Medianeiras - Informações de voluntário '
     @voluntario = Voluntario.find(params[:id])
   end
 

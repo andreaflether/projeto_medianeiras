@@ -5,15 +5,12 @@ Rails.application.routes.draw do
 
   # Redirecionando ações do controller 'Pages' para namespace do /
   get '/sobre', to: 'pages#sobre'
-  get '/atividades', to: 'pages#atividades'
-  get '/eventos', to: 'pages#eventos'
+  get '/atividades/info', to: 'pages#atividades'
+  get '/eventos/info', to: 'pages#eventos'
   get '/projetos', to: 'pages#projetos'
 
   # Admin main route
   get 'admin/', to: 'admin#index'
-
-  post '/eventos', to: 'admin/eventos#create'
-  post '/atividades', to: 'admin/atividades#create'
 
   # Página Promulher
   get 'admin/pessoas/promulher'

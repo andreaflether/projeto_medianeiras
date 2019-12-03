@@ -1,18 +1,23 @@
 <br>
-
-<div class="card text-center" style="border-top: 5px solid #007bff;">
-  <div class="card-body">
-    <h3><b><%= @evento.nome %></b></h3>
-    <br>
-    <div class="card-body-text mb-3">
-      <p class="card-text card-bigger"><i class="far fa-calendar-alt text-primary mr-2"></i>
-        <b><%= l @evento.data, format: :long %> - <%= @evento.hora %></b></p>
-      <p class="card-text"><%= @evento.descricao%></p>
-      <p class="card-text"><i class="fas fa-map-marker-alt text-primary mr-2"></i><%= @evento.local %></p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-10 col-sm-12">
+      <div class="card text-center mt-3">
+        <div class="card-header">
+          <h3 class="py-1 my-auto text-primary"><b><%= @evento.nome %></b></h3>
+        </div>
+        <div class="card-body">
+          <div class="card-body-text mb-3">
+            <p class="card-text card-bigger"><i class="far fa-calendar-alt text-primary mr-2"></i>
+              <b><%= l @evento.data, format: :long %> - <%= @evento.hora %></b></p>
+              <p class="card-text"><%= @evento.descricao%></p>
+              <p class="card-text"><i class="fas fa-map-marker-alt text-primary mr-2"></i><%= @evento.local %></p>
+            </div>
+            <%= link_to 'Criar novo evento', new_evento_path, class: 'btn btn-outline-success btn-next' %>
+            <%= link_to 'Editar', edit_evento_path(@evento), class: 'btn btn-outline-primary btn-next' %>
+            <%= link_to 'Apagar', evento_path(@evento), class: 'btn btn-outline-danger btn-next', method: :delete, data: { confirm: 'Tem certeza que deseja apagar o evento selecionado?' } %>
+          </div>
+        </div>
     </div>
-
-    <%= link_to 'Criar novo evento', new_evento_path, class: 'btn btn-outline-success btn-next' %>
-    <%= link_to 'Editar', edit_evento_path(@evento), class: 'btn btn-outline-primary btn-next' %>
-    <%= link_to 'Apagar', evento_path(@evento), class: 'btn btn-outline-danger btn-next', method: :delete, data: { confirm: 'Tem certeza que deseja apagar o evento selecionado?' } %>
   </div>
 </div>

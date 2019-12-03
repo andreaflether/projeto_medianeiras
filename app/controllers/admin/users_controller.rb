@@ -3,14 +3,17 @@ class Admin::UsersController < AdminController
   layout 'menu_admin'
 
   def show
+    @title = 'Medianeiras - Informações de Usuário'
     @user = User.find(params[:id])
   end
 
   def index
+    @title = 'Medianeiras - Usuários'
     @users = User.all
   end
 
   def edit
+    @title = 'Medianeiras - Editar informações de usuário'
      @user = User.find(params[:id])
    end
 

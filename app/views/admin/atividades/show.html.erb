@@ -1,44 +1,44 @@
 <br>
 <div class="container">
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/admin/pessoas/novo">Novo cadastro de atividade</a></li>
-    <li class="breadcrumb-item"><a href="/admin/atividades">Ver todas as atividades cadastradas</a></li>
-    <li class="breadcrumb-item"><a href="/admin/atividades">Ver pessoas cadastradas</a></li>
-  </ol>
-</nav>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/admin/pessoas/novo">Novo cadastro de atividade</a></li>
+      <li class="breadcrumb-item"><a href="/admin/atividades">Ver todas as atividades cadastradas</a></li>
+      <li class="breadcrumb-item"><a href="/admin/atividades">Ver pessoas cadastradas</a></li>
+    </ol>
+  </nav>
 
-    <div class="card mt-3">
-      <div class="card-header" style="border-left: 5px solid #007bff;">
-        <h3 class="my-auto py-2 text-primary"><b><%= @atividade.nome %></b></h3>
-      </div>
-      <ul class="list-group list-group-flush card-body-text">
-        <li class="list-group-item">
-          <b>Professor(a)/Responsável:</b>
-          <% @atividade.voluntarios.each do |voluntario| %>
-          <% if @atividade.voluntarios.count > 1 %>
-          <%= voluntario.nome %><% if (voluntario != @atividade.voluntarios.last )%> / <% end %>
-          <% else %>
-          <%= voluntario.nome %>
-          <% end %>
-          <% end %>
-        </li>
-        <li class="list-group-item"><b>Dia(s): </b><%= @atividade.dias_semana %> - <%= @atividade.horario %></li>
-
-        <li class="list-group-item"><b>Quantidade máx. de alunos: </b><%= @atividade.qtd_max_alunos %></li>
-        <% if @atividade.descricao.present? %>
-          <li class="list-group-item"><b>Descrição: </b><%= @atividade.descricao %></li>
-        <% end %>
-        <li class="list-group-item text-center">
-          <%= link_to 'Editar', edit_atividade_path(@atividade), class: 'btn btn-outline-primary' %>
-          <%= link_to 'Apagar', atividade_path(@atividade), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza que deseja
-          apagar a atividade selecionada?' } %>
-        </li>
-      </ul>
+  <div class="card mt-3">
+    <div class="card-header" style="border-left: 5px solid #007bff;">
+      <h3 class="my-auto py-2 text-primary"><b><%= @atividade.nome %></b></h3>
     </div>
+    <ul class="list-group list-group-flush card-body-text">
+      <li class="list-group-item">
+        <b>Professor(a)/Responsável:</b>
+        <% @atividade.voluntarios.each do |voluntario| %>
+        <% if @atividade.voluntarios.count > 1 %>
+        <%= voluntario.nome %><% if (voluntario != @atividade.voluntarios.last )%> / <% end %>
+        <% else %>
+        <%= voluntario.nome %>
+        <% end %>
+        <% end %>
+      </li>
+      <li class="list-group-item"><b>Dia(s): </b><%= @atividade.dias_semana %> - <%= @atividade.horario %></li>
+      <li class="list-group-item"><b>Quantidade máx. de alunos: </b><%= @atividade.qtd_max_alunos %></li>
+      <% if @atividade.descricao.present? %>
+        <li class="list-group-item"><b>Descrição: </b><%= @atividade.descricao %></li>
+      <% end %>
+      <li class="list-group-item text-center">
+        <%= link_to 'Editar', edit_atividade_path(@atividade), class: 'btn btn-outline-primary' %>
+        <%= link_to 'Apagar', atividade_path(@atividade), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza que deseja
+        apagar a atividade selecionada?' } %>
+      </li>
+    </ul>
+  </div>
+
 <br>
 
-<% if @atividade.imagem.present? %>
+<% if @atividade.imagem.attached? %>
 <div class="row">
   <div class="col-md-12 text-center">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -47,29 +47,38 @@
   </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade in" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content" style="border: none;">
-      <div class="modal-header text-center my-auto">
-        <h5 class="text-center my-auto"><b>Imagem de exibição</b></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="row text-center">
-          <div class="col-md-12">
-            <%= image_tag(@atividade.imagem, :crop => :fill, :class => "img-fluid mx-auto") %>
+  <!-- Modal -->
+  <div class="modal fade in" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" style="border: none;">
+        <div class="modal-header text-center my-auto">
+          <h5 class="text-center my-auto"><b>Imagem de exibição</b></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row text-center">
+            <div class="col-md-12">
+              <%= image_tag(@atividade.imagem, :crop => :fill, :class => "img-fluid mx-auto") %>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <%= link_to 'Editar', edit_atividade_path(@atividade), class: 'btn btn-primary' %>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <div class="modal-footer">
+          <%= link_to 'Editar', edit_atividade_path(@atividade), class: 'btn btn-primary' %>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<% end %>
+  <!-- Fim do modal -->
+
+  <% else %>
+  <div class="row text-center">
+    <div class="col-md-12">
+      <p class="text-danger"><b>Atividade sem imagem de exibição.</b></p>
+      <%= link_to 'Editar', edit_atividade_path(@atividade), class: 'btn btn-primary' %>
+    </div>
+  </div>
+  <% end %>
 </div>

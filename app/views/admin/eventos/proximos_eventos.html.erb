@@ -11,8 +11,8 @@
         <h3><span class="badge badge-primary"><%= l evento.data, format: :day_month %></span></h3>
       </div>
       <div class="col-md-6 mt-1">
-        <h4 class="mb-3"><strong><%= evento.nome %></strong></h4>
-        <p class="mb-2"><i class="text-primary fas fa-map-marker-alt c-icon"></i><em><%= evento.local %></em> - <%= evento.hora %></p>
+        <h4 class="mb-3 evt-title"><strong><%= evento.nome %></strong></h4>
+        <p class="mb-2"><i class="fas text-primary fa-map-marker-alt c-icon"></i><em><%= evento.local %></em> - <%= evento.hora %></p>
         <span class="small"><%= evento.descricao %></span>
       </div>
     </div>

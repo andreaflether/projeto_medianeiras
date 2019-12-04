@@ -66,7 +66,7 @@
          de situações dos que o procuram. <b>Qualquer tipo de ajuda é importante para nós.</b><br></p>
       </div>
     </div>
-    <div class="row text-center justify-content-center align-items-center row-test">
+    <div class="row text-center justify-content-center align-items-center row-test mb-2">
      <div class="col md-4">
        <p class="text-justify">
          O site que inauguramos pretende dar a oportunidade de todos conhecerem as nossas atividades, serviços e cursos, a
@@ -78,14 +78,14 @@
      </div>
     </div>
 
-     <div class="row text-center justify-content-center align-items-center">
+     <div class="row text-center justify-content-center align-items-center mb-2">
        <div class="col-md-8 embed-responsive embed-responsive-16by9 d-flex">
-         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/XMBO9gtPaZE" frameborder="0"
-         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+         <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fccnmedianeira%2Fvideos%2F1482307078577486%2F&show_text=0&width=560"
+         width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
        </div>
      </div>
   </div>
-<br>
+
 <h3 class="title-txt text-center mt-5 mb-4">Próximos eventos - <%= l Date.today, format: :month_only %></h3>
 
 <div class="container">
@@ -99,7 +99,7 @@
           <h3><span class="badge badge-primary bl-color"><%= l evento.data, format: :day_month %></span></h3>
         </div>
         <div class="col-md-6 mt-1">
-          <h4 class="mb-3"><strong><%= evento.nome %></strong></h4>
+          <h4 class="mb-3 evt-title"><strong><%= evento.nome %></strong></h4>
           <p class="mb-2"><i class="fas fa-map-marker-alt c-icon"></i><em><%= evento.local %></em> - <%= evento.hora %></p>
           <span class="small"><%= evento.descricao %></span>
         </div>

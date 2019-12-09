@@ -1,43 +1,22 @@
-# 1. Informações acerca do projeto
+<p align="center"><img src="app/assets/images/logo.png" alt="Logotipo" width="270" height="auto"><p>
 
-Rotas disponíveis (todos os usuários:
-- **/sobre** - informações sobre o centro comunotário, história, fotos, equipe...
-- **/eventos** - calendário de eventos*, eventos que virão a acontecer
-- **/atividades** - informações sobre os projetos e atividades
-- **/aulas** - informações sobre as aulas oferecidas
+## Projeto: Site para o Centro Comunitário Nossa Senhora Medianeira.
 
+**Disponível em:** [http://ccnmedianeiras.herokuapp.com/](http://ccnmedianeiras.herokuapp.com/)
 
-# 2. Páginas de Administrador
- - **/admin** - Rota principal
+Localizado em Fortaleza, o Centro Comunitário Nossa Senhora Medianeira pertence à Paróquia Nossa Senhora das Dores (Otávio Bonfim) onde crianças, adolescentes, jovens e mulheres que moram nas comunidades carentes da Paróquia e bairros adjacentes participam ativamente.
 
-  ## 2.1. Eventos
-  - **/admin/eventos** - Página principal
-  - **/admin/eventos/novo** - Criar evento
-  - **/admin/eventos/1** - Ver evento pelo ID
-  - **/admin/eventos/1/editar** - Editar evento específico (Todos os campos disponíveis)
-  - **/admin/eventos/listagem** - Lista os próximos eventos no mês atual
-  - **/admin/eventos/calendario** - Mostra um calendário com todos os eventos marcados, com os mesmos para exibição e clique em cada dia.
-
-  ## 2.2. Users
-  - **/admin/users** - Página inicial
-  - **/admin/users/1** - Ver user pelo ID
-  - **/admin/users/1/editar** - Editar user específico (Campos Nome, E-mail, Role)
-  
-  ## 2.3. Atividades
-  - **/admin/atividades** - Página inicial
-  - **/admin/atividades/1** - Ver atividade pelo ID
-  - **/admin/atividades/1/editar** - Editar atividade específica (Nome, professor, horário, dias)
-  
-  ## 2.4. Pessoas
-  - **/admin/pessoas** - Página inicial
-  - **/admin/pessoas/1** - Ver pessoa pelo ID
-  - **/admin/pessoas/1/editar** - Editar pessoa específica (Todos os campos)
-
-  ## 2.5. Voluntários
-  - **/admin/voluntarios** - Página inicial
-  - **/admin/voluntarios/1** - Ver pessoa pelo ID
-  - **/admin/voluntarios/editar** - Editar voluntário específico (Todos os campos)
- 
-  
-
-
+**O site desenvolvido tem como intenção oferecer facilidade e praticidade às atividades desenvolvidas pela administração do Centro, tais como:** 
+## Cadastro
+Como foi estudado nas visitas, o cadastro (tanto de alunos quanto de voluntários) é bem manual, e tudo através de papéis, guardado de forma física. Pensando nisso, agora as informações ficarão concentradas em um sistema próprio do Centro, que abrange o cadastro de:
+* **Pessoas (Alunos)**: Todas as pessoas que participam, de alguma forma, poderão ser cadastradas. Também é informado há quanto tempo essa pessoa está no Centro.
+* **Voluntários**: Todos os voluntários possuem cadastro. Também é guardado a informação se a pessoa está ou não em atividade no Centro atualmente.
+* **Atividades**: Todas as atividades desenvolvidas no Centro agora possuem um cadastro. Através disso, é mostrado no site principal quais atividades estão disponíveis para inscrição atualmente, assim como o número de vagas, o professor, o horário e o local; proporcionando, assim, uma informação centralizada para todos os interessados (pessoas que desejam se inscrever e responsáveis pelas atividades).
+## Eventos
+Para gerar interesse do público externo e entreter os que já fazem parte, eventos são constantemente promovidos no Centro pelas    responsáveis ou até mesmo pelos parceiros. Com isso em mente, agora é possível cadastrar esses eventos no sistema e vê-los na página principal do site, dispostos por ordem futura de acontecimento no mês atual.
+   
+## Páginas do site principal 
+- [**Sobre nós**](http://ccnmedianeiras.herokuapp.com/sobre) - informações sobre o centro comunitário, história, fotos, equipe...
+- [**Eventos**](http://ccnmedianeiras.herokuapp.com/eventos/info) - próximos eventos que irão acontecer no Centro.
+- [**Atividades**](http://ccnmedianeiras.herokuapp.com/atividades/info) - informações sobre as atividades oferecidas pelo Centro, assim como a lotação atual, o professor, dia e hora.
+- [**Projetos**](http://ccnmedianeiras.herokuapp.com/projetos) - informações sobre os projetos (internos e dos parceiros).

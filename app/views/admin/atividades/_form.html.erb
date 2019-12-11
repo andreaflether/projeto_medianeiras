@@ -23,7 +23,7 @@
       label_html: { class: 'label col-md-12 hidden-field mt-3 custom-file-label', for: 'customFile' },
       wrapper_html: { class: 'custom-file mb-4'} %>
 
-      <%= f.input :descricao, label: "Descrição", input_html: { class: 'form-control ml-1 mr-1 d-flex col hidden-field mb-3 '},
+      <%= f.input :descricao, label: "Descrição", input_html: { class: 'form-control ml-1 mr-1 d-flex col hidden-field mb-3', maxlength: 291},
       label_html: { class: 'label label_b col-md-12 hidden-field mt-3'}, wrapper_html: {class: 'form-row hidden-field'}%>
     <% end %>
 

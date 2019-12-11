@@ -116,8 +116,9 @@
 
 .teste-obj {
   object-fit: cover !important;
-  width: auto !important;
-  height: 420px !important;
+  width: 425px !important;
+  height: 425px !important;
+  max-height: 450px !important;
 }
 
 .btn-hour:hover {

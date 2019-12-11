@@ -25,7 +25,7 @@
           <td class="align-middle align-self-center align-items-center"><%= link_to voluntario.nome, voluntario,
           { :class => "text-dark", 'data-toggle' => 'tooltip', 'data-placement' => 'top',
           :title => "Ver ficha cadastral de #{voluntario.nome}" } %></td>
-          <td class="align-middle align-self-center align-items-center"><%= l voluntario.dt_nascimento, format: :complete_numbers, default: '-' %></td>
+          <td class="align-middle align-self-center align-items-center"><%= l voluntario.dt_entrada, format: :complete_numbers, default: '-' %></td>
           <td class="align-middle align-self-center align-items-center"><%= voluntario.escolaridade %></td>
           <td class="align-middle align-self-center align-items-center">
             <% if voluntario.presenca? %>

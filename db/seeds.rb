@@ -1,14 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 15.times do
   Pessoa.create([{
     nome: Faker::Name.name,
-    dt_entrada: Faker::Date.in_date_period
+    dt_nascimento: Faker::Date.birthday(min_age: 10, max_age: 65), #=> "Mar, 28 Mar 1986"
+    dt_entrada: Faker::Date.in_date_period,
+    idade: Faker::Number.between(from: 10, to: 65) #=> 7
     }])
+  Voluntario.create([{
+    nome: Faker::Name.name,
+    dt_nascimento: Faker::Date.birthday(min_age: 18, max_age: 65),
+    escolaridade: 'Ensino Superior',
+    especializacao: Faker::Educator.subject
+  }])
+
 end

@@ -22,7 +22,7 @@ class Admin::EventosController < AdminController
   end
 
   def proximos_eventos
-    @title = 'Medianeira - Próximos Eventos'
+    @title = 'Medianeiras - Próximos Eventos'
     @proximos_eventos = Evento.proximos_eventos
   end
 

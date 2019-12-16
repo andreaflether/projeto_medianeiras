@@ -100,7 +100,10 @@
           <h3><span class="badge badge-primary bl-color"><%= l evento.data, format: :day_month %></span></h3>
         </div>
         <div class="col-md-6 mt-1">
-          <h4 class="mb-3 evt-title"><strong><%= evento.nome %></strong></h4>
+          <h4 class="mb-3 evt-title">
+            <% if evento.data == Date.today %>
+            <span class="todays-event">Hoje! - </span>
+            <% end %><strong><%= evento.nome %></strong></h4>
           <p class="mb-2"><i class="fas fa-map-marker-alt c-icon"></i><em><%= evento.local %></em> - <%= evento.hora %></p>
           <span class="small"><%= evento.descricao %></span>
         </div>
@@ -109,7 +112,7 @@
   <% end %> <!-- Fim do loop -->
     <div class="col-lg-12 mt-2 mb-2">
       <div class="row justify-content-md-center justify-content-sm-center btn-row">
-      <%= link_to 'Ver todos os eventos', eventos_path, class: 'btn btn-outline-secondary badge-pill px-4' %>
+      <%= link_to 'Ver todos os eventos', eventos_info_path, class: 'btn btn-outline-secondary badge-pill px-4' %>
       </div>
     </div>
 </div>
@@ -130,7 +133,7 @@
             <div class="ml-2">
               <b>Rua Clarindo de Queiroz, 2018 - Farias Brito. CEP: 60035-130</b> <br>
               Cidade: Fortaleza/CE. <br>
-              Fones: (85) 0000-0000 – (85) 00000-0000
+              Fone: (85) 99677-8416
             </div>
           </div>
         </div>
@@ -142,7 +145,7 @@
           <div class="card-event my-auto card-event-blue" style="background-color: #05afea; padding: 20px 20px;">
             <h5><b>Seja um Voluntário</b></h5>
             <p class="text-justify text-center">Precisamos de pessoas para atender a demanda crescente. Conheça todos
-            os nossos projetos clicando <a href="/pages/projetos" class="text-white">aqui.</a></p>
+            os nossos projetos clicando <a href="/projetos" class="text-white">aqui.</a></p>
             <a href="http://facebook.com/pg/ccnmedianeira"><button type="button" class="btn btn-outline-light btn-ajuda">Junte-se a nós</button></a>
           </div>
         </div>

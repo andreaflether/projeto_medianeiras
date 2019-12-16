@@ -38,11 +38,12 @@ class Admin::PessoasController < AdminController
   end
 
   def destroy
-    @atividade = Atividade.find(params[:atividade_id])
     @pessoa = Pessoa.find(params[:id])
+    # @pessoa.atividade_ids = [params[:atividade_id].to_i] if params[:atividade_id]
+    @atividade = Atividade.find(params[:atividade_id]) if params[:atividade_id]
     unless @atividade
       @pessoa.destroy
-      redirect_to pessoas_path, notice: 'Cadastro apagado com sucesso.'
+      redirect_to pessoas_path, notice: "Cadastro apagado com sucesso."
     else
       @pessoa.atividades.delete @atividade
       @pessoa.save

@@ -27,6 +27,7 @@ gem 'inline_svg'
 gem "simple_calendar", "~> 2.0"
 gem 'cloudinary'
 gem 'popper_js', '~> 1.14.5'
+gem 'non-stupid-digest-assets', '~> 1.0', '>= 1.0.8'
 
 #Bootstrap, JS
 source 'https://rails-assets.org' do

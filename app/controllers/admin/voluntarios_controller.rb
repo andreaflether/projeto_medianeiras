@@ -44,7 +44,7 @@ class Admin::VoluntariosController < AdminController
   end
 
   def show
-    @title = 'Medianeiras - Informações de voluntário '
+    @title = 'Medianeiras - Informações de voluntário'
     @voluntario = Voluntario.find(params[:id])
   end
 

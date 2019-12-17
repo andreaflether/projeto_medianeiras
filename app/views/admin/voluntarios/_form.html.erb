@@ -4,12 +4,15 @@
     <%= f.input :dt_nascimento, label: "Data de nascimento", input_html: { class: 'form-control ml-1 mr-1 d-flex col mb-0'},
     label_html: { class: 'label label_b col-md-12 mt-4'}, wrapper_html: {class: 'form-row'}, start_year: Date.today.year - 90,
     end_year: Date.today.year, required: true %>
+    <%= f.association :atividades, label: "Professor/Responsável da(s) atividade(s)", :collection => @atividades.order('nome ASC'),
+    :label_method => :nome, :value_method => :id, input_html: {class: 'select21 mb-0', style: 'width: 100%; '},
+    label_html: { class: 'label label_b mt-4'} %>
     <%= f.input :identidade, input_html: { class: 'form-control'}, label_html: { class: 'label label_b mt-4'}  %>
     <%= f.input :telefone, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'}  %>
     <%= f.input :email, input_html: { class: 'form-control'}, label_html: { class: 'label label_b'} %>
     <%= f.input :escolaridade, prompt: "Escolha uma escolaridade", label: "Escolaridade", collection: [ "Ensino fundamental", "Ensino médio",
     "Curso técnico","Ensino superior", "Mestrado", "Doutorado"], input_html: { class: 'form-control mb-0', id: "escolaridade"},
-    label_html: { class: 'label label_b'}, required: true%>
+    label_html: { class: 'label label_b'}, required: true %>
 
     <%= content_tag :div, class: 'js-dependent-fields', data: { 'select-id': 'escolaridade', 'option-value': 'Ensino superior|Mestrado|Doutorado|Curso técnico'} do %>
       <%= f.input :especializacao, label: "Especialização", input_html: { class: 'form-control ml-1 mr-1 d-flex col hidden-field mb-0 '},
@@ -36,4 +39,15 @@
 
 <script>
   $('#voluntario_telefone').val('(85)')
+</script>
+
+<!-- Script para habilitar o select2 no campo "Atividades" -->
+<script>
+  $(document).ready(function() {
+    $('.select21').select2({
+      theme: 'bootstrap',
+      placeholder: 'Selecionar Professor(a)/Responsável',
+      language: 'pt-BR'
+    });
+});
 </script>

@@ -22,6 +22,7 @@
     <p class="card-text"><b>Identidade: </b><%= @voluntario.identidade %></p>
     <p class="card-text"><b>Escolaridade: </b><%= @voluntario.escolaridade %></p>
     <p class="card-text"><b>Especialização: </b><%= @voluntario.especializacao %></p>
+    <p class="card-text"><b>Atividade(s): </b> <%= @voluntario.atividades.pluck(:nome).join(", ") %></p>
     <% if @voluntario.presenca? %>
       <p class="card-text"><b>Status: </b>Em atividade</p>
     <% else %>

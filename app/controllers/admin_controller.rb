@@ -16,6 +16,7 @@ class AdminController < ApplicationController
     @evento = Evento.proximos_eventos.last
 
     @proximos_aniversarios = Pessoa.proximos_aniversarios
+    @proximos_aniversarios_v = Voluntario.proximos_aniversarios_v
   end
 
   def show

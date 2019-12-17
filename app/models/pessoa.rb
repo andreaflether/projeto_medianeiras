@@ -11,6 +11,6 @@ class Pessoa < ApplicationRecord
   end
 
   scope :proximos_aniversarios, lambda {
-    where(dt_nascimento: 2.days.ago .. 2.days.from_now)
+    select { |x| x.dt_nascimento&.month.to_i == Date.today.month && x.dt_nascimento&.day.to_i - 2 <= Date.today.day }
   }
 end

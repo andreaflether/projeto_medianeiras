@@ -18,6 +18,7 @@ class Admin::VoluntariosController < AdminController
 
   def update
     @voluntario = Voluntario.find(params[:id])
+    @atividades = Atividade.all
     if @voluntario.update(voluntario_params)
       redirect_to @voluntario, notice: "Cadastro atualizado com sucesso."
     else
@@ -28,10 +29,12 @@ class Admin::VoluntariosController < AdminController
   def edit
     @title = 'Medianeiras - Editar informações de voluntário'
     @voluntario = Voluntario.find(params[:id])
+    @atividades = Atividade.all
   end
 
   def destroy
     @voluntario = Voluntario.find(params[:id])
+    @atividades = Atividade.all
     @voluntario.destroy
 
     redirect_to voluntarios_path, notice: 'Voluntário apagado com sucesso.'
